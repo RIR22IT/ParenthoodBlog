@@ -80,20 +80,6 @@
 
                 <div class="form-group">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-mobile-phone" style="font-size:35px;"></i></span>
-                        <?php if (isset($_GET['mobile'])) { ?>
-                        <input type="number" class="form-control" name="mobile" placeholder="Your mobile"
-                            value="<?php echo $_GET['mobile']; ?>">
-                        <?php }else{ ?>
-                        <input type="number" class="form-control" name="mobile" placeholder="Your mobile">
-                        <?php } ?>
-                    </div>
-                </div>
-
-                <hr class="hr-xs">
-
-                <div class="form-group">
-                    <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock ti-unlock"></i></span>
                         <?php if (isset($_GET['password'])) { ?>
                         <input type="password" class="form-control" name="password" placeholder="Your password"
