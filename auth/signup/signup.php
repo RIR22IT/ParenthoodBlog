@@ -122,7 +122,7 @@
                 <button class="btn btn-primary btn-block" type="submit">Sign up</button>
                 <div class="login-links">
                     <p class="text-center">Already have an account? <a class="txt-brand"
-                            href="user-login.html">Login</a></p>
+                            href="../login/index.php">Login</a></p>
                 </div>
             </form>
         </div>
