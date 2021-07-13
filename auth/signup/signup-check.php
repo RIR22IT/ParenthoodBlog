@@ -3,8 +3,8 @@ session_start();
 include "../../database/connection.php";
 
 if (isset($_POST['firstName']) && isset($_POST['lastName'])
-    && isset($_POST['email']) && isset($_POST['mobile']) 
-    && isset($_POST['password']) && isset($_POST['repassword'])) {
+    && isset($_POST['email']) && isset($_POST['password'])
+	&& isset($_POST['repassword'])) {
 
 	function validate($data){
        $data = trim($data);
@@ -16,7 +16,6 @@ if (isset($_POST['firstName']) && isset($_POST['lastName'])
 	$fname   = validate($_POST['firstName']);
     $lname   = validate($_POST['lastName']);
 	$email   = validate($_POST['email']);
-	$mobile  = validate($_POST['mobile']);
     $pass    = validate($_POST['password']);
 	$re_pass = validate($_POST['repassword']);
     
@@ -33,10 +32,7 @@ if (isset($_POST['firstName']) && isset($_POST['lastName'])
     }else if(empty($email)){
         header("Location: signup.php?error=Email is required&$user_data");
 	    exit();
-    }else if(empty($mobile)){
-        header("Location: signup.php?error=Mobile is required&$user_data");
-	    exit();
-	}else if(empty($pass)){
+    }else if(empty($pass)){
         header("Location: signup.php?error=Password is required&$user_data");
 	    exit();
 	}else if(empty($re_pass)){
@@ -59,7 +55,7 @@ if (isset($_POST['firstName']) && isset($_POST['lastName'])
 			header("Location: signup.php?error=The email is already exists&$user_data");
 	        exit();
 		}else {
-           $sql2 = "INSERT INTO users(firstName, lastName, email, mobile, password) VALUES('$fname', '$lname', '$email', '$mobile', '$pass')";
+           $sql2 = "INSERT INTO users(firstName, lastName, email, password) VALUES('$fname', '$lname', '$email', '$pass')";
            $result2 = mysqli_query($db, $sql2);
            if ($result2) {
            	 header("Location: signup.php?success=Your account has been created successfully!");
