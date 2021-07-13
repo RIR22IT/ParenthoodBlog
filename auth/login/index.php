@@ -22,6 +22,7 @@
 
         <div class="login-links">
             <p class="text-center">Need an account? <a class="txt-brand" href="../signup/signup.php">Sign Up</a></p>
+            <p class="text-center">Having problems in logging in?<a class="txt-brand" href="../forgot/forget-password.php"> Forgot Password</a></p>
         </div>
     </form>
 
