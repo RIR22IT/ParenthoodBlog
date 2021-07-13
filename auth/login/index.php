@@ -24,10 +24,6 @@
             <p class="text-center">Having problems in logging in?<a class="txt-brand" href="../forgot/forget-password.php"> Forgot Password</a></p>
         </div>
     
-
-
-		<div class="link forget-pass text-left"><a href="../forgot/forgotPassword.php">Forgot password?</a></div>
-
      	<button type="submit">Login</button>
      </form>
 

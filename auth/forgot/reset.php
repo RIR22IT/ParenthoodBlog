@@ -3,7 +3,7 @@ session_start();
 include "../../database/connection.php";
 if (isset($_GET['token'])) {
     $token = mysqli_real_escape_string($db, $_GET['token']);
-    $query = "select * from password_reset where token = '$token'";
+    $query = "SELECT * FROM password_reset WHERE token = '$token'";
     $run = mysqli_query($db, $query);
     if (mysqli_num_rows($run) > 0) {
         $row = mysqli_fetch_array($run);
@@ -17,18 +17,19 @@ if (isset($_GET['token'])) {
 if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
     $confirmpassword = mysqli_real_escape_string($db, $_POST['confirmpassword']);
-    $options = ['cost' => 11];
-    $hashed = password_hash($password, PASSWORD_BCRYPT, $options);
+    // $options = ['cost' => 11];
+    // $hashed = password_hash($password, PASSWORD_BCRYPT, $options);
+    $hashed = md5($password);
     if ($password != $confirmpassword) {
-        $msg = "<div class = 'alert alert-danger'>Sorry, passwords didn't matched</div>";
-    } elseif (strlen($password) < 6) {
-        $msg = "<div class = 'alert alert-danger'Passwords must be 6 characters long.</div>";
+        $msg = "<div class = 'alert alert-danger'>Sorry, passwords didn't matched!</div>";
+    } elseif (strlen($password) < 8) {
+        $msg = "<div class = 'alert alert-danger'>Passwords must be 6 characters long.</div>";
     } else {
-        $query = "update users set password = '$hashed' where email = '$email'";
+        $query = "UPDATE users SET password = '$hashed' WHERE email = '$email'";
         mysqli_query($db, $query);
-        $query = "delete from password_reset where email = '$email'";
+        $query = "DELETE FROM password_reset where email = '$email'";
         mysqli_query($db, $query);
-        $query = "<div class = 'alert alert-success'Passwords Updated.</div>";
+        $msg = "<div class = 'alert alert-success'Passwords Updated.</div>";
     }
 }
 ?>
@@ -62,7 +63,7 @@ if (isset($_POST['submit'])) {
         <?php if (isset($msg)) {
             echo $msg;
         } ?>
-        <button class="btn btn-primary btn-block">Reset Password</button>
+        <button class="btn btn-primary btn-block" name="submit">Reset Password</button>
 
         <div class="login-links">
             <p class="text-center">Back to Home>> <a class="txt-brand" href="../login/home.php">Home</a></p>
