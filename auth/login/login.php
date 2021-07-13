@@ -15,7 +15,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	$pass = validate($_POST['password']);
 
 	if (empty($email)) {
-		header("Location: index.php?error=Email/Mobile number is required");
+		header("Location: index.php?error=Email is required");
 	    exit();
 	}else if(empty($pass)){
         header("Location: index.php?error=Password is required");
@@ -26,23 +26,22 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		// hashing the password
         $pass = md5($pass);
 
-		$sql = "SELECT * FROM users WHERE email='$email' OR mobile='$email' AND password='$pass'";
+		$sql = "SELECT * FROM users WHERE email='$email' AND password='$pass'";
 
 		$result = mysqli_query($db, $sql);
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
             if ($row['email'] === $email && $row['password'] === $pass) {
-				//|| $row['mobile'] === $email
             	$_SESSION['email'] = $row['email'];
             	$_SESSION['id'] = $row['id'];
             	header("Location: home.php");
 		        exit();
             }else{
-				header("Location: index.php?error=Incorrect email/mobile number or password");
+				header("Location: index.php?error=Incorrect email or password");
 		        exit();
 			}
 		}else{
-			header("Location: index.php?error=Incorrect email/mobile or password");
+			header("Location: index.php?error=Incorrect email or password");
 	        exit();
 		}
 	}

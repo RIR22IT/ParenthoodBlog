@@ -25,7 +25,7 @@
     <main>
 
         <div class="login-block">
-            <img src="http://scanfcode.com/wp-content/uploads/2017/09/cropped-Untitled-1.png" alt="Scanfcode">
+            <!-- <img src="http://scanfcode.com/wp-content/uploads/2017/09/cropped-Untitled-1.png" alt="Scanfcode"> -->
             <h1>SIGN UP</h1>
 
             <form action="signup-check.php" method="POST">
@@ -80,20 +80,6 @@
 
                 <div class="form-group">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-mobile-phone" style="font-size:35px;"></i></span>
-                        <?php if (isset($_GET['mobile'])) { ?>
-                        <input type="number" class="form-control" name="mobile" placeholder="Your mobile"
-                            value="<?php echo $_GET['mobile']; ?>">
-                        <?php }else{ ?>
-                        <input type="number" class="form-control" name="mobile" placeholder="Your mobile">
-                        <?php } ?>
-                    </div>
-                </div>
-
-                <hr class="hr-xs">
-
-                <div class="form-group">
-                    <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock ti-unlock"></i></span>
                         <?php if (isset($_GET['password'])) { ?>
                         <input type="password" class="form-control" name="password" placeholder="Your password"
@@ -122,7 +108,7 @@
                 <button class="btn btn-primary btn-block" type="submit">Sign up</button>
                 <div class="login-links">
                     <p class="text-center">Already have an account? <a class="txt-brand"
-                            href="user-login.html">Login</a></p>
+                            href="../login/index.php">Login</a></p>
                 </div>
             </form>
         </div>
