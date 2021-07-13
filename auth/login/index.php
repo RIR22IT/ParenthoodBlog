@@ -21,7 +21,7 @@
         <button type="submit">Login</button>
 
         <div class="login-links">
-            <p class="text-center">Need an account? <a class="txt-brand" href="../signup/signup.php">Sign Up >></a></p>
+            <p class="text-center">Need an account? <a class="txt-brand" href="../signup/signup.php">Sign Up</a></p>
         </div>
     </form>
 

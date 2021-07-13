@@ -25,7 +25,7 @@
     <main>
 
         <div class="login-block">
-            <img src="http://scanfcode.com/wp-content/uploads/2017/09/cropped-Untitled-1.png" alt="Scanfcode">
+            <!-- <img src="http://scanfcode.com/wp-content/uploads/2017/09/cropped-Untitled-1.png" alt="Scanfcode"> -->
             <h1>SIGN UP</h1>
 
             <form action="signup-check.php" method="POST">
