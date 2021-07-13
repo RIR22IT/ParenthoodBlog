@@ -18,12 +18,18 @@
         <label>Password</label>
         <input type="password" name="password" placeholder="Password"><br>
 
-        <button type="submit">Login</button>
-
+      
         <div class="login-links">
             <p class="text-center">Need an account? <a class="txt-brand" href="../signup/signup.php">Sign Up</a></p>
         </div>
-    </form>
+    
+
+
+		<div class="link forget-pass text-left"><a href="../forgot/forgotPassword.php">Forgot password?</a></div>
+
+     	<button type="submit">Login</button>
+     </form>
+
 
 </body>
 
