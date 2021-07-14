@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         mysqli_query($db, $query);
         $query = "DELETE FROM password_reset where email = '$email'";
         mysqli_query($db, $query);
-        $msg = "<div class = 'alert alert-success'Passwords Updated.</div>";
+        $msg = "<div class = 'alert alert-success'> Passwords Updated </div>";
     }
 }
 ?>
@@ -41,6 +41,11 @@ if (isset($_POST['submit'])) {
     <title>Reset Password</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/loginstyle.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -48,27 +53,55 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <form action="" method="post">
-        <h2>Reset Password</h2>
-
-        <label>Email</label>
-        <input type="text" name="" value=""><br>
-
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Password"><br>
-
-        <label>Confirm Password</label>
-        <input type="password" name="confirmpassword" placeholder="Email Address"><br>
-
-        <?php if (isset($msg)) {
-            echo $msg;
-        } ?>
-        <button class="btn btn-primary btn-block" name="submit">Reset Password</button>
-
-        <div class="login-links">
-            <p class="text-center">Back to Home>> <a class="txt-brand" href="../login/home.php">Home</a></p>
+    <img class="wave" src="../../assets/images/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="../../assets/images/motherhood.svg">
         </div>
-    </form>
+        <div class="login-content">
+            <form action="" method="post">
+                <h2 class="title">Reset Password</h2>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Email Address</h5>
+                        <input type="text" name="" value="" class="input"><br>
+                    </div>
+                </div>
+
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input type="password" name="password" class="input"><br>
+                    </div>
+                </div>
+
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Confirm Password</h5>
+                        <input type="password" name="confirmpassword" class="input"><br>
+                    </div>
+                </div><br/>
+
+                <?php if (isset($msg)) {
+                    echo $msg;
+                } ?>
+
+                <input type="submit" name="submit" class="btn" value="Reset Password">
+
+                <a class="txt-brand" href="../login/home.php">Back to Home</a>
+
+            </form>
+            <script type="text/javascript" src="../../assets/js/main.js"></script>
 
 </body>
 

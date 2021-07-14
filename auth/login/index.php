@@ -4,29 +4,60 @@
 <head>
     <title>LOGIN</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/loginstyle.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <form action="login.php" method="post">
-        <h2>LOGIN</h2>
-        <?php if (isset($_GET['error'])) { ?>
-        <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
-        <label>Email Address</label>
-        <input type="text" name="email" placeholder="Email Address"><br>
-
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Password"><br>
-
-      
-        <div class="login-links">
-            <p class="text-center">Need an account? <a class="txt-brand" href="../signup/signup.php">Sign Up</a></p>
-            <p class="text-center">Having problems in logging in?<a class="txt-brand" href="../forgot/forget-password.php"> Forgot Password</a></p>
+    <img class="wave" src="../../assets/images/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="../../assets/images/fatherhood.svg">
         </div>
-    
-     	<button type="submit">Login</button>
-     </form>
+        <div class="login-content">
+            <form action="login.php" method="post">
+                <img src="../../assets/images/user.svg">
+                <h2 class="title">LOGIN</h2>
+                <?php if (isset($_GET['error'])) { ?>
+                    <p class="error"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
 
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Email Address</h5>
+                        <input type="text" name="email" class="input"><br>
+                    </div>
+                </div>
+
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input type="password" name="password" class="input"><br>
+                    </div>
+                </div>
+
+                <input type="submit" class="btn" value="Login">
+
+                <a class="txt-brand" href="../signup/signup.php">Sign Up</a>
+                <a class="txt-brand" href="../forgot/forget-password.php">Forgot Password</a>
+
+            </form>
+
+            <script type="text/javascript" src="../../assets/js/main.js"></script>
 
 </body>
 
