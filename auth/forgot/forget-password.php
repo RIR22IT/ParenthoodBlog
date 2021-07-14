@@ -1,8 +1,39 @@
+<?php
+session_start();
+include "../../database/connection.php";
+if (isset($_POST['submit'])) {
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $run = mysqli_query($db, $query);
+    if (mysqli_num_rows($run) > 0) {
+        $row = mysqli_fetch_array($run);
+        $db_email = $row['email'];
+        $db_id = $row['id'];
+        $token = uniqid(md5(time()));
+        $query = "INSERT INTO password_reset (id, email, token) VALUES ($db_id, '$email', '$token')";
+
+        if (mysqli_query($db, $query)) {
+            $to = $db_email;
+            $subject = "Password reset link";
+            $message = "Click <a href='https://YOUR_WEBSITE.com/reset.php?token=$token'>here</a> to reset your password.";
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers = "Content-type: text/html;charset=UTF-8" . "\r\n";
+            $headers = 'From: <demo@demo.com>' . "\r\n";
+            mail($to, $subject, $message, $headers);
+
+            $msg = "<div class = 'success'> Password reset link has been sent to the email.</div>";
+        }
+    } else {
+        $msg = "<div class = 'error'> User not found </div>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>LOGIN</title>
+    <title>Forgot Password</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/loginstyle.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/signup.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
@@ -20,15 +51,11 @@
     <img class="wave" src="../../assets/images/wave.png">
     <div class="container">
         <div class="img">
-            <img src="../../assets/images/fatherhood.svg">
+            <img src="../../assets/images/playtime.svg">
         </div>
         <div class="login-content">
-            <form action="login.php" method="post">
-                <img src="../../assets/images/user.svg">
-                <h2 class="title">LOGIN</h2>
-                <?php if (isset($_GET['error'])) { ?>
-                    <p class="error"><?php echo $_GET['error']; ?></p>
-                <?php } ?>
+            <form action="" method="post">
+                <h2 class="title">Forgot Password</h2>
 
                 <div class="input-div one">
                     <div class="i">
@@ -36,29 +63,20 @@
                     </div>
                     <div class="div">
                         <h5>Email Address</h5>
-                        <input type="text" name="email" class="input"><br>
+                        <input type="email" name="email" class="input"><br>
                     </div>
                 </div>
 
-                <div class="input-div pass">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="div">
-                        <h5>Password</h5>
-                        <input type="password" name="password" class="input"><br>
-                    </div>
-                </div>
+                <?php if (isset($msg)) {
+                    echo $msg;
+                } ?>
 
-                <input type="submit" class="btn" value="Login">
+                <input type="submit" name="submit" class="btn" value="Submit">
 
-                <a class="txt-brand" href="../signup/signup.php">Sign Up</a>
-                <a class="txt-brand" href="../forgot/forget-password.php">Forgot Password</a>
+                <a class="txt-brand" href="../login/home.php">Back to Home</a>
 
             </form>
-
             <script type="text/javascript" src="../../assets/js/main.js"></script>
-
 </body>
 
 </html>
