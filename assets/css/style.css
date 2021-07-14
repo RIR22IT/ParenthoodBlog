@@ -160,6 +160,25 @@ a:hover{
 	color: #384DA1;
 }
 
+.error {
+	background: #F2DEDE;
+	color: #A94442;
+	padding: 10px;
+	width: 55%;
+	border-radius: 5px;
+	margin: 20px auto;
+	width: 100%;
+}
+
+.success {
+	background: #D4EDDA;
+	color: #40754C;
+	padding: 10px;
+	width: 100%;
+	border-radius: 5px;
+	margin: 20px auto;
+ }
+
 .btn{
 	display: block;
 	width: 100%;
