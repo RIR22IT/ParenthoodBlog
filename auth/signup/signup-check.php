@@ -22,6 +22,16 @@ if (isset($_POST['firstName']) && isset($_POST['lastName'])
 
 	$user_data = 'firstName='. $fname. '&lastName='. $lname;
 
+	$uppercase   = preg_match('@[A-Z]@', $pass);
+	$lowercase   = preg_match('@[a-z]@', $pass);
+	$number      = preg_match('@[0-9]@', $pass);
+	$specialChar = preg_match('@[^\w]@', $pass);
+
+	if(!$uppercase || !$lowercase || !$number || !$specialChar || strlen($pass) < 8){
+		header("Location: signup.php?error=Password should be at least 8 characters, one upper case letter, one number, and one special character.&$user_data");
+		exit();
+	}
+
 
 	if (empty($fname)) {
 		header("Location: signup.php?error=First name is required&$user_data");
