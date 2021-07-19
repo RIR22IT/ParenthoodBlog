@@ -2313,51 +2313,61 @@
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">First Name</label>
-									<input class="form-control" placeholder="" type="text" value="James">
+									<input class="form-control" placeholder="" type="text" value="">
 								</div>
 					
 								<div class="form-group label-floating">
 									<label class="control-label">Your Email</label>
-									<input class="form-control" placeholder="" type="email" value="jspiegel@yourmail.com">
+									<input class="form-control" placeholder="" type="email" value="">
 								</div>
 					
 								<div class="form-group date-time-picker label-floating">
 									<label class="control-label">Your Birthday</label>
-									<input name="datetimepicker" value="10/24/1984" />
+									<input name="datetimepicker" value="" />
 									<span class="input-group-addon">
 															<svg class="olymp-month-calendar-icon icon"><use xlink:href="#olymp-month-calendar-icon"></use></svg>
 														</span>
 								</div>
+								
 							</div>
 					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">Last Name</label>
-									<input class="form-control" placeholder="" type="text" value="Spiegel">
+									<input class="form-control" placeholder="" type="text" value="">
+								</div>
+
+								<div class="form-group label-floating">
+									<label class="control-label">Your Occupation</label>
+									<input class="form-control" placeholder="" type="text" value="">
+								</div>
+
+								<div class="form-group">
+									<textarea class="form-control" placeholder="Write a little description about you"></textarea>
 								</div>
 					
-								<div class="form-group label-floating">
+								<!-- <div class="form-group label-floating">
 									<label class="control-label">Your Website</label>
 									<input class="form-control" placeholder="" type="email" value="daydreamzagency.com">
 								</div>
+					 			-->
 					
-					
-								<div class="form-group label-floating is-empty">
+								<!-- <div class="form-group label-floating is-empty">
 									<label class="control-label">Your Phone Number</label>
 									<input class="form-control" placeholder="" type="text">
-								</div>
+								</div> -->
 							</div>
 					
-							<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your Country</label>
 									<select class="form-select">
-										<option value="US">United States</option>
-										<option value="AU">Australia</option>
+										<option value="SL">Sri Lanka</option>
+										<option value="IND">India</option>
 									</select>
 								</div>
 							</div>
-							<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+							<!-- <div class="col col-lg-4 col-md-4 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your State / Province</label>
 									<select class="form-select">
@@ -2365,84 +2375,86 @@
 										<option value="TE">Texas</option>
 									</select>
 								</div>
-							</div>
-							<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+							</div> -->
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
-									<label class="control-label">Your City</label>
+									<label class="control-label">Your Province / State</label>
 									<select class="form-select">
-										<option value="SF">San Francisco</option>
-										<option value="NY">New York</option>
+										<option value="WE">Western Province</option>
+										<option value="CE">Central Province</option>
+										<option value="SO">Southern Province</option>
+										<option value="UV">Uva Province</option>
+										<option value="SA">Sabaragamuwa Province</option>
+										<option value="NW">North Western Province</option>
+										<option value="NC">North Central Province</option>
+										<option value="NO">Northern Province</option>
 									</select>
 								</div>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<textarea class="form-control" placeholder="Write a little description about you">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56</textarea>
-								</div>
+								</div> -->
 					
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your Gender</label>
 									<select class="form-select">
 										<option value="MA">Male</option>
 										<option value="FE">Female</option>
+										<option value="OTH">Other</option>
 									</select>
 								</div>
 					
-								<div class="form-group label-floating is-empty">
+								<!-- <div class="form-group label-floating is-empty">
 									<label class="control-label">Religious Belifs</label>
 									<input class="form-control" placeholder="" type="text">
-								</div>
+								</div> -->
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group label-floating is-empty">
+								<!-- <div class="form-group label-floating is-empty">
 									<label class="control-label">Your Birthplace</label>
 									<input class="form-control" placeholder="" type="text">
-								</div>
-					
-								<div class="form-group label-floating">
-									<label class="control-label">Your Occupation</label>
-									<input class="form-control" placeholder="" type="text" value="UI/UX Designer">
-								</div>
+								</div> -->
 					
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Status</label>
 									<select class="form-select">
 										<option value="MA">Married</option>
-										<option value="FE">Not Married</option>
+										<option value="SI">Single Parent</option>
 									</select>
 								</div>
 					
-								<div class="form-group label-floating">
+								<!-- <div class="form-group label-floating">
 									<label class="control-label">Political Incline</label>
 									<input class="form-control" placeholder="" type="text" value="Democrat">
-								</div>
+								</div> -->
 							</div>
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group with-icon label-floating">
 									<label class="control-label">Your Facebook Account</label>
-									<input class="form-control" type="text" value="www.facebook.com/james-spiegel95321">
+									<input class="form-control" type="text" value="">
 									<svg class="c-facebook" width="20" height="20"><use xlink:href="#olymp-facebook-icon"></use></svg>
 								</div>
-								<div class="form-group with-icon label-floating">
+								<!-- <div class="form-group with-icon label-floating">
 									<label class="control-label">Your Twitter Account</label>
-									<input class="form-control" type="text" value="www.twitter.com/james_spiegelOK">
+									<input class="form-control" type="text" value="">
 									<svg class="c-twitter" width="20" height="20"><use xlink:href="#olymp-twitter-icon"></use></svg>
-								</div>
-								<div class="form-group with-icon label-floating is-empty">
+								</div> -->
+								<!-- <div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Your RSS Feed Account</label>
 									<input class="form-control" type="text">
 									<svg class="c-rss" width="20" height="20"><use xlink:href="#olymp-rss-icon"></use></svg>
-								</div>
-								<div class="form-group with-icon label-floating">
+								</div> -->
+								<!-- <div class="form-group with-icon label-floating">
 									<label class="control-label">Your Dribbble Account</label>
-									<input class="form-control" type="text" value="www.dribbble.com/thecowboydesigner">
+									<input class="form-control" type="text" value="">
 									<svg class="c-dribbble" width="20" height="20"><use xlink:href="#olymp-dribble-icon"></use></svg>
-								</div>
-								<div class="form-group with-icon label-floating is-empty">
+								</div> -->
+								<!-- <div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Your Spotify Account</label>
 									<input class="form-control" type="text">
 									<svg class="c-spotify" width="20" height="20"><use xlink:href="#olymp-spotify-icon"></use></svg>
-								</div>
+								</div> -->
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<button class="btn btn-secondary btn-lg full-width">Restore all Attributes</button>
