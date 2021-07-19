@@ -2387,7 +2387,7 @@
 										<option value="SA">Sabaragamuwa Province</option>
 										<option value="NW">North Western Province</option>
 										<option value="NC">North Central Province</option>
-										<option value="NO">Nothern Province</option>
+										<option value="NO">Northern Province</option>
 									</select>
 								</div>
 							</div>
@@ -2435,26 +2435,26 @@
 									<input class="form-control" type="text" value="">
 									<svg class="c-facebook" width="20" height="20"><use xlink:href="#olymp-facebook-icon"></use></svg>
 								</div>
-								<div class="form-group with-icon label-floating">
+								<!-- <div class="form-group with-icon label-floating">
 									<label class="control-label">Your Twitter Account</label>
 									<input class="form-control" type="text" value="">
 									<svg class="c-twitter" width="20" height="20"><use xlink:href="#olymp-twitter-icon"></use></svg>
-								</div>
-								<div class="form-group with-icon label-floating is-empty">
+								</div> -->
+								<!-- <div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Your RSS Feed Account</label>
 									<input class="form-control" type="text">
 									<svg class="c-rss" width="20" height="20"><use xlink:href="#olymp-rss-icon"></use></svg>
-								</div>
-								<div class="form-group with-icon label-floating">
+								</div> -->
+								<!-- <div class="form-group with-icon label-floating">
 									<label class="control-label">Your Dribbble Account</label>
 									<input class="form-control" type="text" value="">
 									<svg class="c-dribbble" width="20" height="20"><use xlink:href="#olymp-dribble-icon"></use></svg>
-								</div>
-								<div class="form-group with-icon label-floating is-empty">
+								</div> -->
+								<!-- <div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Your Spotify Account</label>
 									<input class="form-control" type="text">
 									<svg class="c-spotify" width="20" height="20"><use xlink:href="#olymp-spotify-icon"></use></svg>
-								</div>
+								</div> -->
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<button class="btn btn-secondary btn-lg full-width">Restore all Attributes</button>
