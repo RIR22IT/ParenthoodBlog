@@ -91,7 +91,7 @@
                         <?php } ?>
                     </div>
                 </div>
-                <a href="../login/login.php">Already have an account?</a>
+                <a href="../login/login-check.php">Already have an account?</a>
                 <input type="submit" class="btn" value="Sign Up">
             </form>
         </div>
