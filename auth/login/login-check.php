@@ -44,7 +44,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 					if ($row['email'] === $email && $row['password'] === $pass) {
 						$_SESSION['email'] = $row['email'];
 						$_SESSION['id'] = $row['id'];
-						header("Location: home.php");
+						header("Location: ../../YourAccount-PersonalInformation.php");
 						exit();
 					}else{
 						header("Location: login-check.php?error=Incorrect email or password");
