@@ -126,7 +126,7 @@
 						</div>
 					</a>
 
-					<h1>The Most Complete Social Network is Here!</h1>
+					<h1>PARENTHOOD</h1>
 					<p>We included all you may need to build the best social network! Things like profile pages, newsfeed,
 						friend groups, statistics, birthdays, community badges, events calendar, full music player and
 						unique iconography! Have fun customizing it!
@@ -134,10 +134,13 @@
 
 					<div class="row">
 						<div class="col col-lg-6 col-md-12 col-sm-12 col-12">
-							<a target="_blank" href="https://1.envato.market/olympus-template" class="btn btn-purple btn-md w-100">Purchase Olympus!</a>
+							<a target="_blank" href="./auth/login/login.php" class="btn btn-purple btn-md w-100">LOGIN</a>
 						</div>
-						<div class="col col-lg-6 col-md-12 col-sm-12 col-12">
+						<!-- <div class="col col-lg-6 col-md-12 col-sm-12 col-12">
 							<a target="_blank" href="https://support.crumina.net/help-center/categories/50/olympus-html-social-network-toolkit" class="btn btn-md btn-border c-white w-100">Help & Documentation</a>
+						</div> -->
+						<div class="col col-lg-6 col-md-12 col-sm-12 col-12">
+							<a target="_blank" href="./auth/signup/signup.php" class="btn btn-purple btn-md w-100">SIGNUP</a>
 						</div>
 					</div>
 				</div>
