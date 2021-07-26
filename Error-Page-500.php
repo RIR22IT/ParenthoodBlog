@@ -67,7 +67,7 @@
 						<a href="#">support@olympus.com</a>
 					</p>
 				</div>
-				<a href="index.html" class="btn btn-primary btn-lg">Go to Homepage</a>
+				<a href="index.php" class="btn btn-primary btn-lg">Go to Homepage</a>
 			</div>
 		</div>
 	</div>
