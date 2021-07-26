@@ -2985,12 +2985,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 
                                     <div class="form-group date-time-picker label-floating">
                                         <label class="control-label">Your Birthday</label>
-                                        <input name="datetimepicker" value="<?php echo $user_dob ?>" />
-                                        <span class="input-group-addon">
+                                        <!-- <input name="datetimepicker" value="<?php echo $user_dob ?>" /> -->
+                                        <!-- <span class="input-group-addon">
                                             <svg class="olymp-month-calendar-icon icon">
-                                                <use xlink:href="olymp-month-calendar-icon"></use>
+                                                <use xlink:href="#olymp-month-calendar-icon"></use>
                                             </svg>
-                                        </span>
+                                        </span> -->
                                     </div>
 
                                 </div>

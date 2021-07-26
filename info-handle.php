@@ -31,7 +31,9 @@ if(isset($_POST['update'])){
     $user_fb         = $_POST['fb'];
     $user_reg_date   = $_POST['user_reg_date'];
     $user_description= $_POST['description'];
-  
+    
+    // echo $user_dob;
+
     mysqli_query($db,"UPDATE users SET firstName = '$firstName', lastName = '$lastName', user_image = '$user_image', user_cover = '$user_cover', 
     user_dob = '$user_dob', user_country = '$user_country', user_province = '$user_province',
     user_gender = '$user_gender', user_occupation = '$user_occupation', user_status = '$user_status',

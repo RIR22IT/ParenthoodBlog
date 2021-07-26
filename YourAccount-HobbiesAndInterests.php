@@ -52,8 +52,8 @@
 </div>
 
 <!-- ... end Preloader -->
-<!-- Profile Settings Responsive -->
 
+<!-- Profile Settings Responsive -->
 <div class="profile-settings-responsive">
 
 	<a href="#" class="js-profile-settings-open profile-settings-open">
@@ -122,7 +122,6 @@
 		</div>
 	</div>
 </div>
-
 <!-- ... end Profile Settings Responsive -->
 
 
