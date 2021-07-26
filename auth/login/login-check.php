@@ -26,10 +26,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		
 		if($responseData->success){
 			if (empty($email)) {
-				header("Location: login-check.php?error=Email is required");
+				header("Location: login.php?error=Email is required");
 				exit();
 			}else if(empty($pass)){
-				header("Location: login-check.php?error=Password is required");
+				header("Location: login.php?error=Password is required");
 				exit();
 			}else{
 		
@@ -47,22 +47,22 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 						header("Location: ../../YourAccount-PersonalInformation.php");
 						exit();
 					}else{
-						header("Location: login-check.php?error=Incorrect email or password");
+						header("Location: login.php?error=Incorrect email or password");
 						exit();
 					}
 				}else{
-					header("Location: login-check.php?error=Incorrect email or password");
+					header("Location: login.php?error=Incorrect email or password");
 					exit();
 				}
 			}
 		}else{
-			header("Location: login-check.php?error=Robot verification failed, please try again.");
+			header("Location: login.php?error=Robot verification failed, please try again.");
 			exit();
 		}
 		
 
 	}else{
-		header("Location: login-check.php?error=Please check on the reCAPTCHA box");
+		header("Location: login.php?error=Please check on the reCAPTCHA box");
 		exit();
 	}
 

@@ -20,6 +20,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
         $user_status     = $row['user_status'];
         $user_fb         = $row['user_fb'];
         $user_description = $row['user_description'];
+        $img_src         = "upload/".$user_image;
     }
 ?>
 
@@ -3105,13 +3106,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                     <a href="02-ProfilePage.html" class="h4 author-name">James Spiegel</a>
                                     <div class="country">San Francisco, CA</div>
                                 </div> -->
-                            <form action="info-handle.php" method="GET">
+                            <form action="info-handle.php" method="POST" enctype='multipart/form-data'>
                                 <!-- <div class="author-thumb"> -->
                                 <!-- <img loading="lazy" src="img/author-main1.webp" alt="author" width="124" height="124"> -->
                                 <!-- </div> -->
                                 <div class="profile-pic-div">
-                                    <img src="#" id="photo">
-                                    <input type="file" id="file" name="img">
+                                    <img src='<?php echo $img_src; ?>' id="photo">
+                                    <input type="file" id="file" name="img" value=""/>
                                     <label for="file" id="uploadBtn" type="submit">Choose Photo</label>
                                 </div>
                                 <input type="hidden" name="id" value='<?php echo $id ?>'>
