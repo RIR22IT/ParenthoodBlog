@@ -4,7 +4,7 @@ include ('./database/connection.php');
 $id              = 0;
 $firstName       = "";
 $lastName        = "";
-$user_image      = [];
+$img             = [];
 $user_cover      = [];
 $user_dob        = 0;
 $user_country    = "";
@@ -77,4 +77,23 @@ if(isset($_POST['btnHobby'])){
         header('location: YourAccount-HobbiesAndInterests.php');
     }
   
+}
+
+
+if(isset($_GET['btnImg'])){
+    $img        = $_FILES["img"]["name"];
+    $id         = $_GET['id'];
+    if(file_exists("upload/".$_FILES["img"]["name"])){
+        $store = $_FILES["img"]["name"];
+        $_SESSION['status'] = "Image already exists.'.$store.'";
+    }else{
+        $run = mysqli_query($db, "UPDATE users SET img = '$img' WHERE id = $id");
+        header('location: YourAccount-PersonalInformation.php');
+        if($run){
+            move_uploaded_file($_FILES["img"]["tmp_name"], "upload/".$_FILES["img"]["name"]);
+            header('location: YourAccount-PersonalInformation.php');
+        }else{
+            $_SESSION['success'] = "not added";
+        }
+    }
 }
