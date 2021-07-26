@@ -1,28 +1,27 @@
-<?php 
+<?php
 session_start();
 include "./database/connection.php";
 if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
-	 $email = $_SESSION['email'];
-     $id = $_SESSION['id'];
-     $query = "SELECT * FROM users WHERE id = '$id'";
-     $run = mysqli_query($db, $query);
-     if (mysqli_num_rows($run) > 0) {
-         $row = mysqli_fetch_array($run);
-         $firstName       = $row['firstName'];
-         $lastName        = $row['lastName'];
-         $user_image      = $row['user_image'];
-		 $user_cover      = $row['user_cover'];
-		 $user_dob        = $row['user_dob'];
-		 $user_country    = $row['user_country'];
-		 $user_province   = $row['user_province'];
-		 $user_gender     = $row['user_gender'];
-		 $user_occupation = $row['user_occupation'];
-		 $user_status     = $row['user_status'];
-		 $user_fb         = $row['user_fb'];
-		 $user_reg_date   = $row['user_reg_date'];
-		 $user_description   = $row['user_description'];
-     }
- ?>
+    $email = $_SESSION['email'];
+    $id = $_SESSION['id'];
+    $query = "SELECT * FROM users WHERE id = '$id'";
+    $run = mysqli_query($db, $query);
+    if (mysqli_num_rows($run) > 0) {
+        $row = mysqli_fetch_array($run);
+        $firstName       = $row['firstName'];
+        $lastName        = $row['lastName'];
+        $user_image      = $row['user_image'];
+        $user_cover      = $row['user_cover'];
+        $user_dob        = $row['user_dob'];
+        $user_country    = $row['user_country'];
+        $user_province   = $row['user_province'];
+        $user_gender     = $row['user_gender'];
+        $user_occupation = $row['user_occupation'];
+        $user_status     = $row['user_status'];
+        $user_fb         = $row['user_fb'];
+        $user_description = $row['user_description'];
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +35,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-
     <!-- Theme Font -->
     <link rel="preload" type="text/css" href="css/theme-font.min.css" as="style">
 
@@ -46,8 +44,71 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <!-- Main Styles CSS -->
     <link rel="stylesheet" type="text/css" href="css/main.min.css">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
     <!-- Main RTL CSS -->
     <!--<link rel="stylesheet" type="text/css" href="css/rtl.min.css">-->
+    <style>
+    /* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 30px;
+        color: #222;
+    } */
+
+    .profile-pic-div {
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid grey;
+        margin-top: -90px;
+        background-image: url("img/profile_default.jpg");
+    }
+
+    #photo {
+        height: 100%;
+        width: 100%;
+    }
+
+    #file {
+        display: none;
+    }
+
+    #uploadBtn {
+        height: 40px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        color: wheat;
+        line-height: 30px;
+        font-family: sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        display: none;
+    }
+    </style>
+
 
 </head>
 
@@ -120,19 +181,19 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                 <div class="accordion-body">
                                     <ul class="your-profile-menu">
                                         <li>
-                                            <a href="28-YourAccount-PersonalInformation.html">Personal Information</a>
+                                            <a href="YourAccount-PersonalInformation.php">Personal Information</a>
                                         </li>
                                         <li>
-                                            <a href="29-YourAccount-AccountSettings.html">Account Settings</a>
+                                            <a href="29-YourAccount-AccountSettings.php">Account Settings</a>
                                         </li>
                                         <li>
-                                            <a href="30-YourAccount-ChangePassword.html">Change Password</a>
+                                            <a href="30-YourAccount-ChangePassword.php">Change Password</a>
                                         </li>
                                         <li>
-                                            <a href="31-YourAccount-HobbiesAndInterests.html">Hobbies and Interests</a>
+                                            <a href="YourAccount-HobbiesAndInterests.php">Hobbies and Interests</a>
                                         </li>
                                         <li>
-                                            <a href="32-YourAccount-EducationAndEmployement.html">Education and
+                                            <a href="YourAccount-EducationAndEmployement.php">Education and
                                                 Employement</a>
                                         </li>
                                     </ul>
@@ -2926,28 +2987,149 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 
     </header>
 
-    <!-- ... end Responsive Header-BP -->
-    <div class="header-spacer header-spacer-small"></div>
-
     <!-- Main Header Account -->
 
-    <div class="main-header">
-        <div class="content-bg-wrap bg-account"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
-                    <div class="main-header-content">
-                        <h1>Your Account Dashboard</h1>
-                        <p>Welcome to your account dashboard! Here you’ll find everything you need to change your
-                            profile
-                            information, settings, read notifications and requests, view your latest messages, change
-                            your pasword and much
-                            more! Also you can create or manage your own favourite page, have fun!</p>
+    <!-- <div class="main-header">
+            <div class="content-bg-wrap bg-account"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+                        <div class="main-header-content">
+                            <h1>Your Account Dashboard</h1>
+                            <p>Welcome to your account dashboard! Here you’ll find everything you need to change your
+                                profile
+                                information, settings, read notifications and requests, view your latest messages, change
+                                your pasword and much
+                                more! Also you can create or manage your own favourite page, have fun!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="img-bottom" src="img/account-bottom.webp" width="1169" height="153">
+        </div> -->
+
+    <!-- ... end Responsive Header-BP -->
+    <div class="header-spacer"></div>
+
+    <!-- Top Header-Profile -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="ui-block">
+                    <div class="top-header">
+                        <div class="top-header-thumb">
+
+                        </div>
+                        <div class="profile-section">
+                            <!-- <div class="row">
+                                    <div class="col col-lg-5 col-md-5 col-sm-12 col-12">
+                                        <ul class="profile-menu">
+                                            <li>
+                                                <a href="02-ProfilePage.html" class="active">Timeline</a>
+                                            </li>
+                                            <li>
+                                                <a href="05-ProfilePage-About.html">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="06-ProfilePage.html">Friends</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col col-lg-5 ms-auto col-md-5 col-sm-12 col-12">
+                                        <ul class="profile-menu">
+                                            <li>
+                                                <a href="07-ProfilePage-Photos.html">Photos</a>
+                                            </li>
+                                            <li>
+                                                <a href="09-ProfilePage-Videos.html">Videos</a>
+                                            </li>
+                                            <li>
+                                                <div class="more">
+                                                    <svg class="olymp-three-dots-icon">
+                                                        <use xlink:href="#olymp-three-dots-icon"></use>
+                                                    </svg>
+                                                    <ul class="more-dropdown more-with-triangle">
+                                                        <li>
+                                                            <a href="#">Report Profile</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Block Profile</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+
+                            <div class="control-block-button">
+                                <!-- <a href="35-YourAccount-FriendsRequests.html" class="btn btn-control bg-blue">
+                                        <svg class="olymp-happy-face-icon">
+                                            <use xlink:href="#olymp-happy-face-icon"></use>
+                                        </svg>
+                                    </a> -->
+
+                                <!-- <a href="#" class="btn btn-control bg-purple">
+                                        <svg class="olymp-chat---messages-icon">
+                                            <use xlink:href="#olymp-chat---messages-icon"></use>
+                                        </svg>
+                                    </a> -->
+
+                                <div class="btn btn-control bg-primary more">
+                                    <svg class="olymp-settings-icon">
+                                        <use xlink:href="#olymp-camera-icon"></use>
+                                    </svg>
+
+                                    <ul class="more-dropdown more-with-triangle triangle-bottom-right">
+                                        <li>
+                                            <a href="#" edata-bs-toggle="modal"
+                                                data-bs-target="#updat-header-photo">Update Profile Photo</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-bs-toggle="modal"
+                                                data-bs-target="#update-header-photo">Update Header Photo</a>
+                                        </li>
+                                        <!-- <li>
+                                                <a href="29-YourAccount-AccountSettings.html">Account Settings</a>
+                                            </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-header-author">
+                            <!-- <a href="02-ProfilePage.html" class="author-thumb">
+                                    <img loading="lazy" src="img/author-main1.webp" alt="author" width="124" height="124">
+                                </a>
+                                <div class="author-content">
+                                    <a href="02-ProfilePage.html" class="h4 author-name">James Spiegel</a>
+                                    <div class="country">San Francisco, CA</div>
+                                </div> -->
+                            <form action="info-handle.php" method="GET">
+                                <!-- <div class="author-thumb"> -->
+                                <!-- <img loading="lazy" src="img/author-main1.webp" alt="author" width="124" height="124"> -->
+                                <!-- </div> -->
+                                <div class="profile-pic-div">
+                                    <img src="#" id="photo">
+                                    <input type="file" id="file" name="img">
+                                    <label for="file" id="uploadBtn" type="submit">Choose Photo</label>
+                                </div>
+                                <input type="hidden" name="id" value='<?php echo $id ?>'>
+                                <button type="submit" name="btnImg">Save</button>
+                                <script src="app.js"></script>
+
+                                <!-- <button type="file" name="upload_file" id="upload_file"
+                                    onChange="getImagePreview(event)"></button> -->
+                                <!-- <a href="#" class="author-thumb">
+                                    <img loading="lazy" src="img/author-main1.webp" alt="author" width="124" height="124">
+                                    <input type="file" name="upload_file" id="upload_file" onChange="getImagePreview(event)">
+                                </a> -->
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img class="img-bottom" src="img/account-bottom.webp" width="1169" height="153">
     </div>
 
     <!-- ... end Main Header Account -->
@@ -2979,19 +3161,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 
                                     <div class="form-group label-floating">
                                         <label class="control-label">Your Email</label>
-                                        <input class="form-control" placeholder="" type="email" 
+                                        <input class="form-control" placeholder="" type="email"
                                             value="<?php echo $email; ?>" disabled>
                                     </div>
 
-                                    <div class="form-group date-time-picker label-floating">
-                                        <label class="control-label">Your Birthday</label>
-                                        <!-- <input name="datetimepicker" value="<?php echo $user_dob ?>" /> -->
-                                        <!-- <span class="input-group-addon">
-                                            <svg class="olymp-month-calendar-icon icon">
-                                                <use xlink:href="#olymp-month-calendar-icon"></use>
-                                            </svg>
-                                        </span> -->
-                                    </div>
+                                    <!-- <div class="form-group"> -->
+                                    <p>Date of Birth: <input type="date" id="datepicker" name="birth"
+                                            value="<?php echo $user_dob; ?>"></p>
+                                    <!-- </div> -->
 
                                 </div>
 
@@ -3009,9 +3186,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                     </div>
 
                                     <div class="form-group">
+                                        <!-- <label class="control-label">Description</label> -->
+                                        <!-- <input class="form-control" placeholder="Write a little description about you" type="text" name="description" value="<?php echo $user_description; ?>"> -->
                                         <textarea class="form-control"
                                             placeholder="Write a little description about you"
-                                            name="description"></textarea>
+                                            name="description"><?php echo $user_description; ?></textarea>
                                     </div>
 
                                     <!-- <div class="form-group label-floating">
@@ -3030,8 +3209,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                     <div class="form-group label-floating is-select">
                                         <label class="control-label">Your Country</label>
                                         <select class="form-select" name="country">
-                                            <option value="Sri Lanka">Sri Lanka</option>
-                                            <option value="India">India</option>
+                                            <option value="Sri Lanka" <?php
+                                                                            if ($user_country == 'Sri Lanka') {
+                                                                                echo "selected";
+                                                                            }
+                                                                            ?>>Sri Lanka</option>
+                                            <option value="India" <?php
+                                                                        if ($user_country == 'India') {
+                                                                            echo "selected";
+                                                                        }
+                                                                        ?>>India</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3048,14 +3235,49 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                     <div class="form-group label-floating is-select">
                                         <label class="control-label">Your Province / State</label>
                                         <select class="form-select" name="province">
-                                            <option value="Western Province">Western Province</option>
-                                            <option value="Central Province">Central Province</option>
-                                            <option value="Southern Province">Southern Province</option>
-                                            <option value="Uva Province">Uva Province</option>
-                                            <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
-                                            <option value="North Western Province">North Western Province</option>
-                                            <option value="North Central Province">North Central Province</option>
-                                            <option value="Northern Province">Northern Province</option>
+                                            <option value="Western Province" <?php
+                                                                                    if ($user_province == 'Western Province') {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>>Western Province</option>
+                                            <option value="Central Province" <?php
+                                                                                    if ($user_province == 'Central Province') {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>>Central Province</option>
+                                            <option value="Southern Province" <?php
+                                                                                    if ($user_province == 'Southern Province') {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>>Southern Province</option>
+                                            <option value="Uva Province" <?php
+                                                                                if ($user_province == 'Uva Province') {
+                                                                                    echo "selected";
+                                                                                }
+                                                                                ?>>Uva Province</option>
+                                            <option value="Sabaragamuwa Province" <?php
+                                                                                        if ($user_province == 'Sabaragamuwa Province') {
+                                                                                            echo "selected";
+                                                                                        }
+                                                                                        ?>>Sabaragamuwa Province
+                                            </option>
+                                            <option value="North Western Province" <?php
+                                                                                        if ($user_province == 'North Western Province') {
+                                                                                            echo "selected";
+                                                                                        }
+                                                                                        ?>>North Western Province
+                                            </option>
+                                            <option value="North Central Province" <?php
+                                                                                        if ($user_province == 'North Central Province') {
+                                                                                            echo "selected";
+                                                                                        }
+                                                                                        ?>>North Central Province
+                                            </option>
+                                            <option value="Northern Province" <?php
+                                                                                    if ($user_province == 'Northern Province') {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>>Northern Province</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3067,9 +3289,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                     <div class="form-group label-floating is-select">
                                         <label class="control-label">Your Gender</label>
                                         <select class="form-select" name="gender">
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                            <option value="Other">Other</option>
+                                            <option value="Male" <?php
+                                                                        if ($user_gender == 'Male') {
+                                                                            echo "selected";
+                                                                        }
+                                                                        ?>>Male</option>
+                                            <option value="Female" <?php
+                                                                        if ($user_gender == 'Female') {
+                                                                            echo "selected";
+                                                                        }
+                                                                        ?>>Female</option>
+                                            <option value="Other" <?php
+                                                                        if ($user_gender == 'Other') {
+                                                                            echo "selected";
+                                                                        }
+                                                                        ?>>Other</option>
                                         </select>
                                     </div>
 
@@ -3087,8 +3321,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                     <div class="form-group label-floating is-select">
                                         <label class="control-label">Status</label>
                                         <select class="form-select" name="status">
-                                            <option value="Married">Married</option>
-                                            <option value="Single Parent">Single Parent</option>
+                                            <option value="Married" <?php
+                                                                        if ($user_status == 'Married') {
+                                                                            echo "selected";
+                                                                        }
+                                                                        ?>>Married</option>
+                                            <option value="Single Parent" <?php
+                                                                                if ($user_status == 'Single Parent') {
+                                                                                    echo "selected";
+                                                                                }
+                                                                                ?>>Single Parent</option>
                                         </select>
                                     </div>
 
@@ -3100,7 +3342,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                 <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="form-group with-icon label-floating">
                                         <label class="control-label">Your Facebook Account</label>
-                                        <input class="form-control" type="text" name="fb" value="">
+                                        <input class="form-control" type="text" name="fb"
+                                            value="<?php echo $user_fb; ?>">
                                         <svg class="c-facebook" width="20" height="20">
                                             <use xlink:href="#olymp-facebook-icon"></use>
                                         </svg>
@@ -3127,12 +3370,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 								</div> -->
                                 </div>
                                 <input type="hidden" name="id" value='<?php echo $id ?>'>
-                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <button class="btn btn-secondary btn-lg full-width" name="restore">Restore all
-                                        Attributes</button>
-                                </div>
-                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <button class="btn btn-primary btn-lg full-width" name="update" type="submit">Save all
+                                <!-- <div class="col col-lg-6 col-md-6 col-sm-12 col-12"> -->
+                                <!-- <button class="btn btn-secondary btn-lg full-width" name="restore">Restore all
+                                            Attributes</button> -->
+                                <!-- </div> -->
+                                <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <button class="btn btn-primary btn-lg full-width" name="update" type="submit">Save
+                                        all
                                         Changes</button>
                                 </div>
 
@@ -3174,8 +3418,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                     <div class="accordion-body">
                                         <ul class="your-profile-menu">
                                             <li>
-                                                <a href="28-YourAccount-PersonalInformation.html">Personal
-                                                    Information</a>
+                                                <a href="YourAccount-PersonalInformation.php">Personal Information</a>
                                             </li>
                                             <li>
                                                 <a href="29-YourAccount-AccountSettings.html">Account Settings</a>
@@ -3184,11 +3427,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
                                                 <a href="30-YourAccount-ChangePassword.html">Change Password</a>
                                             </li>
                                             <li>
-                                                <a href="31-YourAccount-HobbiesAndInterests.html">Hobbies and
-                                                    Interests</a>
+                                                <a href="YourAccount-HobbiesAndInterests.php">Hobbies and Interests</a>
                                             </li>
                                             <li>
-                                                <a href="32-YourAccount-EducationAndEmployement.html">Education and
+                                                <a href="YourAccount-EducationAndEmployement.php">Education and
                                                     Employement</a>
                                             </li>
                                         </ul>
@@ -3497,14 +3739,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 
     <!-- JS Scripts -->
     <script src="js/jQuery/jquery-3.5.1.min.js"></script>
-
     <script src="js/libs/jquery.mousewheel.min.js"></script>
     <script src="js/libs/perfect-scrollbar.min.js"></script>
     <script src="js/libs/imagesloaded.pkgd.min.js"></script>
     <script src="js/libs/material.min.js"></script>
     <script src="js/libs/selectize.min.js"></script>
     <script src="js/libs/moment.min.js"></script>
-    <script src="js/libs/daterangepicker.min.js"></script>
+    <!-- <script src="js/libs/daterangepicker.min.js"></script> -->
     <script src="js/libs/isotope.pkgd.min.js"></script>
     <script src="js/libs/ajax-pagination.min.js"></script>
     <script src="js/libs/jquery.magnific-popup.min.js"></script>
@@ -3518,13 +3759,62 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     <script src="js/svg-loader.js"></script>
     <!-- /SVG icons loader -->
 
+    <script>
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+    </script>
+
+    <script>
+    //declearing html elements
+
+    const imgDiv = document.querySelector('.profile-pic-div');
+    const img = document.querySelector('#photo');
+    const file = document.querySelector('#file');
+    const uploadBtn = document.querySelector('#uploadBtn');
+
+    //if user hover on img div 
+
+    imgDiv.addEventListener('mouseenter', function() {
+        uploadBtn.style.display = "block";
+    });
+
+    //if we hover out from img div
+
+    imgDiv.addEventListener('mouseleave', function() {
+        uploadBtn.style.display = "none";
+    });
+
+    //lets work for image showing functionality when we choose an image to upload
+
+    //when we choose a foto to upload
+
+    file.addEventListener('change', function() {
+        //this refers to file
+        const choosedFile = this.files[0];
+
+        if (choosedFile) {
+
+            const reader = new FileReader(); //FileReader is a predefined function of JS
+
+            reader.addEventListener('load', function() {
+                img.setAttribute('src', reader.result);
+            });
+
+            reader.readAsDataURL(choosedFile);
+
+
+        }
+    });
+    </script>
+
 </body>
 
 </html>
 
-<?php 
-}else{
-     header("Location: auth/login/login.php");
-     exit();
+<?php
+} else {
+    header("Location: auth/login/login.php");
+    exit();
 }
- ?>
+?>
