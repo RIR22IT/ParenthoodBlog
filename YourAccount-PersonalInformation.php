@@ -404,7 +404,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 
                     <div class="control-block">
                         <div class="author-page author vcard inline-items">
-                            <div class="author-thumb">
+                            <div class="author-thumb">z
                                 <img alt="author" src="img/author-page.webp" width="36" height="36" class="avatar">
                                 <span class="icon-status online"></span>
                             </div>
