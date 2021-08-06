@@ -1,12 +1,13 @@
+
 <div class="top-header">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-7">
                 <div class="header-nav">
                     <ul>
-                        <li><span class="headre-weather"><i class="fa fa-calendar-check-o"></i>&nbsp; Thursday, January
-                                25</span></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><span class="headre-weather"><i class="fa fa-calendar-check-o"></i>&nbsp;
+                                <?php echo date('d - F - Y'); ?></span></li>
+                        <li><a href="contact.php">Contact</a></li>
                         <li><a href="about-me.html">about</a></li>
                         <li><a href="#">Buy now!</a></li>
                     </ul>
@@ -31,7 +32,7 @@
                                 <span class="degrees">- 5.9</span>
                                 <span class="unit">C</span>
                             </div>
-                            <div class="weather-city">New York</div>
+                            <div class="weather-city">Sri Lanka</div>
                         </div>
                     </li>
                 </ul>
