@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>OSRU - News, Blog & Magazine HTML Template</title>
+    <title>Parenthood Global - Contact</title>
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/animsition.min.css" rel="stylesheet">
@@ -63,8 +63,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <h4 class="addon-title">Address</h4>
-                                                <div class="addon-text"> 1355 Market Street, Suite 900<br>
-                                                    San Francisco, CA 94103</div>
+                                                <div class="addon-text"> No: 50, Kassapa Road,<br>
+                                                    Colombo 05.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -75,8 +75,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <h4 class="addon-title">Email Address</h4>
-                                                <div class="addon-text">support@osrunews.com<br>
-                                                    Info@osrunews.com</div>
+                                                <div class="addon-text">parenthoodglobal@gmail.com<br>
+                                                    info@parenthoodglobal.com</div>
                                             </div>
                                         </div>
                                     </div>
