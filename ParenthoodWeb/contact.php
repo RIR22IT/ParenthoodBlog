@@ -50,11 +50,11 @@
                                 <div class="contact-address">
                                     <div class="contact-text">
                                         <h3>Contact Info</h3>
-                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has
                                             roots in a piece of classical
                                             Latin literature from 45 BC, making it over 2000 years old. Richard
                                             McClintock, a Latin professor at
-                                            Hampden-Sydney College in Virginia.</p>
+                                            Hampden-Sydney College in Virginia.</p> -->
                                     </div>
                                     <div class="address-info">
                                         <div class="media">
@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
                                 <div class="contact-form">
-                                    <h3>Feedback</h3>
+                                    <h3>Get in Touch</h3>
                                     <div class="form-group">
                                         <textarea class="form-control" id="textarea" rows="5"></textarea>
                                     </div>
@@ -125,7 +125,7 @@
                             <!-- <div id="map" class="gmap1"></div> -->
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89631.10617014831!2d79.85877325614926!3d6.869900946070409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bd75d4bdbf5%3A0xd015651e6d1fe33e!2s50%2C%205%20Kassapa%20Rd%2C%20Colombo%2000500!5e0!3m2!1sen!2slk!4v1628151264103!5m2!1sen!2slk"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                width="600" height="700" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>

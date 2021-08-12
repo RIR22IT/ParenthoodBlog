@@ -27,11 +27,11 @@
             <!-- /.End of logo section -->
             <div class="container">
                 <div class="newstricker_inner">
-                    <div class="trending"><strong>Trending</strong> Now</div>
+                    <div class="trending"><strong>Join</strong> Us</div>
                     <div id="newsTicker" class="owl-carousel owl-theme">
-                        <div class="item">
+                        <!-- <div class="item">
                             <a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                        </div>
+                        </div> -->
                         <div class="item">
                             <a href="#">It is a long established fact that a reader will be distracted by the readable.</a>
                         </div>
@@ -580,17 +580,17 @@
                                     <!--  /.End of title -->
                                     <a class="category" href="">
                                         <figure><img src="assets/img/category-1.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Fashion</div>
+                                        <div class="category_name">Execting Parents</div>
                                     </a>
                                     <!-- /.End of category -->
                                     <a class="category" href="">
                                         <figure><img src="assets/img/category-2.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Travel</div>
+                                        <div class="category_name">New Parents with Toddlers</div>
                                     </a>
                                     <!-- /.End of category -->
                                     <a class="category" href="">
                                         <figure><img src="assets/img/category-3.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Life Style</div>
+                                        <div class="category_name">Parents of Schoolers</div>
                                     </a>
                                     <!-- /.End of category -->
                                 </div>

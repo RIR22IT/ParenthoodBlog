@@ -5,9 +5,9 @@
                 <div class="header-nav">
                     <ul>
                         <li><span class="headre-weather"><i class="fa fa-calendar-check-o"></i>&nbsp; <?php echo date('d - F - Y'); ?></span></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a href="contact.html">Contact</a></li>
                         <li><a href="about-me.html">about</a></li>
-                        <li><a href="#">Buy now!</a></li>
+                        <li><a href="#">Buy now!</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <li>
                         <a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal">Login / Register</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <div class="weather-top">
                             <i class="fa fa-cloud"></i>
                             <div class="weather-now">
@@ -32,7 +32,7 @@
                             </div>
                             <div class="weather-city">New York</div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -61,20 +61,20 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-center" data-in="navFadeInDown" data-out="navFadeOutUp">
-                <li class="dropdown active">
-                    <a href="index.html" class="dropdown-toggle">Home</a>
-                    <ul class="dropdown-menu">
+                <li class="">
+                    <a href="index.php" class="dropdown-toggle">Home</a>
+                    <!-- <ul class="dropdown-menu">
                         <li class="active"><a href="index.html">News - Layout - one</a></li>
                         <li><a href="news-layout-2.html">News - Layout - Two</a></li>
                         <li><a href="news-layout-3.html">News - Layout - Three</a></li>
                         <li><a href="magazine.html">Magazine - Layout</a></li>
                         <li><a href="blog-layout-1.html">Blog - Layout - One</a></li>
                         <li><a href="blog-layout-2.html">Blog - Layout - Two</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Features</a>
-                    <ul class="dropdown-menu">
+                <li class="">
+                    <a href="#" class="dropdown-toggle">Community</a>
+                    <!-- <ul class="dropdown-menu">
                         <li><a href="about-me.html">About</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li class="dropdown">
@@ -124,12 +124,12 @@
                         <li><a href="author-post.html">Author Single Page</a></li>
                         <li><a href="404.html">404</a></li>
                         <li><a href="typography.html">Typography</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
-                <li class="dropdown megamenu-fw megamenu-video">
-                    <a href="#" class="dropdown-toggle">Video</a>
-                    <ul class="dropdown-menu megamenu-content" role="menu">
-                        <li>
+                <li class="">
+                    <a href="#" class="dropdown-toggle">Parents</a>
+                    <!-- <ul class="dropdown-menu megamenu-content" role="menu"> -->
+                        <!-- <li>
                             <div class="row m_0">
                                 <div class="col-menu-video col-md-3">
                                     <article class="post_article">
@@ -140,9 +140,9 @@
                                         </a>
                                         <h4><a href="details-video.html">Ut et nunc a <em><strong>dolor
                                                         sodales</strong></em> lacinia quis ac justo.</a></h4>
-                                    </article>
-                                </div><!-- end col-3 -->
-                                <div class="col-menu-video col-md-3">
+                                    </article> -->
+                                <!-- </div>end col-3 -->
+                                <!-- <div class="col-menu-video col-md-3">
                                     <article class="post_article">
                                         <a class="post_img" href="details-video.html">
                                             <figure><img class="img-responsive" alt="" src="assets/img/400x280-8.jpg">
@@ -152,8 +152,8 @@
                                         <h4><a href="details-video.html">Mauris eu orci rutrum, accumsan nulla ac.</a>
                                         </h4>
                                     </article>
-                                </div><!-- end col-3 -->
-                                <div class="col-menu-video col-md-3">
+                                </div>end col-3 -->
+                                <!-- <div class="col-menu-video col-md-3">
                                     <article class="post_article">
                                         <a class="post_img" href="details-video.html">
                                             <figure><img class="img-responsive" alt="" src="assets/img/400x280-9.jpg">
@@ -174,8 +174,8 @@
                                         <h4><a href="details-video.html">Mauris eu orci rutrum, accumsan nulla ac.</a>
                                         </h4>
                                     </article>
-                                </div><!-- end col-3 -->
-                                <div class="col-menu-video col-md-3">
+                                </div>end col-3 -->
+                                <!-- <div class="col-menu-video col-md-3">
                                     <article class="post_article">
                                         <a class="post_img" href="details-video.html">
                                             <figure><img class="img-responsive" alt="" src="assets/img/400x280-12.jpg">
@@ -185,20 +185,20 @@
                                         <h4><a href="details-video.html">Mauris eu orci rutrum, accumsan nulla ac.</a>
                                         </h4>
                                     </article>
-                                </div><!-- end col-3 -->
-                            </div><!-- end row -->
-                        </li>
-                    </ul>
+                                </div>end col-3 -->
+                            <!-- </div>end row -->
+                        <!-- </li>
+                    </ul> -->
                 </li>
                 <!--/.End of video menu -->
-                <li class="dropdown megamenu-fw megamenu-nav-tabs">
-                    <a href="#" class="dropdown-toggle">News</a>
-                    <ul class="dropdown-menu megamenu-content">
-                        <li>
+                <li class="">
+                    <a href="#" class="dropdown-toggle">My Baby</a>
+                    <!-- <ul class="dropdown-menu megamenu-content"> -->
+                        <!-- <li>
                             <div class="block-mega-menu">
-                                <div class="mega-cat-menu">
+                                <div class="mega-cat-menu"> -->
                                     <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs menu-tabs">
+                                    <!-- <ul class="nav nav-tabs menu-tabs">
                                         <li><a href="#cat1" data-toggle="tab">Fashion</a></li>
                                         <li><a href="#cat2" data-toggle="tab">Travel</a></li>
                                         <li class="active"><a href="#cat3" data-toggle="tab">Health & Fitness</a></li>
@@ -206,9 +206,9 @@
                                         <li><a href="#cat5" data-toggle="tab">Foods</a></li>
                                     </ul>
                                 </div>
-                                <div class="mega-cat-article">
+                                <div class="mega-cat-article"> -->
                                     <!-- Tab panes -->
-                                    <div class="tab-content menu-tab-content">
+                                    <!-- <div class="tab-content menu-tab-content">
                                         <div class="tab-pane" id="cat1">
                                             <div class="row">
                                                 <div class="col-sm-3">
@@ -221,8 +221,8 @@
                                                         <h4><a href="details-video.html">Ut et nunc a <em><strong>dolor
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4>
-                                                    </article>
-                                                </div>
+                                                    </article> -->
+                                                <!-- </div>
                                                 <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
@@ -241,8 +241,8 @@
                                                         </a>
                                                         <h4><a href="details-post.html">Aliquam eu nunc at nulla
                                                                 efficitur <em>pellentesque .</em></a></h4>
-                                                    </article>
-                                                </div>
+                                                    </article> -->
+                                                <!-- </div>
                                                 <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
@@ -266,8 +266,8 @@
                                                         <h4><a href="details-post.html">Ut et nunc a <em><strong>dolor
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4>
-                                                    </article>
-                                                </div>
+                                                    </article> -->
+                                                <!-- </div>
                                                 <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
@@ -289,8 +289,8 @@
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4>
                                                     </article>
-                                                </div>
-                                                <div class="col-sm-3">
+                                                </div> -->
+                                                <!-- <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
                                                             <figure><img class="img-responsive"
@@ -314,8 +314,8 @@
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4>
                                                     </article>
-                                                </div>
-                                                <div class="col-sm-3">
+                                                </div> -->
+                                                <!-- <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-video.html">
                                                             <figure><img class="img-responsive" alt=""
@@ -346,8 +346,8 @@
                                                         </a>
                                                         <h4><a href="details-video.html">Ut et nunc a <em><strong>dolor
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
-                                                        </h4>
-                                                    </article>
+                                                        </h4> -->
+                                                    <!-- </article>
                                                 </div>
                                             </div>
                                         </div>
@@ -375,8 +375,8 @@
                                                     </article>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <article class="post_article">
-                                                        <a class="post_img" href="details-post.html">
+                                                    <article class="post_article"> -->
+                                                        <!-- <a class="post_img" href="details-post.html">
                                                             <figure><img class="img-responsive"
                                                                     src="assets/img/400x280-18.jpg" alt=""></figure>
                                                         </a>
@@ -408,8 +408,8 @@
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4>
                                                     </article>
-                                                </div>
-                                                <div class="col-sm-3">
+                                                </div> -->
+                                                <!-- <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
                                                             <figure><img class="img-responsive"
@@ -440,17 +440,17 @@
                                                     </article>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </div> -->
+                                    <!-- </div>
                                 </div>
-                            </div><!-- end row -->
-                        </li>
-                    </ul>
+                            </div>end row -->
+                        <!-- </li>
+                    </ul> -->
                 </li>
                 <!-- /.End of tab category menu -->
-                <li class="dropdown megamenu-fw">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Megamenu</a>
-                    <ul class="dropdown-menu megamenu-content" role="menu">
+                <li class="">
+                    <a href="javascript:void(0)" class="dropdown-toggle">Trending</a>
+                    <!-- <ul class="dropdown-menu megamenu-content" role="menu">
                         <li>
                             <div class="row">
                                 <div class="col-menu col-md-3">
@@ -462,8 +462,8 @@
                                         <li><a href="blog-layout-1.html">Blog Layout One</a></li>
                                         <li><a href="blog-layout-2.html">Blog Layout Two</a></li>
                                     </ul>
-                                </div><!-- end col-3 -->
-                                <div class="col-menu col-md-3">
+                                </div>end col-3 -->
+                                <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="post-classic.html">Category Classic</a></li>
                                         <li><a href="post-list+left-right.html">List + Left Right</a></li>
@@ -472,8 +472,8 @@
                                         <li><a href="post-masonry+left-sidebar.html">Masonry + Left</a></li>
                                         <li><a href="post-masonry+no-sidebar.html">Masonry + no Sidebar</a></li>
                                     </ul>
-                                </div><!-- end col-3 -->
-                                <div class="col-menu col-md-3">
+                                </div>end col-3 -->
+                                <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="post-masonry+right-sidebar.html">Masonry + Right</a></li>
                                         <li><a href="details-classic.html">Post - Classic</a></li>
@@ -482,8 +482,8 @@
                                         <li><a href="details-video.html">Post - Video</a></li>
                                         <li><a href="details-video-2.html">Post - Video - Two</a></li>
                                     </ul>
-                                </div><!-- end col-3 -->
-                                <div class="col-menu col-md-3">
+                                </div>end col-3 -->
+                                <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="details-video-scrolldown.html">Post - Scrolldown</a></li>
                                         <li><a href="details-youtube.html">Post - Youtube</a></li>
@@ -492,8 +492,8 @@
                                         <li><a href="details-soundcloud.html">Post - SoundCloud</a></li>
                                         <li><a href="portfolio.html">Portfolio</a></li>
                                     </ul>
-                                </div><!-- end col-3 -->
-                                <div class="col-menu col-md-3">
+                                </div>end col-3 -->
+                                <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="shortcodes.html">Shortcodes</a></li>
@@ -501,14 +501,14 @@
                                         <li><a href="404.html">404</a></li>
                                         <li><a href="about-me.html">About</a></li>
                                     </ul>
-                                </div><!-- end col-3 -->
-                            </div><!-- end row -->
-                        </li>
-                    </ul>
+                                </div>end col-3 -->
+                            <!-- </div>end row -->
+                        <!-- </li> -->
+                    <!-- </ul> -->
                 </li>
                 <!-- /.End of category menu -->
-                <li><a href="javascript:void(0)">Lyfestyle</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <!-- <li><a href="javascript:void(0)">Lyfestyle</a></li> -->
+                <li><a href="contact.php">Contact Us</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>
