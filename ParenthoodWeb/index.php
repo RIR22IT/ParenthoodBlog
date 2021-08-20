@@ -1,3 +1,6 @@
+<?php include('./auth.php')?>
+<?php include('./database/connection.php')?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -780,31 +783,38 @@
                             <div class="tab-pane fade" id="register">
                                 <div class="form-content">
                                     <h2 class="text-center">Sign Up For Free</h2>
-                                    <div class="form-group">
-                                        <input class="form-control" name="name" id="name" placeholder="Your Name"
-                                            type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="email" id="email"
-                                            placeholder="Your Email Address" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="c_name" id="c_name"
-                                            placeholder="Your Company Name" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="pass2" id="pass2"
-                                            placeholder="Enter Your Password" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="r_pass" id="r_pass"
-                                            placeholder="Retype Your Password" type="text">
-                                    </div>
-                                    <div class="block-content">
-                                        <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are
-                                                encrypted and Secured</span></div>
-                                    </div>
-                                    <a href="#" class="btn link-btn btn-block btn-rounded">Sign Up &#8702;</a>
+                                    <form method="POST" action="auth.php">
+                                            <div class="form-group">
+                                                <input class="form-control" name="firstname" id="firstname" 
+                                                placeholder="First Name" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" name="lastname" id="lastname"
+                                                    placeholder="Last Name" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" name="email" id="email"
+                                                    placeholder="Enter Your Email" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" name="mobile" id="mobile"
+                                                    placeholder="Enter Your Mobile" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" name="password" id="password"
+                                                    placeholder="Enter Your Password" type="password">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" name="r_pass" id="r_pass"
+                                                    placeholder="Retype Your Password" type="password">
+                                            </div>
+                                            <div class="block-content">
+                                                <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are
+                                                        encrypted and Secured</span></div>
+                                            </div>
+                                            <button name="reg">Sign up</button>
+                                            <!-- <a href="#" class="btn link-btn btn-block btn-rounded" name="reg">Sign Up &#8702;</a> -->
+                                    </form>
                                 </div>
                             </div>
                         </div>
