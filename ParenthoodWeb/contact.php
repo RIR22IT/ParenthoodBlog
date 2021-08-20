@@ -147,7 +147,7 @@
             </div>
             <!-- /. End of news latter -->
             <div class="insta-content">
-                <div class="insta-link"><a href="#" rel="me" target="_blank" class="">Follow Me!</a></div>
+                <!-- <div class="insta-link"><a href="#" rel="me" target="_blank" class="">Follow Me!</a></div> -->
                 <div id="ri-grid" class="ri-grid ri-grid-size-2">
                     <img class="ri-loading-image" src="assets/img/loading.gif" alt="" />
                     <ul>

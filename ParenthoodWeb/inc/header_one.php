@@ -112,12 +112,12 @@
                         <li><a href="blog-layout-2.html">Blog - Layout - Two</a></li>
                     </ul> -->
                 </li>
-                <li class="">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Community</a>
-                    <!-- <ul class="dropdown-menu">
-                        <li><a href="about-me.html">About</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
+                     <ul class="dropdown-menu">
+                        <li><a href="whyUs.php">Why Us</a></li>
+                     </ul>
+                        <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle">Category Type</a>
                             <ul class="dropdown-menu">
                                 <li><a href="post-classic.html">Classic</a></li>
@@ -166,8 +166,14 @@
                         <li><a href="typography.html">Typography</a></li>
                     </ul> -->
                 </li>
-                <li class="">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Parents</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="post.php">Parenthood Life</a></li>
+                        <li><a href="#">Expecting Parents</a></li>
+                        <li><a href="#">New Parents with Toddlers</a></li>
+                        <li><a href="#">Expert Advice</a></li>
+                    </ul>
                     <!-- <ul class="dropdown-menu megamenu-content" role="menu"> -->
                         <!-- <li>
                             <div class="row m_0">
@@ -231,8 +237,8 @@
                     </ul> -->
                 </li>
                 <!--/.End of video menu -->
-                <li class="">
-                    <a href="#" class="dropdown-toggle">My Baby</a>
+                <!-- <li class="">
+                    <a href="#" class="dropdown-toggle">My Baby</a> -->
                     <!-- <ul class="dropdown-menu megamenu-content">
                         <li>
                             <div class="block-mega-menu">
@@ -486,10 +492,10 @@
                             </div>end row -->
                         <!-- </li>
                     </ul> -->
-                </li>
+                <!-- </li> -->
                 <!-- /.End of tab category menu -->
                 <li class="">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Trending</a>
+                    <a href="trending.php" class="dropdown-toggle">Trending</a>
                     <!-- <ul class="dropdown-menu megamenu-content" role="menu">
                         <li>
                             <div class="row">

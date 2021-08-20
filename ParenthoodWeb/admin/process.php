@@ -18,7 +18,7 @@ session_start();
             if(mysqli_fetch_assoc($result))
             {
                 $_SESSION['email'] = $_POST['email'];
-                header("location: ");
+                header("location: dashboard.php");
             }
             else
             {
