@@ -33,8 +33,7 @@
                             <div class="weather-city">New York</div>
                         </div>
                     </li> -->
-                </ul>
-            </div>
+                    </div>
         </div>
     </div>
 </div>
@@ -43,8 +42,7 @@
     <div class="container">
         <div class="attr-nav">
             <ul>
-                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal"><i
-                            class="fa fa-user"></i></a></li>
+                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal"><i class="fa fa-user"></i></a></li>
                 <li class="side-menu"><a href="javascript:void(0)"><i class="fa fa-bars"></i></a></li>
                 <li id="btn-search1"><a href="javascript:void(0)" id="btn-search2"><i class="fa fa-search"></i></a></li>
             </ul>
@@ -63,17 +61,16 @@
             <ul class="nav navbar-nav navbar-center" data-in="navFadeInDown" data-out="navFadeOutUp">
                 <li class="">
                     <a href="index.php" class="dropdown-toggle">Home</a>
-                    <!-- <ul class="dropdown-menu">
-                        <li class="active"><a href="index.html">News - Layout - one</a></li>
-                        <li><a href="news-layout-2.html">News - Layout - Two</a></li>
-                        <li><a href="news-layout-3.html">News - Layout - Three</a></li>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Community</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="whyUs.php">Why Us</a></li>
+                        <!-- <li><a href="news-layout-3.html">News - Layout - Three</a></li>
                         <li><a href="magazine.html">Magazine - Layout</a></li>
                         <li><a href="blog-layout-1.html">Blog - Layout - One</a></li>
-                        <li><a href="blog-layout-2.html">Blog - Layout - Two</a></li>
-                    </ul> -->
-                </li>
-                <li class="">
-                    <a href="#" class="dropdown-toggle">Community</a>
+                        <li><a href="blog-layout-2.html">Blog - Layout - Two</a></li> -->
+                    </ul>
                     <!-- <ul class="dropdown-menu">
                         <li><a href="about-me.html">About</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
@@ -126,10 +123,16 @@
                         <li><a href="typography.html">Typography</a></li>
                     </ul> -->
                 </li>
-                <li class="">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Parents</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="post.php">Parenthood Life</a></li>
+                        <li><a href="#">Expecting Parents</a></li>
+                        <li><a href="#">New Parents with Toddlers</a></li>
+                        <li><a href="#">Expert Advice</a></li>
+                    </ul>
                     <!-- <ul class="dropdown-menu megamenu-content" role="menu"> -->
-                        <!-- <li>
+                    <!-- <li>
                             <div class="row m_0">
                                 <div class="col-menu-video col-md-3">
                                     <article class="post_article">
@@ -141,8 +144,8 @@
                                         <h4><a href="details-video.html">Ut et nunc a <em><strong>dolor
                                                         sodales</strong></em> lacinia quis ac justo.</a></h4>
                                     </article> -->
-                                <!-- </div>end col-3 -->
-                                <!-- <div class="col-menu-video col-md-3">
+                    <!-- </div>end col-3 -->
+                    <!-- <div class="col-menu-video col-md-3">
                                     <article class="post_article">
                                         <a class="post_img" href="details-video.html">
                                             <figure><img class="img-responsive" alt="" src="assets/img/400x280-8.jpg">
@@ -153,7 +156,7 @@
                                         </h4>
                                     </article>
                                 </div>end col-3 -->
-                                <!-- <div class="col-menu-video col-md-3">
+                    <!-- <div class="col-menu-video col-md-3">
                                     <article class="post_article">
                                         <a class="post_img" href="details-video.html">
                                             <figure><img class="img-responsive" alt="" src="assets/img/400x280-9.jpg">
@@ -175,7 +178,7 @@
                                         </h4>
                                     </article>
                                 </div>end col-3 -->
-                                <!-- <div class="col-menu-video col-md-3">
+                    <!-- <div class="col-menu-video col-md-3">
                                     <article class="post_article">
                                         <a class="post_img" href="details-video.html">
                                             <figure><img class="img-responsive" alt="" src="assets/img/400x280-12.jpg">
@@ -186,19 +189,19 @@
                                         </h4>
                                     </article>
                                 </div>end col-3 -->
-                            <!-- </div>end row -->
-                        <!-- </li>
+                    <!-- </div>end row -->
+                    <!-- </li>
                     </ul> -->
                 </li>
                 <!--/.End of video menu -->
-                <li class="">
-                    <a href="#" class="dropdown-toggle">My Baby</a>
-                    <!-- <ul class="dropdown-menu megamenu-content"> -->
-                        <!-- <li>
+                <!-- <li class="">
+                    <a href="#" class="dropdown-toggle">My Baby</a> -->
+                <!-- <ul class="dropdown-menu megamenu-content"> -->
+                <!-- <li>
                             <div class="block-mega-menu">
                                 <div class="mega-cat-menu"> -->
-                                    <!-- Nav tabs -->
-                                    <!-- <ul class="nav nav-tabs menu-tabs">
+                <!-- Nav tabs -->
+                <!-- <ul class="nav nav-tabs menu-tabs">
                                         <li><a href="#cat1" data-toggle="tab">Fashion</a></li>
                                         <li><a href="#cat2" data-toggle="tab">Travel</a></li>
                                         <li class="active"><a href="#cat3" data-toggle="tab">Health & Fitness</a></li>
@@ -207,8 +210,8 @@
                                     </ul>
                                 </div>
                                 <div class="mega-cat-article"> -->
-                                    <!-- Tab panes -->
-                                    <!-- <div class="tab-content menu-tab-content">
+                <!-- Tab panes -->
+                <!-- <div class="tab-content menu-tab-content">
                                         <div class="tab-pane" id="cat1">
                                             <div class="row">
                                                 <div class="col-sm-3">
@@ -222,7 +225,7 @@
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4>
                                                     </article> -->
-                                                <!-- </div>
+                <!-- </div>
                                                 <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
@@ -242,7 +245,7 @@
                                                         <h4><a href="details-post.html">Aliquam eu nunc at nulla
                                                                 efficitur <em>pellentesque .</em></a></h4>
                                                     </article> -->
-                                                <!-- </div>
+                <!-- </div>
                                                 <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
@@ -267,7 +270,7 @@
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4>
                                                     </article> -->
-                                                <!-- </div>
+                <!-- </div>
                                                 <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
@@ -290,7 +293,7 @@
                                                         </h4>
                                                     </article>
                                                 </div> -->
-                                                <!-- <div class="col-sm-3">
+                <!-- <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
                                                             <figure><img class="img-responsive"
@@ -315,7 +318,7 @@
                                                         </h4>
                                                     </article>
                                                 </div> -->
-                                                <!-- <div class="col-sm-3">
+                <!-- <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-video.html">
                                                             <figure><img class="img-responsive" alt=""
@@ -347,7 +350,7 @@
                                                         <h4><a href="details-video.html">Ut et nunc a <em><strong>dolor
                                                                         sodales</strong></em> lacinia quis ac justo.</a>
                                                         </h4> -->
-                                                    <!-- </article>
+                <!-- </article>
                                                 </div>
                                             </div>
                                         </div>
@@ -376,7 +379,7 @@
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <article class="post_article"> -->
-                                                        <!-- <a class="post_img" href="details-post.html">
+                <!-- <a class="post_img" href="details-post.html">
                                                             <figure><img class="img-responsive"
                                                                     src="assets/img/400x280-18.jpg" alt=""></figure>
                                                         </a>
@@ -409,7 +412,7 @@
                                                         </h4>
                                                     </article>
                                                 </div> -->
-                                                <!-- <div class="col-sm-3">
+                <!-- <div class="col-sm-3">
                                                     <article class="post_article">
                                                         <a class="post_img" href="details-post.html">
                                                             <figure><img class="img-responsive"
@@ -441,15 +444,15 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                    <!-- </div>
+                <!-- </div>
                                 </div>
                             </div>end row -->
-                        <!-- </li>
+                <!-- </li>
                     </ul> -->
-                </li>
+                <!-- </li> -->
                 <!-- /.End of tab category menu -->
                 <li class="">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Trending</a>
+                    <a href="trending.php" class="dropdown-toggle">Trending</a>
                     <!-- <ul class="dropdown-menu megamenu-content" role="menu">
                         <li>
                             <div class="row">
@@ -463,7 +466,7 @@
                                         <li><a href="blog-layout-2.html">Blog Layout Two</a></li>
                                     </ul>
                                 </div>end col-3 -->
-                                <!-- <div class="col-menu col-md-3">
+                    <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="post-classic.html">Category Classic</a></li>
                                         <li><a href="post-list+left-right.html">List + Left Right</a></li>
@@ -473,7 +476,7 @@
                                         <li><a href="post-masonry+no-sidebar.html">Masonry + no Sidebar</a></li>
                                     </ul>
                                 </div>end col-3 -->
-                                <!-- <div class="col-menu col-md-3">
+                    <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="post-masonry+right-sidebar.html">Masonry + Right</a></li>
                                         <li><a href="details-classic.html">Post - Classic</a></li>
@@ -483,7 +486,7 @@
                                         <li><a href="details-video-2.html">Post - Video - Two</a></li>
                                     </ul>
                                 </div>end col-3 -->
-                                <!-- <div class="col-menu col-md-3">
+                    <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="details-video-scrolldown.html">Post - Scrolldown</a></li>
                                         <li><a href="details-youtube.html">Post - Youtube</a></li>
@@ -493,7 +496,7 @@
                                         <li><a href="portfolio.html">Portfolio</a></li>
                                     </ul>
                                 </div>end col-3 -->
-                                <!-- <div class="col-menu col-md-3">
+                    <!-- <div class="col-menu col-md-3">
                                     <ul class="menu-col">
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="shortcodes.html">Shortcodes</a></li>
@@ -502,8 +505,8 @@
                                         <li><a href="about-me.html">About</a></li>
                                     </ul>
                                 </div>end col-3 -->
-                            <!-- </div>end row -->
-                        <!-- </li> -->
+                    <!-- </div>end row -->
+                    <!-- </li> -->
                     <!-- </ul> -->
                 </li>
                 <!-- /.End of category menu -->
@@ -533,8 +536,7 @@
                 <div class="media-body">
                     <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
                     <div class="entry-meta">
-                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time
-                                datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
+                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
                     </div>
                 </div>
             </div>
@@ -546,8 +548,7 @@
                 <div class="media-body">
                     <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
                     <div class="entry-meta">
-                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time
-                                datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
+                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
                     </div>
                 </div>
             </div>
@@ -559,8 +560,7 @@
                 <div class="media-body">
                     <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
                     <div class="entry-meta">
-                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time
-                                datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
+                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
                     </div>
                 </div>
             </div>
@@ -586,8 +586,7 @@
 <div class="clearfix"></div>
 <!-- /.End of navigation -->
 <div class="search">
-    <button id="btn-search-close" class="btn btn--search-close" aria-label="Close search form"> <i
-            class="ti-close"></i></button>
+    <button id="btn-search-close" class="btn btn--search-close" aria-label="Close search form"> <i class="ti-close"></i></button>
     <form class="search__form" action="javascript:void(0)" method="post">
         <input class="search__input" name="search" type="search" placeholder="Search and hit enter..." />
         <span class="search__info">Hit enter to search or ESC to close</span>

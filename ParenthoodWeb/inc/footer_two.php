@@ -7,18 +7,8 @@
                         <div class="footer-logo">
                             <img src="assets/img/logo-white.png" class="img-responsive" alt="">
                         </div>
-                        <p>It is a long established fact that a reader<br>
-                            will be distracted by the readable content of<br>
-                            a page when looking at its layout. The point<br>
-                            of using Lorem Ipsum</p>
-                        <div class="textwidget">
-                            <p>457 BIgBlue Street, Suite 4A<br>
-                                New York, NY 10013<br>
-                                <span>(315) 5512-2579</span><br>
-                                <!--<a href="mailto:info@example.com">info@example.com</a>-->
-                            </p>
-                        </div>
-                        <p>Contact us on <a href="mailto:info@example.com"><strong>info@example.com</strong></a></p>
+                        <p>Parenthood is a social networking and knowledge sharing platform for Parents, to make their Parenthood more positive and memorable. A community where likeminded parents are there to support their fellow members</p>
+                        <p>Contact us on <a href="mailto:info@example.com"><strong>parenthoodglobal@gmail.com</strong></a></p>
                     </div>
                 </div>
                 <div class="hidden-sm col-md-3">
@@ -29,16 +19,14 @@
                                 <div class="icon"><i class="ti-twitter"></i></div>
                                 <div class="tweet-text">
                                     So proud to have become an <a target="_blank" href="#">@envato</a> Power
-                                    Elite author. Drop our #ThemeForest: <a target="_blank"
-                                        href="#">https://t.co/jGyLLggygN</a>
+                                    Elite author. Drop our #ThemeForest: <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon"><i class="ti-twitter"></i></div>
                                 <div class="tweet-text">
                                     So proud to have become an <a target="_blank" href="#">@envato</a> Power
-                                    Elite author. Drop out our #ThemeForest: <a target="_blank"
-                                        href="#">https://t.co/jGyLLggygN</a>
+                                    Elite author. Drop out our #ThemeForest: <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
                                 </div>
                             </li>
                         </ul>
@@ -48,11 +36,11 @@
                     <div class="footer-box">
                         <h3 class="widget-title title-white">Need help</h3>
                         <ul class="footer-cat">
-                            <li><a href="#">Our Community</a></li>
-                            <li><a href="#">See Our Portfolio</a></li>
-                            <li><a href="#">Story About Us</a></li>
-                            <li><a href="#">Keep in Touch</a></li>
-                            <li><a href="#">Purchase Our Products</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Parents</a></li>
+                            <li><a href="#">Trending</a></li>
+                            <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -67,8 +55,7 @@
                                 <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics
                                         Copenhagen</a></h6>
                                 <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time
-                                            datetime="2018-01-21T19:00">Jan 21,
+                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
                                             2018</time></span>
                                 </div>
                             </div>
@@ -82,8 +69,7 @@
                                 <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics
                                         Copenhagen</a></h6>
                                 <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time
-                                            datetime="2018-01-21T19:00">Jan 21,
+                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
                                             2018</time></span>
                                 </div>
                             </div>
@@ -97,8 +83,7 @@
                                 <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics
                                         Copenhagen</a></h6>
                                 <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time
-                                            datetime="2018-01-21T19:00">Jan 21,
+                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
                                             2018</time></span>
                                 </div>
                             </div>
