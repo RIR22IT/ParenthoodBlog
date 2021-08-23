@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db_name = 'parenthoodblogdb';
+$db_name = 'parenthoodweb';
 
     //database connection
     $db = mysqli_connect($host,$user,$pass,$db_name);
