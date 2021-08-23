@@ -1,3 +1,6 @@
+<?php include('../database/connection.php'); ?>
+<?php include('../admin/php_code.php'); ?>
+
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
@@ -11,6 +14,8 @@ if (!isset($_SESSION['email'])) {
 
 <head>
 
+    <title>ADMIN PANEL - ADD HOME VIDEO</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,6 +27,7 @@ if (!isset($_SESSION['email'])) {
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
     </script>
+    <link rel="icon" href="../favamecro.ico">  
 
     <style>
         form {
@@ -45,7 +51,7 @@ if (!isset($_SESSION['email'])) {
         }
     </style>
 
-    <title>ADMIN PANEL - DASHBOARD</title>
+    <title>ADMIN PANEL</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -64,7 +70,7 @@ if (!isset($_SESSION['email'])) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminPanel.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="medicalDashboard.php">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-users-cog"></i>
                 </div>
@@ -99,8 +105,8 @@ if (!isset($_SESSION['email'])) {
             </li>
 
         </ul>
-        <!-- End of Sidebar -->
 
+        <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -135,11 +141,74 @@ if (!isset($_SESSION['email'])) {
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid" style="width: 1300px;">
+                <div class="container-fluid" style="width: 1300px;"><br />
                     <!-- Page Heading -->
-                    <!-- <center>
-                        <h1 class="h3 mb-1 text-gray-800">Vehicle</h1>
-                    </center> -->
+                    <center>
+                        <h1 class="h3 mb-1 text-gray-800">ADD FOOTER IMAGES</h1>
+                    </center>
+
+                    <form method="post" action="footerImageUpload.php" enctype="multipart/form-data" style="width: 60%">
+                        <div class="row">
+
+                            <div class="col-md-offset-1"><br>
+                                <div class="col-15">
+                                    <label for="img">Footer Image* (please upload 300 x 300 dimension)</label>
+                                    <input type="file" class="form-control" name="img" value="" required>
+                                </div><br>
+                            </div>
+                        </div>
+
+                        <div class="col-md-20">
+                            <button type="submit" name="footerImage" class="btn btn-primary">Add Image</button>
+                        </div>
+
+                    </form>
+                    <hr /><br />
+
+                    <center>
+                        <h1 class="h3 mb-1 text-gray-800">VIEW FOOTER IMAGES LIST</h1>
+                    </center><br>
+
+                    <center>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" style="width: 80%">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th style="color: white">#</th>
+                                        <th style="color: white">Footer Image</th>
+                                        <th style="color: white">Delete</th>
+                                    </tr>
+                                </thead>
+
+                                <?php
+                                $i   = 1;
+                                $qry = "select * from footerImage";
+                                $run = $db->query($qry);
+                                if ($run->num_rows > 0) {
+                                    while ($row = $run->fetch_assoc()) {
+                                        $id = $row['id'];
+                                ?>
+
+                                        <tr>
+                                            <td><?php echo $i++ ?></td>
+                                            <td><?php echo '<img src="upload/footerImage/' . $row['img'] . '" width = "70px;" height = "60px;" alt = "Image">' ?>
+                                            </td>
+
+                                            <td>
+                                                <a href="php_code.php?f_del=<?php echo $row['id']; ?>" class="del_btn"><i class="fa fa-trash" style="color:black"></i></a>
+                                            </td>
+                                        </tr>
+
+                                        <?php ?>
+
+                                <?php
+                                    }
+                                }
+                                ?>
+
+                            </table>
+                        </div>
+                    </center>
 
                     <div class="card-body">
                         <?php
@@ -165,21 +234,6 @@ if (!isset($_SESSION['email'])) {
                 </div>
                 <!-- End of Content Wrapper -->
 
-                <div class="card-body">
-                    <?php
-                    if (isset($_SESSION['success']) && $_SESSION['success'] != '') {
-                        echo '<h2 class = "bg-primary text-white"> ' . $_SESSION['success'] . '</h2>';
-                        unset($_SESSION['success']);
-                    }
-
-                    if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
-                        echo '<h2 class = "bg-primary text-white"> ' . $_SESSION['status'] . '</h2>';
-                        unset($_SESSION['status']);
-                    }
-
-                    ?>
-                </div>
-
             </div>
             <!-- End of Page Wrapper -->
 
@@ -187,26 +241,6 @@ if (!isset($_SESSION['email'])) {
             <a class="scroll-to-top rounded" href="#page-top">
                 <i class="fas fa-angle-up"></i>
             </a>
-
-            <!-- Logout Modal-->
-            <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-              <a class="btn btn-primary" href="newlogin.php">Logout</a>
-            </div>
-
-          </div>
-        </div>
-      </div> -->
 
             <!-- Bootstrap core JavaScript-->
             <script src="../vendor/jquery/jquery.min.js"></script>
