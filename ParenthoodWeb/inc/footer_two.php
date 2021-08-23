@@ -78,19 +78,44 @@
                         <h3 class="widget-title title-white">Twitter</h3>
                         <ul class="twitter-widget">
                             <li>
-                                <div class="icon"><i class="ti-twitter"></i></div>
+                            <div class="icon"><i class="fa fa-facebook"></i></div>
+                            <div class="tweet-text">
+                                Facebook Social Link - 
+                                    <a target="_blank" href="#">https://www.facebook.com/
+                                        parenthoodglobal</a>
+                            </div>
+                            
+                                
+                            </li>
+                            <li>
+                            <div class="icon"><i class="fa fa-instagram"></i></div>
                                 <div class="tweet-text">
-                                    So proud to have become an <a target="_blank" href="#">@envato</a> Power
-                                    Elite author. Drop our #ThemeForest: <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                Instagram Social Link - 
+                                    <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                </div>
+                            </li>
+                            <li>
+                            <div class="icon"><i class="fa fa-linkedin"></i></div>
+                                <div class="tweet-text">
+                                Linkedin Social Link - 
+                                    <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon"><i class="ti-twitter"></i></div>
                                 <div class="tweet-text">
-                                    So proud to have become an <a target="_blank" href="#">@envato</a> Power
-                                    Elite author. Drop out our #ThemeForest: <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                Twitter Social Link -
+                                   <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
                                 </div>
                             </li>
+                            <li>
+                                <div class="icon"><i class="fa fa-youtube-play"></i></div>
+                                <div class="tweet-text">
+                                Youtube Social Link -
+                                   <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -157,6 +182,6 @@
         </div>
     </div>
     <div class="sub-footer">
-        Copyright © 2017 by Bdtask. All Rights Reserved.
+        Copyright © 2021 by Parenthood. All Rights Reserved.
     </div>
 </footer>

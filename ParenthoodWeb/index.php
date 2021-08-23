@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>OSRU - News, Blog & Magazine HTML Template</title>
+    <title>Parenthood</title>
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/animsition.min.css" rel="stylesheet">
@@ -69,7 +69,7 @@
                         </div>
                         <!-- /.End of masonry item -->
                     </div>
-                    
+
                     <div class="col-sm-6 mas-p">
                         <div class="row mas-m">
                             <div class="col-xs-6 col-sm-6 mas-p">
@@ -360,7 +360,7 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="media meida-md">
                             <div class="media-left">
                                 <a href="#"><img src="assets/img/370x300-1.jpg" class="media-object" alt=""></a>
@@ -395,8 +395,8 @@
                                     <!-- /.Post social share -->
                                 </div>
                             </div>
-                        </div>       
-                
+                        </div>
+
                         <div class="media meida-md">
                             <div class="media-left">
                                 <a href="#"><img src="assets/img/370x300-7.jpg" class="media-object" alt=""></a>
@@ -446,15 +446,9 @@
                         <!-- /.End of pagination -->
                     </main>
                     <aside class="col-sm-4 col-md-3 rightSidebar">
-                        <div class="about-card">
-                            <div class="ui divider">About me</div>
-                            <figure>
-                                <img src="assets/img/about-avatar.jpg" class="img-responsive center-block" alt="">
-                            </figure>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of
-                                a page when looking at its layout.</p>
-                            <img src="assets/img/signature.png" class="img-responsive center-block" alt="">
-                        </div>
+                    <div class="banner-content">
+                                <img src="assets/img/ad-300x250-1.png" class="img-responsive center-block" alt="">
+                    </div>
                         <!-- /.End of about -->
                         <div class="social_share_btn">
                             <div class="title-holder">
@@ -474,7 +468,7 @@
                             </ul>
                         </div>
                         <!-- /.End of subscribe -->
-                        
+
                         <!-- /.End of latest post -->
                         <div class="category_widget">
                             <div class="title-holder">
@@ -499,18 +493,19 @@
                             <!-- /.End of category -->
                         </div>
                         <!-- /.End of category widget -->
-                      
+
                         <div class="fb_like">
                             <div class="title-holder">
                                 <h3 class="title">Facebook</h3>
                                 <span class="title-shape title-shape-dark"></span>
                             </div>
                             <!--  /.End of title -->
-                            <div class="fb-page" data-href="https://www.facebook.com/fatakestono1/" data-tabs="timeline"
-                                data-width="268" data-height="214" data-small-header="false"
+                            <div class="fb-page" data-href="https://www.facebook.com/parenthoodglobal"
+                                data-tabs="timeline" data-width="268" data-height="214" data-small-header="false"
                                 data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                <blockquote cite="https://www.facebook.com/fatakestono1/" class="fb-xfbml-parse-ignore">
-                                    <a href="https://www.facebook.com/fatakestono1/">ফাটাকেস্ট</a>
+                                <blockquote cite="https://www.facebook.com/parenthoodglobal"
+                                    class="fb-xfbml-parse-ignore"><a
+                                        href="https://www.facebook.com/parenthoodglobal">Parenthood Sri Lanka</a>
                                 </blockquote>
                             </div>
                         </div>
@@ -554,7 +549,7 @@
                     <div class="row">
                         <main class="col-sm-12">
                             <div id="macy-container">
-                               
+
                                 <article class="grid_post video_grid">
                                     <figure>
                                         <a href="#" class="grid_image">
@@ -739,36 +734,36 @@
                                 <div class="form-content">
                                     <h2 class="text-center">Sign Up For Free</h2>
                                     <form method="POST" action="auth.php">
-                                            <div class="form-group">
-                                                <input class="form-control" name="firstname" id="firstname" 
+                                        <div class="form-group">
+                                            <input class="form-control" name="firstname" id="firstname"
                                                 placeholder="First Name" type="text">
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="form-control" name="lastname" id="lastname"
-                                                    placeholder="Last Name" type="text">
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="form-control" name="email" id="email"
-                                                    placeholder="Enter Your Email" type="text">
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="form-control" name="mobile" id="mobile"
-                                                    placeholder="Enter Your Mobile" type="text">
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="form-control" name="password" id="password"
-                                                    placeholder="Enter Your Password" type="password">
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="form-control" name="r_pass" id="r_pass"
-                                                    placeholder="Retype Your Password" type="password">
-                                            </div>
-                                            <div class="block-content">
-                                                <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are
-                                                        encrypted and Secured</span></div>
-                                            </div>
-                                            <button name="reg">Sign up</button>
-                                            <!-- <a href="#" class="btn link-btn btn-block btn-rounded" name="reg">Sign Up &#8702;</a> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" name="lastname" id="lastname"
+                                                placeholder="Last Name" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" name="email" id="email"
+                                                placeholder="Enter Your Email" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" name="mobile" id="mobile"
+                                                placeholder="Enter Your Mobile" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" name="password" id="password"
+                                                placeholder="Enter Your Password" type="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" name="r_pass" id="r_pass"
+                                                placeholder="Retype Your Password" type="password">
+                                        </div>
+                                        <div class="block-content">
+                                            <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are
+                                                    encrypted and Secured</span></div>
+                                        </div>
+                                        <button name="reg">Sign up</button>
+                                        <!-- <a href="#" class="btn link-btn btn-block btn-rounded" name="reg">Sign Up &#8702;</a> -->
                                     </form>
                                 </div>
                             </div>
