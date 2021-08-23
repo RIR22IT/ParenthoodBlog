@@ -12,7 +12,7 @@ session_start();
         else
         {   
     
-            $query = "select * from admin where email = '".$_POST['email']."' and password = '".$_POST['password']."'";
+            $query = "select * from user where email = '".$_POST['email']."' and password = '".$_POST['password']."'";
             $result=mysqli_query($db,$query);
 
             if(mysqli_fetch_assoc($result))
