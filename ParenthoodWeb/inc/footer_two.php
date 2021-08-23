@@ -157,6 +157,6 @@
         </div>
     </div>
     <div class="sub-footer">
-        Copyright © 2017 by Bdtask. All Rights Reserved.
+        Copyright © 2021 by Parenthood. All Rights Reserved.
     </div>
 </footer>
