@@ -14,7 +14,7 @@ if (!isset($_SESSION['email'])) {
 
 <head>
 
-    <title>ADMIN PANEL - ADD HOME VIDEO</title>
+    <title>ADMIN PANEL - HOME VIDEO</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +27,7 @@ if (!isset($_SESSION['email'])) {
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
     </script>
-    <link rel="icon" href="../favamecro.ico">  
+    <link rel="icon" href="../favamecro.ico">
 
     <style>
         form {
@@ -144,68 +144,49 @@ if (!isset($_SESSION['email'])) {
                 <div class="container-fluid" style="width: 1300px;"><br />
                     <!-- Page Heading -->
                     <center>
-                        <h1 class="h3 mb-1 text-gray-800">ADD FOOTER IMAGES</h1>
+                        <h1 class="h3 mb-1 text-gray-800">HOMEPAGE VIDEO</h1>
                     </center>
 
-                    <form method="post" action="footerImageUpload.php" enctype="multipart/form-data" style="width: 60%">
-                        <div class="row">
+                    <?php
+                    $sql = "SELECT link FROM video WHERE v_id = '1'";
+                    $exe = mysqli_query($db, $sql);
+                    $rowSelect = mysqli_fetch_array($exe);
+                    if ($rowSelect['link'] != "") {
+                    ?>
 
-                            <div class="col-md-offset-1"><br>
-                                <div class="col-15">
-                                    <label for="img">Footer Image* (please upload 300 x 300 dimension)</label>
-                                    <input type="file" class="form-control" name="img" value="" required>
-                                </div><br>
-                            </div>
-                        </div>
+                        <?php
+                        $url = $rowSelect['link'];
+                        $link = substr($url, strpos($url, "v=") + 2);
+                        ?>
 
-                        <div class="col-md-20">
-                            <button type="submit" name="footerImage" class="btn btn-primary">Add Image</button>
-                        </div>
+                        <hr /><br/><br/>
 
-                    </form>
-                    <hr /><br />
+                        <center>
+                        <iframe width="500" height="300" src="https://www.youtube.com/embed/<?php echo $link; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </center>
+                    <?php
+                    }
+                    ?>
 
-                    <center>
-                        <h1 class="h3 mb-1 text-gray-800">VIEW FOOTER IMAGES LIST</h1>
-                    </center><br>
+                    <br/><br/>
 
                     <center>
                         <div class="table-responsive">
                             <table class="table table-bordered" style="width: 80%">
                                 <thead>
                                     <tr class="bg-primary">
-                                        <th style="color: white">#</th>
-                                        <th style="color: white">Footer Image</th>
-                                        <th style="color: white">Delete</th>
+                                        <th style="color: white">Video</th>
+                                        <th style="color: white">Action</th>
                                     </tr>
                                 </thead>
-
-                                <?php
-                                $i   = 1;
-                                $qry = "select * from footerImage";
-                                $run = $db->query($qry);
-                                if ($run->num_rows > 0) {
-                                    while ($row = $run->fetch_assoc()) {
-                                        $id = $row['id'];
-                                ?>
-
-                                        <tr>
-                                            <td><?php echo $i++ ?></td>
-                                            <td><?php echo '<img src="upload/footerImage/' . $row['img'] . '" width = "70px;" height = "60px;" alt = "Image">' ?>
-                                            </td>
-
-                                            <td>
-                                                <a href="php_code.php?f_del=<?php echo $row['id']; ?>" class="del_btn"><i class="fa fa-trash" style="color:black"></i></a>
-                                            </td>
-                                        </tr>
-
-                                        <?php ?>
-
-                                <?php
-                                    }
-                                }
-                                ?>
-
+                                <tr>
+                                    <form method="POST">
+                                        <td> <input type="text" name="video" placeholder="Enter Youtube Video Link Here..." class="form-control" value="" required></td>
+                                        <td>
+                                            <button type="button" name="link" class="btn btn-primary">Update</button>
+                                        </td>
+                                    </form>
+                                </tr>
                             </table>
                         </div>
                     </center>

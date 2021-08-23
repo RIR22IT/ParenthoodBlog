@@ -25,3 +25,17 @@ if (isset($_GET['f_del'])) {
     $_SESSION['message'] = "Image Deleted successfully!";
     header('location: footerImageUpload.php');
 }
+
+//Update Youtube Video Link
+
+if(isset($_POST['link'])){
+    $link= $_POST['video'];
+
+    $sql = "UPDATE video SET link = '$link' WHERE v_id = '1'";
+    $run = mysqli_query($db, $sql);
+    if($run){
+        header("location: homeVideo.php?success");
+    }else{
+        header("location: homeVideo.php?fail");
+    }
+}
