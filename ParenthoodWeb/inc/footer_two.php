@@ -81,7 +81,8 @@
                             <div class="icon"><i class="fa fa-facebook"></i></div>
                             <div class="tweet-text">
                                 Facebook Social Link - 
-                                    <a target="_blank" href="#">https://www.facebook.com/
+                                    <a target="_blank" href="https://www.facebook.com/
+                                        parenthoodglobal">https://www.facebook.com/
                                         parenthoodglobal</a>
                             </div>
                             
@@ -91,28 +92,32 @@
                             <div class="icon"><i class="fa fa-instagram"></i></div>
                                 <div class="tweet-text">
                                 Instagram Social Link - 
-                                    <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                    <a target="_blank" href="https://www.instagram.com/parenthoodsrilanka/">https://www.instagram.com/
+                                        parenthoodsrilanka</a>
                                 </div>
                             </li>
                             <li>
                             <div class="icon"><i class="fa fa-linkedin"></i></div>
                                 <div class="tweet-text">
                                 Linkedin Social Link - 
-                                    <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                    <a target="_blank" href="https://www.linkedin.com/company/parenthood-sri-lanka">https://www.linkedin.com/company/
+                                        parenthood-sri-lanka</a>
                                 </div>
                             </li>
                             <li>
-                                <div class="icon"><i class="ti-twitter"></i></div>
+                                <div class="icon"><i class="fa fa-pinterest-square"></i></div>
                                 <div class="tweet-text">
-                                Twitter Social Link -
-                                   <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                Pinterest Social Link -
+                                   <a target="_blank" href="https://www.pinterest.com/parenthoodglobal/_saved">https://www.pinterest.com/
+                                       parenthoodglobal/_saved</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon"><i class="fa fa-youtube-play"></i></div>
                                 <div class="tweet-text">
                                 Youtube Social Link -
-                                   <a target="_blank" href="#">https://t.co/jGyLLggygN</a>
+                                   <a target="_blank" href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA">https://www.youtube.com/
+                                       channel/UCcZeSJZ4KFFUOppROwUg_uA</a>
                                 </div>
                             </li>
 
