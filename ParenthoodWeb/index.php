@@ -446,9 +446,9 @@
                         <!-- /.End of pagination -->
                     </main>
                     <aside class="col-sm-4 col-md-3 rightSidebar">
-                    <div class="banner-content">
-                                <img src="assets/img/ad-300x250-1.png" class="img-responsive center-block" alt="">
-                    </div>
+                        <div class="banner-content">
+                            <img src="assets/img/ad-300x250-1.png" class="img-responsive center-block" alt="">
+                        </div>
                         <!-- /.End of about -->
                         <div class="social_share_btn">
                             <div class="title-holder">
@@ -457,14 +457,16 @@
                             </div>
                             <!--  /.End of title -->
                             <ul>
-                                <li class="li-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i>
-                                        Facebook</a></li>
-                                <li class="li-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i>
-                                        Twitter</a></li>
-                                <li class="li-google-plus"><a href="#" target="_blank"><i class="fa fa-google-plus"></i>
-                                        Google +</a></li>
-                                <li class="li-pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest-p"></i>
-                                        Pinterest</a></li>
+                                <li class="li-facebook"><a href="https://www.facebook.com/parenthoodglobal" target="_blank"><i class="fa fa-facebook"></i>
+                                        </a></li>
+                                <li class="li-instagram"><a href="https://www.instagram.com/parenthoodsrilanka/" target="_blank"><i class="fa fa-instagram"></i>
+                                </a></li>
+                                <li class="li-linkedin"><a href="https://www.linkedin.com/company/parenthood-sri-lanka" target="_blank"><i class="fa fa-linkedin"></i>
+                                        </a></li>
+                                <li class="li-pinterest"><a href="https://www.pinterest.com/parenthoodglobal/_saved" target="_blank"><i class="fa fa-pinterest"></i>
+                                        </a></li>
+                                <li class="li-youtube"><a href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA" target="_blank"><i class="fa fa-youtube"></i>
+                                        </a></li>
                             </ul>
                         </div>
                         <!-- /.End of subscribe -->
@@ -526,14 +528,29 @@
                             <div class="item vide_post_item">
                                 <!-- the class "videoWrapper169" means a 16:9 aspect ration video. Another option is "videoWrapper43" for 4:3. -->
                                 <div class="videoWrapper videoWrapper169 js-videoWrapper">
+                                    <?php
+                                        $sql = "SELECT link FROM video WHERE v_id = '1'";
+                                        $exe = mysqli_query($db, $sql);
+                                        $rowSelect = mysqli_fetch_array($exe);
+                                        if ($rowSelect['link'] != "") {
+                                    ?>
+
+                                    <?php
+                                        $url = $rowSelect['link'];
+                                        $link = substr($url, strpos($url, "v=") + 2);
+                                    ?>
+
                                     <!-- YouTube iframe. -->
                                     <!-- note the iframe src is empty by default, the url is in the data-src="" argument -->
                                     <!-- also note the arguments on the url, to autoplay video, remove youtube adverts/dodgy links to other videos, and set the interface language -->
                                     <iframe class="videoIframe js-videoIframe" allowfullscreen
-                                        data-src="https://www.youtube.com/embed/hgzzLIa-93c?autoplay=1& modestbranding=1&rel=0&hl=sv"></iframe>
+                                        src="https://www.youtube.com/embed/<?php echo $link; ?>"></iframe>
                                     <!-- the poster frame - in the form of a button to make it keyboard accessible -->
-                                    <button class="videoPoster js-videoPoster"
-                                        style="background-image:url(assets/img/youtube-video.jpg);">Play video</button>
+                                    <!-- <button class="videoPoster js-videoPoster"
+                                        style="background-image:url(assets/img/youtube-video.jpg);">Play video</button> -->
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                                 <!--<button onclick="videoStop()">external close button</button>-->
                             </div>
@@ -543,282 +560,262 @@
                 </div>
             </div>
         </div>
-            <!--  /.End of youtube video -->
-            <div class="page-content">
-                <div class="container">
-                    <div class="row">
-                        <main class="col-sm-12">
-                            <div id="macy-container">
+        <!--  /.End of youtube video -->
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <main class="col-sm-12">
+                        <div id="macy-container">
 
-                                <article class="grid_post video_grid">
-                                    <figure>
-                                        <a href="#" class="grid_image">
-                                            <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                            <span class="post__icon post__icon--video"></span>
-                                        </a>
-                                        <figcaption>
-                                            <div class="post-cat"><a href="#">Fashion</a></div>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o"
-                                                        aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                        2018</time></span>
-                                                <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                            aria-hidden="true"></i>9 Comments</a></span>
+                            <article class="grid_post video_grid">
+                                <figure>
+                                    <a href="#" class="grid_image">
+                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
+                                        <span class="post__icon post__icon--video"></span>
+                                    </a>
+                                    <figcaption>
+                                        <div class="post-cat"><a href="#">Fashion</a></div>
+                                        <div class="entry-meta">
+                                            <span class="entry-date"><i class="fa fa-calendar-o"
+                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
+                                                    2018</time></span>
+                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
+                                                        aria-hidden="true"></i>9 Comments</a></span>
+                                        </div>
+                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
+                                                of passages of Lorem Ipsum available</a></h4>
+                                        <div class="element-block">
+                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
+                                                &#8702;</a>
+                                            <!-- /.Post button -->
+                                            <div class="post_share">
+                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
+                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
+                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
                                             </div>
-                                            <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                    of passages of Lorem Ipsum available</a></h4>
-                                            <div class="element-block">
-                                                <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                    &#8702;</a>
-                                                <!-- /.Post button -->
-                                                <div class="post_share">
-                                                    <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                    <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                    <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                </div>
-                                                <!-- /.Post social share -->
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
+                                            <!-- /.Post social share -->
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </article>
 
-                                <article class="grid_post video_grid">
-                                    <figure>
-                                        <a href="#" class="grid_image">
-                                            <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                            <span class="post__icon post__icon--video"></span>
-                                        </a>
-                                        <figcaption>
-                                            <div class="post-cat"><a href="#">Fashion</a></div>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o"
-                                                        aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                        2018</time></span>
-                                                <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                            aria-hidden="true"></i>9 Comments</a></span>
+                            <article class="grid_post video_grid">
+                                <figure>
+                                    <a href="#" class="grid_image">
+                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
+                                        <span class="post__icon post__icon--video"></span>
+                                    </a>
+                                    <figcaption>
+                                        <div class="post-cat"><a href="#">Fashion</a></div>
+                                        <div class="entry-meta">
+                                            <span class="entry-date"><i class="fa fa-calendar-o"
+                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
+                                                    2018</time></span>
+                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
+                                                        aria-hidden="true"></i>9 Comments</a></span>
+                                        </div>
+                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
+                                                of passages of Lorem Ipsum available</a></h4>
+                                        <div class="element-block">
+                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
+                                                &#8702;</a>
+                                            <!-- /.Post button -->
+                                            <div class="post_share">
+                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
+                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
+                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
                                             </div>
-                                            <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                    of passages of Lorem Ipsum available</a></h4>
-                                            <div class="element-block">
-                                                <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                    &#8702;</a>
-                                                <!-- /.Post button -->
-                                                <div class="post_share">
-                                                    <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                    <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                    <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                </div>
-                                                <!-- /.Post social share -->
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
+                                            <!-- /.Post social share -->
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </article>
 
-                                <article class="grid_post video_grid">
-                                    <figure>
-                                        <a href="#" class="grid_image">
-                                            <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                            <span class="post__icon post__icon--video"></span>
-                                        </a>
-                                        <figcaption>
-                                            <div class="post-cat"><a href="#">Fashion</a></div>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o"
-                                                        aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                        2018</time></span>
-                                                <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                            aria-hidden="true"></i>9 Comments</a></span>
+                            <article class="grid_post video_grid">
+                                <figure>
+                                    <a href="#" class="grid_image">
+                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
+                                        <span class="post__icon post__icon--video"></span>
+                                    </a>
+                                    <figcaption>
+                                        <div class="post-cat"><a href="#">Fashion</a></div>
+                                        <div class="entry-meta">
+                                            <span class="entry-date"><i class="fa fa-calendar-o"
+                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
+                                                    2018</time></span>
+                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
+                                                        aria-hidden="true"></i>9 Comments</a></span>
+                                        </div>
+                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
+                                                of passages of Lorem Ipsum available</a></h4>
+                                        <div class="element-block">
+                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
+                                                &#8702;</a>
+                                            <!-- /.Post button -->
+                                            <div class="post_share">
+                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
+                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
+                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
                                             </div>
-                                            <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                    of passages of Lorem Ipsum available</a></h4>
-                                            <div class="element-block">
-                                                <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                    &#8702;</a>
-                                                <!-- /.Post button -->
-                                                <div class="post_share">
-                                                    <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                    <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                    <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                </div>
-                                                <!-- /.Post social share -->
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
+                                            <!-- /.Post social share -->
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </article>
 
-                                <article class="grid_post video_grid">
-                                    <figure>
-                                        <a href="#" class="grid_image">
-                                            <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                            <span class="post__icon post__icon--video"></span>
-                                        </a>
-                                        <figcaption>
-                                            <div class="post-cat"><a href="#">Fashion</a></div>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o"
-                                                        aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                        2018</time></span>
-                                                <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                            aria-hidden="true"></i>9 Comments</a></span>
+                            <article class="grid_post video_grid">
+                                <figure>
+                                    <a href="#" class="grid_image">
+                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
+                                        <span class="post__icon post__icon--video"></span>
+                                    </a>
+                                    <figcaption>
+                                        <div class="post-cat"><a href="#">Fashion</a></div>
+                                        <div class="entry-meta">
+                                            <span class="entry-date"><i class="fa fa-calendar-o"
+                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
+                                                    2018</time></span>
+                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
+                                                        aria-hidden="true"></i>9 Comments</a></span>
+                                        </div>
+                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
+                                                of passages of Lorem Ipsum available</a></h4>
+                                        <div class="element-block">
+                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
+                                                &#8702;</a>
+                                            <!-- /.Post button -->
+                                            <div class="post_share">
+                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
+                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
+                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
                                             </div>
-                                            <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                    of passages of Lorem Ipsum available</a></h4>
-                                            <div class="element-block">
-                                                <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                    &#8702;</a>
-                                                <!-- /.Post button -->
-                                                <div class="post_share">
-                                                    <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                    <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                    <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                </div>
-                                                <!-- /.Post social share -->
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </div>
-                        </main>
-                    </div>
+                                            <!-- /.Post social share -->
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                    </main>
                 </div>
             </div>
-
         </div>
 
-        <?php include('./inc/footer_two.php'); ?>
-        <!-- /.End of main content -->
-        <div class="modal fade user-modal" id="user-modal">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#login" data-toggle="tab">Log in</a></li>
-                            <li><a href="#register" data-toggle="tab">Register</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="login">
-                                <div class="form-content text-center">
-                                    <h2>Sign In</h2>
-                                    <p>Chose One of the Following Methods.</p>
-                                    <div class="social-btn">
-                                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i>With Facebook</a>
-                                        <a href="#" class="btn btn-plush"><i class="fa fa-google-plus"></i>With Google
-                                            +</a>
+    </div>
+
+    <?php include('./inc/footer_two.php'); ?>
+    <!-- /.End of main content -->
+    <div class="modal fade user-modal" id="user-modal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#login" data-toggle="tab">Log in</a></li>
+                        <li><a href="#register" data-toggle="tab">Register</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="login">
+                            <div class="form-content text-center">
+                                <h2>Sign In</h2>
+                                <p>Chose One of the Following Methods.</p>
+                                <div class="social-btn">
+                                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i>With Facebook</a>
+                                    <a href="#" class="btn btn-plush"><i class="fa fa-google-plus"></i>With Google
+                                        +</a>
+                                </div>
+                                <div class="ui horizontal divider">Or </div>
+                                <p>Sign in Using Your Email Address</p>
+                                <div class="form-group">
+                                    <input class="form-control" name="f_name" id="f_name2"
+                                        placeholder="Username or email" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="pass" id="pass" placeholder="Password"
+                                        type="text">
+                                </div>
+                                <div class="block-content">
+
+                                    <div class="checkbox checkbox-danger">
+                                        <input id="checkbox8" type="checkbox">
+                                        <label for="checkbox8">
+                                            Remember me
+                                        </label>
                                     </div>
-                                    <div class="ui horizontal divider">Or </div>
-                                    <p>Sign in Using Your Email Address</p>
+                                    <a href="#" class="forgot">Forgot Password?</a>
+                                </div>
+                                <a href="#" class="btn link-btn btn-block btn-rounded">Login &#8702;</a>
+                                <div class="">Don't have an account? <a href="#">Sign up Now</a></div>
+                            </div>
+                            <!-- /.End of Login -->
+                        </div>
+                        <div class="tab-pane fade" id="register">
+                            <div class="form-content">
+                                <h2 class="text-center">Sign Up For Free</h2>
+                                <form method="POST" action="auth.php">
                                     <div class="form-group">
-                                        <input class="form-control" name="f_name" id="f_name2"
-                                            placeholder="Username or email" type="text">
+                                        <input class="form-control" name="firstname" id="firstname"
+                                            placeholder="First Name" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="pass" id="pass" placeholder="Password"
-                                            type="text">
+                                        <input class="form-control" name="lastname" id="lastname"
+                                            placeholder="Last Name" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="email" id="email"
+                                            placeholder="Enter Your Email" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="mobile" id="mobile"
+                                            placeholder="Enter Your Mobile" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="password" id="password"
+                                            placeholder="Enter Your Password" type="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="r_pass" id="r_pass"
+                                            placeholder="Retype Your Password" type="password">
                                     </div>
                                     <div class="block-content">
-
-                                        <div class="checkbox checkbox-danger">
-                                            <input id="checkbox8" type="checkbox">
-                                            <label for="checkbox8">
-                                                Remember me
-                                            </label>
-                                        </div>
-                                        <a href="#" class="forgot">Forgot Password?</a>
+                                        <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are
+                                                encrypted and Secured</span></div>
                                     </div>
-                                    <a href="#" class="btn link-btn btn-block btn-rounded">Login &#8702;</a>
-                                    <div class="">Don't have an account? <a href="#">Sign up Now</a></div>
-                                </div>
-                                <!-- /.End of Login -->
-                            </div>
-                            <div class="tab-pane fade" id="register">
-                                <div class="form-content">
-                                    <h2 class="text-center">Sign Up For Free</h2>
-                                    <form method="POST" action="auth.php">
-                                        <div class="form-group">
-                                            <input class="form-control" name="firstname" id="firstname"
-                                                placeholder="First Name" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="lastname" id="lastname"
-                                                placeholder="Last Name" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="email" id="email"
-                                                placeholder="Enter Your Email" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="mobile" id="mobile"
-                                                placeholder="Enter Your Mobile" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="password" id="password"
-                                                placeholder="Enter Your Password" type="password">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="r_pass" id="r_pass"
-                                                placeholder="Retype Your Password" type="password">
-                                        </div>
-                                        <div class="block-content">
-                                            <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are
-                                                    encrypted and Secured</span></div>
-                                        </div>
-                                        <button name="reg">Sign up</button>
-                                        <!-- <a href="#" class="btn link-btn btn-block btn-rounded" name="reg">Sign Up &#8702;</a> -->
-                                    </form>
-                                </div>
+                                    <button name="reg">Sign up</button>
+                                    <!-- <a href="#" class="btn link-btn btn-block btn-rounded" name="reg">Sign Up &#8702;</a> -->
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /.End of Sign up  Sing in -->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/animsition.min.js"></script>
-        <script src="assets/js/bootsnav.js"></script>
-        <script src="assets/js/macy.js"></script>
-        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-        <script src="assets/js/ResizeSensor.min.js"></script>
-        <script src="assets/js/theia-sticky-sidebar.min.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/owl-carousel/owl.carousel.min.js"></script>
-        <script src="assets/js/modernizr.custom.js"></script>
-        <script src="assets/js/jquery.gridrotator.min.js"></script>
-        <script src="assets/js/parallax-background.min.js"></script>
-        <script src="assets/js/jquery.simpleSocialShare.min.js"></script>
-        <script src="assets/js/jquery.fluidbox.min.js"></script>
-        <script src="assets/js/retina.min.js"></script>
-        <script src="assets/js/jquery.shuffle.min.js"></script>
-        <script src="assets/js/readingTime.min.js"></script>
-        <script src="assets/js/custom.js"></script>
-        <script>
-        $(document).ready(function() {
-            'use strict';
-            //Grid content 
-            var masonry = new Macy({
-                container: '.grid-content',
-                trueOrder: false,
-                waitForImages: false,
-                useOwnImageLoader: false,
-                debug: true,
-                mobileFirst: true,
-                columns: 1,
-                margin: 30,
-                breakAt: {
-                    1200: 2,
-                    992: 2,
-                    768: 2,
-                    480: 2
-                }
-            });
-        });
-        </script>
-
-        <script>
+    </div>
+    <!-- /.End of Sign up  Sing in -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/animsition.min.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/macy.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/ResizeSensor.min.js"></script>
+    <script src="assets/js/theia-sticky-sidebar.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/js/modernizr.custom.js"></script>
+    <script src="assets/js/jquery.gridrotator.min.js"></script>
+    <script src="assets/js/parallax-background.min.js"></script>
+    <script src="assets/js/jquery.simpleSocialShare.min.js"></script>
+    <script src="assets/js/jquery.fluidbox.min.js"></script>
+    <script src="assets/js/retina.min.js"></script>
+    <script src="assets/js/jquery.shuffle.min.js"></script>
+    <script src="assets/js/readingTime.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+    $(document).ready(function() {
+        'use strict';
+        //Grid content 
         var masonry = new Macy({
-            container: '#macy-container',
+            container: '.grid-content',
             trueOrder: false,
             waitForImages: false,
             useOwnImageLoader: false,
@@ -827,13 +824,33 @@
             columns: 1,
             margin: 30,
             breakAt: {
-                1200: 4,
-                992: 3,
+                1200: 2,
+                992: 2,
                 768: 2,
                 480: 2
             }
         });
-        </script>
+    });
+    </script>
+
+    <script>
+    var masonry = new Macy({
+        container: '#macy-container',
+        trueOrder: false,
+        waitForImages: false,
+        useOwnImageLoader: false,
+        debug: true,
+        mobileFirst: true,
+        columns: 1,
+        margin: 30,
+        breakAt: {
+            1200: 4,
+            992: 3,
+            768: 2,
+            480: 2
+        }
+    });
+    </script>
 </body>
 
 </html>

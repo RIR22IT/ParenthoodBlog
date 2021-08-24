@@ -164,7 +164,9 @@ if (!isset($_SESSION['email'])) {
                     <?php
                             }else if(isset($_GET['error'])){
                             ?>
-                    <div class="alert alert-danger" role="alert"> OOPS! Something Wrong!</div>
+                    <div class="alert alert-danger" role="alert"> 
+                        OOPS! Something Wrong!
+                    </div>
                     <?php
                             }
                         ?>
