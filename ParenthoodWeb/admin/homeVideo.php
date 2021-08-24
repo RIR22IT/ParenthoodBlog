@@ -22,40 +22,45 @@ if (!isset($_SESSION['email'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
     </script>
     <link rel="icon" href="../favamecro.ico">
 
     <style>
-        form {
-            width: 45%;
-            margin: 50px auto;
-            text-align: left;
-            padding: 20px;
-            border: 1px solid #bbbbbb;
-            border-radius: 5px;
-        }
+    form {
+        width: 45%;
+        margin: 50px auto;
+        text-align: left;
+        padding: 20px;
+        border: 1px solid #bbbbbb;
+        border-radius: 5px;
+    }
 
-        .msg {
-            margin: 30px auto;
-            padding: 10px;
-            border-radius: 5px;
-            color: #3c763d;
-            background: #dff0d8;
-            border: 1px solid #3c763d;
-            width: 50%;
-            text-align: center;
-        }
+    .msg {
+        margin: 30px auto;
+        padding: 10px;
+        border-radius: 5px;
+        color: #3c763d;
+        background: #dff0d8;
+        border: 1px solid #3c763d;
+        width: 50%;
+        text-align: center;
+    }
     </style>
 
     <title>ADMIN PANEL</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../admin//styles//sb-admin-2.min.css" rel="stylesheet">
@@ -126,14 +131,17 @@ if (!isset($_SESSION['email'])) {
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle" src="../images/adminNew.jpg">
                             </a>
                         </li>
                         <!--logout btn-->
                         <li class="nav-item dropdown no-arrow" style="padding-top:15px; ">
-                            <a href="logout.php?logout" class="btn btn-outline-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                            <a href="logout.php?logout" class="btn btn-outline-secondary" role="button"
+                                aria-pressed="true"><i
+                                    class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
                         </li>
                     </ul>
 
@@ -148,27 +156,42 @@ if (!isset($_SESSION['email'])) {
                     </center>
 
                     <?php
+                        if(isset($_GET['success'])){
+                    ?>
+                    <div class="alert alert-success" role="alert">
+                        YouTube Link Successfully Updated!
+                    </div>
+                    <?php
+                            }else if(isset($_GET['error'])){
+                            ?>
+                    <div class="alert alert-danger" role="alert"> OOPS! Something Wrong!</div>
+                    <?php
+                            }
+                        ?>
+
+                    <?php
                     $sql = "SELECT link FROM video WHERE v_id = '1'";
                     $exe = mysqli_query($db, $sql);
                     $rowSelect = mysqli_fetch_array($exe);
                     if ($rowSelect['link'] != "") {
                     ?>
 
-                        <?php
+                    <?php
                         $url = $rowSelect['link'];
                         $link = substr($url, strpos($url, "v=") + 2);
                         ?>
 
-                        <hr /><br/><br/>
+                    <hr /><br /><br />
 
-                        <center>
-                        <iframe width="500" height="300" src="https://www.youtube.com/embed/<?php echo $link; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </center>
-                    <?php
-                    }
-                    ?>
+                    <center>
+                        <iframe width="500" height="300" src="https://www.youtube.com/embed/<?php echo $link; ?>"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </center>
 
-                    <br/><br/>
+
+                    <br /><br />
 
                     <center>
                         <div class="table-responsive">
@@ -180,31 +203,22 @@ if (!isset($_SESSION['email'])) {
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <form method="POST">
-                                        <td> <input type="text" name="video" placeholder="Enter Youtube Video Link Here..." class="form-control" value="" required></td>
+                                    <form method="GET" action="php_code.php">
+                                        <td> <input type="text" name="video"
+                                                placeholder="Enter Youtube Video Link Here..." class="form-control"
+                                                value="<?php echo $url?>" required></td>
                                         <td>
-                                            <button type="button" name="link" class="btn btn-primary">Update</button>
+                                            <button type="submit" name="link" class="btn btn-primary">Update</button>
                                         </td>
                                     </form>
                                 </tr>
                             </table>
                         </div>
                     </center>
+                    <?php
+                    }
+                    ?>
 
-                    <div class="card-body">
-                        <?php
-                        if (isset($_SESSION['success']) && $_SESSION['success'] != '') {
-                            echo '<h2 class = "bg-primary text-white"> ' . $_SESSION['success'] . '</h2>';
-                            unset($_SESSION['success']);
-                        }
-
-                        if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
-                            echo '<h2 class = "bg-primary text-white"> ' . $_SESSION['status'] . '</h2>';
-                            unset($_SESSION['status']);
-                        }
-
-                        ?>
-                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -229,7 +243,13 @@ if (!isset($_SESSION['email'])) {
 
             <!-- Core plugin JavaScript-->
             <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script type="text/javascript">
+            setTimeout(function() {
 
+                // Closing the alert
+                $('.alert').alert('close');
+            }, 2000);
+            </script>
 </body>
 
 </html>

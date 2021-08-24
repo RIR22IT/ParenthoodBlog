@@ -28,8 +28,8 @@ if (isset($_GET['f_del'])) {
 
 //Update Youtube Video Link
 
-if(isset($_POST['link'])){
-    $link= $_POST['video'];
+if(isset($_GET['link'])){
+    $link= $_GET['video'];
 
     $sql = "UPDATE video SET link = '$link' WHERE v_id = '1'";
     $run = mysqli_query($db, $sql);
