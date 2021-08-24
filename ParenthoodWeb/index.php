@@ -457,16 +457,19 @@
                             </div>
                             <!--  /.End of title -->
                             <ul>
-                                <li class="li-facebook"><a href="https://www.facebook.com/parenthoodglobal" target="_blank"><i class="fa fa-facebook"></i>
-                                        </a></li>
-                                <li class="li-instagram"><a href="https://www.instagram.com/parenthoodsrilanka/" target="_blank"><i class="fa fa-instagram"></i>
-                                </a></li>
-                                <li class="li-linkedin"><a href="https://www.linkedin.com/company/parenthood-sri-lanka" target="_blank"><i class="fa fa-linkedin"></i>
-                                        </a></li>
-                                <li class="li-pinterest"><a href="https://www.pinterest.com/parenthoodglobal/_saved" target="_blank"><i class="fa fa-pinterest"></i>
-                                        </a></li>
-                                <li class="li-youtube"><a href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA" target="_blank"><i class="fa fa-youtube"></i>
-                                        </a></li>
+                                <li class="li-facebook"><a href="https://www.facebook.com/parenthoodglobal"
+                                        target="_blank"><i class="fa fa-facebook"></i>
+                                        Facebook</a></li>
+                                <li class="li-pinterest"><a
+                                        href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA"
+                                        target="_blank"><i class="fa fa-youtube"></i>
+                                        Youtube</a></li>
+                                <li class="li-twitter"><a href="https://www.linkedin.com/company/parenthood-sri-lanka"
+                                        target="_blank"><i class="fa fa-linkedin"></i>
+                                        Linkedin</a></li>
+                                <li class="li-pinterest"><a href="https://www.pinterest.com/parenthoodglobal/_saved"
+                                        target="_blank"><i class="fa fa-pinterest-p"></i>
+                                        Pinterest</a></li>
                             </ul>
                         </div>
                         <!-- /.End of subscribe -->

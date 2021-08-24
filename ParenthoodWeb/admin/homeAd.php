@@ -14,7 +14,7 @@ if (!isset($_SESSION['email'])) {
 
 <head>
 
-    <title>ADMIN PANEL - HOME VIDEO</title>
+    <title>ADMIN PANEL - ADD HOME AD</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,7 +72,7 @@ if (!isset($_SESSION['email'])) {
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include('./pageWrapper.php'); ?>
+        <?php include('./pageWrapper.php') ?>
 
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -114,76 +114,68 @@ if (!isset($_SESSION['email'])) {
                 <!-- Begin Page Content -->
                 <div class="container-fluid" style="width: 1300px;"><br />
                     <!-- Page Heading -->
-                    <center>
-                        <h1 class="h3 mb-1 text-gray-800">HOMEPAGE VIDEO</h1>
-                    </center>
+                    <div class="container-fluid" style="width: 1300px;"><br />
+                        <!-- Page Heading -->
+                        <center>
+                            <h1 class="h3 mb-1 text-gray-800">ADD HOME AD</h1>
+                        </center>
+                        <hr /><br />
+                        <center>
+                            <div class="container">
+                                <img id="blah" src="#" alt="your image" />
+                            </div>
+                        </center>
 
-                    <?php
-                        if(isset($_GET['success'])){
-                    ?>
-                    <div class="alert alert-success" role="alert">
-                        YouTube Link Successfully Updated!
-                    </div>
-                    <?php
-                            }else if(isset($_GET['error'])){
-                            ?>
-                    <div class="alert alert-danger" role="alert">
-                        OOPS! Something Wrong!
-                    </div>
-                    <?php
-                            }
-                        ?>
+                        <center>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="width: 80%">
+                                    <thead>
+                                        <tr class="bg-primary">
+                                            <th style="color: white">Image</th>
+                                            <th style="color: white">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <form method="post" action="footerImageUpload.php" enctype="multipart/form-data"
+                                            style="width: 60%">
+                                            <td>
+                                                <div class="row">
 
-                    <?php
-                    $sql = "SELECT link FROM video WHERE v_id = '1'";
-                    $exe = mysqli_query($db, $sql);
-                    $rowSelect = mysqli_fetch_array($exe);
-                    if ($rowSelect['link'] != "") {
-                    ?>
-
-                    <?php
-                        $url = $rowSelect['link'];
-                        $link = substr($url, strpos($url, "v=") + 2);
-                        ?>
-
-                    <hr /><br /><br />
-
-                    <center>
-                        <iframe width="500" height="300" src="https://www.youtube.com/embed/<?php echo $link; ?>"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </center>
-
-
-                    <br /><br />
-
-                    <center>
-                        <div class="table-responsive">
-                            <table class="table table-bordered" style="width: 80%">
-                                <thead>
-                                    <tr class="bg-primary">
-                                        <th style="color: white">Video</th>
-                                        <th style="color: white">Action</th>
+                                                    <div class="col-md-offset-1"><br>
+                                                        <div class="col-15">
+                                                            <label for="img">Footer Image* (please upload 300 x 300
+                                                                dimension)</label>
+                                                            <input type="file" class="form-control" id="ImgInp"
+                                                                name="img" value="" required>
+                                                        </div><br>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="submit" name="link" class="btn btn-primary">Save</button>
+                                            </td>
+                                        </form>
                                     </tr>
-                                </thead>
-                                <tr>
-                                    <form method="GET" action="php_code.php">
-                                        <td> <input type="text" name="video"
-                                                placeholder="Enter Youtube Video Link Here..." class="form-control"
-                                                value="<?php echo $url?>" required></td>
-                                        <td>
-                                            <button type="submit" name="link" class="btn btn-primary">Update</button>
-                                        </td>
-                                    </form>
-                                </tr>
-                            </table>
-                        </div>
-                    </center>
-                    <?php
-                    }
-                    ?>
+                                </table>
+                            </div>
+                        </center>
 
+                    </div>
+
+                    <div class="card-body">
+                        <?php
+                        if (isset($_SESSION['success']) && $_SESSION['success'] != '') {
+                            echo '<h2 class = "bg-primary text-white"> ' . $_SESSION['success'] . '</h2>';
+                            unset($_SESSION['success']);
+                        }
+
+                        if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+                            echo '<h2 class = "bg-primary text-white"> ' . $_SESSION['status'] . '</h2>';
+                            unset($_SESSION['status']);
+                        }
+
+                        ?>
+                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -209,13 +201,15 @@ if (!isset($_SESSION['email'])) {
 
     <!-- Core plugin JavaScript-->
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script type="text/javascript">
-    setTimeout(function() {
-
-        // Closing the alert
-        $('.alert').alert('close');
-    }, 2000);
+    <script>
+    imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+    }
     </script>
+
 </body>
 
 </html>
