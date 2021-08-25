@@ -119,13 +119,26 @@ if (!isset($_SESSION['email'])) {
                         <center>
                             <h1 class="h3 mb-1 text-gray-800">ADD HOME AD</h1>
                         </center>
+                        <?php
+                            if(isset($_GET['success'])){
+                        ?>
+                        <div class="alert alert-success" role="alert">
+                            Home Ad Image Successfully Updated!
+                        </div>
+                        <?php
+                            }else if(isset($_GET['error'])){
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                            OOPS! Something Wrong!
+                        </div>
+                        <?php
+                            }
+                        ?>
                         <hr /><br />
                         <center>
-                            <div class="container">
-                                <img id="blah" src="#" alt="your image" />
-                            </div>
+                            <div id="preview"></div>
                         </center>
-
+                        <br>
                         <center>
                             <div class="table-responsive">
                                 <table class="table table-bordered" style="width: 80%">
@@ -136,25 +149,57 @@ if (!isset($_SESSION['email'])) {
                                         </tr>
                                     </thead>
                                     <tr>
-                                        <form method="post" action="footerImageUpload.php" enctype="multipart/form-data"
+                                        <form method="POST" action="php_code.php" enctype="multipart/form-data"
                                             style="width: 60%">
                                             <td>
                                                 <div class="row">
 
                                                     <div class="col-md-offset-1"><br>
+
                                                         <div class="col-15">
-                                                            <label for="img">Footer Image* (please upload 300 x 300
+                                                            <label for="img">Home Ad Image* (please upload 300 x 250
                                                                 dimension)</label>
-                                                            <input type="file" class="form-control" id="ImgInp"
-                                                                name="img" value="" required>
-                                                        </div><br>
+                                                            <input type="file" class="form-control" id="img" name="img"
+                                                                value="" placeholder="Enter Name"
+                                                                onchange="getImagePreview(event)" required>
+                                                        </div>
+                                                        <br>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
-                                                <button type="submit" name="link" class="btn btn-primary">Save</button>
+                                                <br /><br />
+                                                <button type="submit" name="ad" class="btn btn-primary">Save</button>
                                             </td>
                                         </form>
+                                    </tr>
+                                    <thead>
+                                        <tr class="bg-primary">
+                                            <th style="color: white">Current Image</th>
+                                            <th style="color: white">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <?php 
+                                            $qry = "SELECT * FROM homead WHERE h_Id='1'";
+                                            $data = mysqli_query($db, $qry) or die('error');
+
+                                            if(mysqli_num_rows($data) > 0){
+                                                while($row = mysqli_fetch_assoc($data)){
+                                                    $id = $row['h_Id'];
+                                                    $img = $row['img'];
+                                        ?>
+                                        <td>
+                                            <?php echo '<img width="300" height="250" src="./upload/homeAd/' .$img. '" alt="current-img">' ?>
+                                        </td>
+                                        <?php            
+                                                }
+                                            }
+                                        ?>
+                                        
+                                        <td>
+                                            #
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -201,12 +246,15 @@ if (!isset($_SESSION['email'])) {
 
     <!-- Core plugin JavaScript-->
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script>
-    imgInp.onchange = evt => {
-        const [file] = imgInp.files
-        if (file) {
-            blah.src = URL.createObjectURL(file)
-        }
+    <script type="text/javascript">
+    function getImagePreview(event) {
+        var image = URL.createObjectURL(event.target.files[0]);
+        var imagediv = document.getElementById('preview');
+        var newimg = document.createElement('img');
+        imagediv.innerHTML = '';
+        newimg.src = image;
+        newimg.width = "300";
+        imagediv.appendChild(newimg);
     }
     </script>
 

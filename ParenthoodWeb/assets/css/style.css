@@ -60,7 +60,7 @@ body {
     color: #ffffff;
 }
 ::selection {
-    background-color: #d17c78;
+    background-color: #efc136;
     color: #ffffff;
 }
 @media(min-width: 480px) and (max-width: 767px){
@@ -177,7 +177,7 @@ a,
 .video-title, .title-filter li.active a,
 .portfolio-sorting li a:hover,
 .portfolio-sorting li a.active{
-    color: #d17c78;
+    color: #efc136;
 }
 /*---- Background Color ---------*/
 .btn-top,
@@ -201,7 +201,7 @@ a,
 .checkbox-danger input[type="checkbox"]:checked + label::before,
 .link-btn, 
 .title-filter li a:hover {
-    background-color: #d17c78;
+    background-color: #efc136;
 }
 /*Box layout*/
 /*.main-content.boxed {
@@ -271,7 +271,7 @@ a,
     border-bottom: 1px solid #eaeaea;
 }
 .top-header.dark {
-    background-color: #000;
+    background-color: #384da1;
     border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 .header-nav {
@@ -1128,7 +1128,7 @@ nav.navbar.bootsnav {
 /* Navbar Inverse
 =================================*/
 nav.navbar.navbar-inverse {
-    background-color: #111;
+    background-color: #384da1;
     /*min-height: 80px;*/
 }
 nav.navbar.navbar-inverse ul.cart-list > li.total > .btn{
@@ -1328,7 +1328,7 @@ ul.cart-list > li.total > .btn:focus{
     opacity: 1;
     height: 40px;
     width: 40px;
-    background: #d17c78;
+    background: #efc136;
     border: 0;
     position: absolute;
     margin: 0;
@@ -1343,7 +1343,7 @@ ul.cart-list > li.total > .btn:focus{
 }
 #newsTicker.owl-theme .owl-controls .owl-buttons .owl-prev {
     right: 40px;
-    background-color: #cc6b66;
+    background-color: #efc136;
 }
 #newsTicker.owl-theme .owl-controls .owl-buttons .owl-next {
     right: 0px;
@@ -2249,8 +2249,8 @@ ul.cart-list > li.total > .btn:focus{
 }
 .newslatter .btn-default,
 .newslatter2 .btn-default {
-    background-color: #111;
-    border-color: #111;
+    background-color: #384da1;
+    border-color: #384da1;
     color: #fff;
     border-radius: 0px;
     padding: 10px 40px;
@@ -4031,7 +4031,7 @@ h4.grid_post_title {
     padding: 6px 20px;
     font-size: 16px;
     border-radius: 0;
-    border: 1px dashed #d17c78;
+    border: 1px dashed #efc136;
     transition: color .3s ease-out,border .3s ease-out,background .3s ease-out;
 }
 .btn.btn-outline {
@@ -4209,7 +4209,7 @@ h4.grid_post_title {
 .youtube_video {
     padding: 70px 0;
     /*border: 1px solid #eaeaea;*/
-    background-color: #111;
+    background-color: #384da1;
     margin: 20px 0 50px;
 }
 .video-title {
@@ -4740,14 +4740,14 @@ footer {
     background-color: #fff;
 }
 .footer-black{
-    background-color: #111;
+    background-color: #384da1;
 }
 .footer-white{
     background-color: #fff;
 }
 .footer-black .sub-footer {
-    border-top: 1px solid #0e0e0e;
-    background-color: #0e0e0e;
+    border-top: 1px solid #384da1;
+    background-color: #384da1;
 }
 .footer-black p,
 .footer-black .textwidget,
