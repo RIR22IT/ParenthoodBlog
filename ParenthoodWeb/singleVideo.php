@@ -1,3 +1,20 @@
+<?php include('./database/connection.php'); ?>
+<?php 
+    if(isset($_GET['video'])){
+        $id  = $_GET['video'];
+        $qry = "SELECT * FROM singleVideo WHERE s_id = $id";
+        $run = $db -> query($qry);
+        if($run->num_rows > 0){
+            while($row = $run->fetch_assoc()){
+                $id    = $row['s_id'];
+                $title = $row['title'];
+                $category = $row['categoryType'];
+                $link = $row['videoLink'];
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,25 +49,28 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <header class="details-header">
-                                <div class="post-cat"><a href="#">Fashion</a><a href="#">Travel</a><a href="#">Lifestyle</a></div>
-                                <h2>There are many <em>variations of passages</em> of Lorem Ipsum available, but the majority.</h2>
+                                <div class="post-cat"><a href="#"><?php echo $category ?></a></div>
+                                <h2><?php echo $title ?></h2>
                                 <div class="element-block">
                                     <div class="entry-meta">
                                         <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
                                         <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
                                     </div>
-                                    <div class="reading-time"><span class="eta"></span> (<span class="words"></span> words)</div>
+                                    <!-- <div class="reading-time"><span class="eta"></span> (<span class="words"></span> words)</div> -->
                                 </div>
                             </header>
                             <div class="item vide_post_item">
                                 <!-- the class "videoWrapper169" means a 16:9 aspect ration video. Another option is "videoWrapper43" for 4:3. -->
                                 <div class="videoWrapper videoWrapper169 js-videoWrapper">
+                                    <?php
+                                        $url = substr($link, strpos($link, "v=") + 2) 
+                                    ?>
                                     <!-- YouTube iframe. -->
                                     <!-- note the iframe src is empty by default, the url is in the data-src="" argument -->
                                     <!-- also note the arguments on the url, to autoplay video, remove youtube adverts/dodgy links to other videos, and set the interface language -->
-                                    <iframe class="videoIframe js-videoIframe" allowfullscreen data-src="https://www.youtube.com/embed/hgzzLIa-93c?autoplay=1& modestbranding=1&rel=0&hl=sv"></iframe>
+                                    <iframe class="videoIframe js-videoIframe" allowfullscreen src="https://www.youtube.com/embed/<?php echo $url ?>"></iframe>
                                     <!-- the poster frame - in the form of a button to make it keyboard accessible -->
-                                    <button class="videoPoster js-videoPoster" style="background-image:url(assets/img/youtube-video.jpg);">Play video</button>
+                                    <!-- <button class="videoPoster js-videoPoster" style="background-image:url(assets/img/youtube-video.jpg);">Play video</button> -->
                                 </div>
                                 <!--<button onclick="videoStop()">external close button</button>-->
                             </div>
