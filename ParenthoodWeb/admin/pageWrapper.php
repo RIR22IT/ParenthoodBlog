@@ -42,4 +42,18 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="singleVideo.php">
+                    <i class="fas fa-plus-square"></i>
+                    <span>Add Single Video</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="viewSingleVideo.php">
+                    <i class="fas fa-plus-square"></i>
+                    <span>View Single Video</span>
+                </a>
+            </li>
+
         </ul>

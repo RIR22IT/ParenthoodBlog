@@ -28,14 +28,47 @@ if (isset($_GET['f_del'])) {
 
 //Update Youtube Video Link
 
-if(isset($_GET['link'])){
-    $link= $_GET['video'];
+if (isset($_GET['link'])) {
+    $link = $_GET['video'];
 
     $sql = "UPDATE video SET link = '$link' WHERE v_id = '1'";
     $run = mysqli_query($db, $sql);
-    if($run){
+    if ($run) {
         header("location: homeVideo.php?success");
-    }else{
+    } else {
         header("location: homeVideo.php?fail");
     }
+}
+
+// initialize variables - Single Video Links
+$videoLink = "";
+$title = "";
+$categoryType = "";
+
+if (isset($_POST['singleVideo'])) {
+    $videoLink = $_POST['videoLink'];
+    $title = $_POST['title'];
+    $categoryType = $_POST['categoryType'];
+
+        $qry = "INSERT INTO singlevideo (videoLink, title, categoryType) VALUES ('$videoLink', '$title', '$categoryType')";
+        $run = mysqli_query($db, $qry);
+        $_SESSION['message'] = "Added successfully";
+}
+
+if (isset($_POST['s_update'])) { //update single video table
+    $id = $_POST['s_id'];
+    $videoLink = $_POST['videoLink'];
+    $title = $_POST['title'];
+    $categoryType = $_POST['categoryType'];
+
+    mysqli_query($db, "UPDATE singlevideo SET videoLink = '$videoLink', title = '$title', categoryType = '$categoryType' WHERE s_id = $id");
+    $_SESSION['message'] = "Updated successfully!";
+    header('location: viewSingleVideo.php');
+}
+
+if (isset($_GET['s_del'])) { //delete single video table
+    $id = $_GET['s_del'];
+    mysqli_query($db, "DELETE FROM singlevideo WHERE s_id=$id");
+    $_SESSION['message'] = "Deleted successfully!";
+    header('location: viewSingleVideo.php');
 }
