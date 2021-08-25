@@ -112,8 +112,10 @@ if (!isset($_SESSION['email'])) {
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid" style="width: 1300px;"><br />
+            <div class="container-fluid" style="width: 1300px;"><br />
                     <!-- Page Heading -->
+                <div class="container-fluid" style="width: 1300px;"><br />
+
                     <center>
                         <h1 class="h3 mb-1 text-gray-800">ADD FOOTER IMAGES</h1>
                     </center>
@@ -210,6 +212,8 @@ if (!isset($_SESSION['email'])) {
             <!-- End of Page Wrapper -->
         </div>
     </div>
+</div>
+
     <!-- Scroll to Top Button -->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
