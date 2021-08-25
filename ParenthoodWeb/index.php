@@ -446,9 +446,22 @@
                         <!-- /.End of pagination -->
                     </main>
                     <aside class="col-sm-4 col-md-3 rightSidebar">
+                        <?php
+                               $qry = "SELECT * FROM homead WHERE h_Id='1'";
+                               $data = mysqli_query($db, $qry) or die('error');
+
+                               if(mysqli_num_rows($data) > 0){
+                                   while($row = mysqli_fetch_assoc($data)){
+                                       $id = $row['h_Id'];
+                                       $img = $row['img'];
+                        ?>
                         <div class="banner-content">
-                            <img src="assets/img/ad-300x250-1.png" class="img-responsive center-block" alt="">
+                            <?php echo'<img src="./admin/upload/homeAd/' .$img. '"alt="ad" class="img-responsive center-block">' ?>
                         </div>
+                        <?php
+                                   }
+                               }
+                        ?>
                         <!-- /.End of about -->
                         <div class="social_share_btn">
                             <div class="title-holder">

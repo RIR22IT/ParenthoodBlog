@@ -39,3 +39,25 @@ if(isset($_GET['link'])){
         header("location: homeVideo.php?fail");
     }
 }
+
+//Home Advertisement 
+
+if(isset($_POST['ad'])){
+    $img = $_FILES['img']['name'];
+
+    if (file_exists("upload/homeAd/" . $_FILES["img"]["name"])) {
+        $store = $_FILES["img"]["name"];
+        $_SESSION['status'] = "Image already exists. '.$store.'";
+    } else {
+        $temp = explode(".", $_FILES["img"]["name"]);
+        $newfilename = round(microtime(true)) . '.' . end($temp);
+        move_uploaded_file($_FILES["img"]["tmp_name"], "upload/homeAd/" . $newfilename);
+        $qry = "UPDATE homead SET img = '$newfilename' WHERE h_Id = '1'";
+        $run = mysqli_query($db, $qry);
+        if($run){
+            header("location: homeAd.php?success");
+        }else{
+            header("location: homeAd.php?fail");
+        }
+    }
+}

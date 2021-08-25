@@ -126,7 +126,7 @@ if (!isset($_SESSION['email'])) {
                     </div>
                     <?php
                             }else if(isset($_GET['error'])){
-                            ?>
+                    ?>
                     <div class="alert alert-danger" role="alert">
                         OOPS! Something Wrong!
                     </div>
