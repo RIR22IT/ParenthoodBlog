@@ -45,12 +45,13 @@ $videoLink = "";
 $title = "";
 $categoryType = "";
 
+
 if (isset($_POST['singleVideo'])) {
     $videoLink = $_POST['videoLink'];
     $title = $_POST['title'];
     $categoryType = $_POST['categoryType'];
-
-        $qry = "INSERT INTO singlevideo (videoLink, title, categoryType) VALUES ('$videoLink', '$title', '$categoryType')";
+   
+        $qry = "INSERT INTO singlevideo (videoLink, title, categoryType, date) VALUES ('$videoLink', '$title', '$categoryType', NOW() )";
         $run = mysqli_query($db, $qry);
         $_SESSION['message'] = "Added successfully";
 }
