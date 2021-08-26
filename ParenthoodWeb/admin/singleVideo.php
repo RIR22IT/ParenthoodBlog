@@ -122,7 +122,7 @@ if (!isset($_SESSION['email'])) {
                         ?>
 
 
-                    <form method="post" action="singleVideo.php" enctype="multipart/form-data" style="width: 60%">
+                    <form method="post" action="viewSingleVideo.php" enctype="multipart/form-data" style="width: 60%">
                         <div class="row">
 
                             <div class="col-15">
