@@ -110,6 +110,18 @@ if (!isset($_SESSION['email'])) {
                         <h1 class="h3 mb-1 text-gray-800">ADD SINGLE VIDEO</h1>
                     </center>
 
+                   
+                    <?php
+                            if(isset($_GET['fail'])){
+                    ?>
+                    <div class="alert alert-danger" role="alert">
+                        OOPS! Something Wrong!
+                    </div>
+                    <?php
+                            }
+                        ?>
+
+
                     <form method="post" action="singleVideo.php" enctype="multipart/form-data" style="width: 60%">
                         <div class="row">
 
