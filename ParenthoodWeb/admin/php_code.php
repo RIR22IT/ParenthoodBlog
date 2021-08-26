@@ -72,6 +72,8 @@ if (isset($_GET['s_del'])) { //delete single video table
     $_SESSION['message'] = "Deleted successfully!";
     header('location: viewSingleVideo.php');
 }
+
+
 //Home Advertisement 
 
 if(isset($_POST['ad'])){
