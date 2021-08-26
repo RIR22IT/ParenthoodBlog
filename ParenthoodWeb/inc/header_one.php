@@ -45,7 +45,7 @@
     <div class="container">
         <div class="header-logo">
             <a href="index.html" class="logo-img">
-                <img src="assets/img/logo.png" alt="">
+                <img src="assets/img/logoNew.png" alt="">
             </a>
         </div>
         <div class="header-soc-icon"><i class="icons ti-menu"></i></div>

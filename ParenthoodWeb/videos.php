@@ -45,10 +45,11 @@
                         <div class="row">
                             <main class="col-sm-12">
                                 <div id="macy-container">
-                                    <article class="grid_post">
+                                <article class="grid_post video_grid">
                                         <figure>
                                             <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-1.jpg" class="img-responsive" alt="">
+                                                <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
+                                                <span class="post__icon post__icon--video"></span>
                                             </a>
                                             <figcaption>
                                                 <div class="post-cat"><a href="#">Fashion</a></div>
@@ -71,9 +72,12 @@
                                         </figure>
                                     </article>
                                     <!-- /.End of grid post -->
-                                    <article class="grid_post grid_post_audio">
+                                    <article class="grid_post video_grid">
                                         <figure>
-                                            <iframe class="soundcloud" height="200" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/290077969&amp;color=%23d17c78&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+                                            <a href="#" class="grid_image">
+                                                <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
+                                                <span class="post__icon post__icon--video"></span>
+                                            </a>
                                             <figcaption>
                                                 <div class="post-cat"><a href="#">Fashion</a></div>
                                                 <div class="entry-meta">
@@ -94,7 +98,6 @@
                                             </figcaption>
                                         </figure>
                                     </article>
-                                    <!-- /.End of grid audio post -->
                                     <article class="grid_post video_grid">
                                         <figure>
                                             <a href="#" class="grid_image">
@@ -122,25 +125,11 @@
                                         </figure>
                                     </article>
                                     <!-- /.End of video grid post -->
-                                    <article class="grid_post card-post">
+                                    <article class="grid_post video_grid">
                                         <figure>
                                             <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-4.jpg" class="img-responsive" alt="">
-                                            </a>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem Ipsum available</a></h4>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <article class="grid_post">
-                                        <figure>
-                                            <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-6.jpg" class="img-responsive" alt="">
+                                                <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
+                                                <span class="post__icon post__icon--video"></span>
                                             </a>
                                             <figcaption>
                                                 <div class="post-cat"><a href="#">Fashion</a></div>
@@ -158,165 +147,6 @@
                                                         <a class="smedia googleplus fa fa-google-plus" href="#"></a>
                                                     </div>
                                                     <!-- /.Post social share -->
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <!-- /.End of grid post -->
-                                    <article class="grid_post">
-                                        <figure>
-                                            <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-7.jpg" class="img-responsive" alt="">
-                                            </a>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem Ipsum available</a></h4>
-                                                <div class="element-block">
-                                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                                    <!-- /.Post button -->
-                                                    <div class="post_share">
-                                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                    </div>
-                                                    <!-- /.Post social share -->
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <!-- /.End of grid post -->
-                                    <article class="grid_post">
-                                        <figure>
-                                            <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-1.jpg" class="img-responsive" alt="">
-                                            </a>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem Ipsum available</a></h4>
-                                                <div class="element-block">
-                                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                                    <!-- /.Post button -->
-                                                    <div class="post_share">
-                                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                    </div>
-                                                    <!-- /.Post social share -->
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <!-- /.End of grid post -->
-                                    <article class="grid_post card-post">
-                                        <figure>
-                                            <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-5.jpg" class="img-responsive" alt="">
-                                            </a>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem Ipsum available</a></h4>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <article class="grid_post">
-                                        <figure>
-                                            <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-2.jpg" class="img-responsive" alt="">
-                                            </a>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem Ipsum available</a></h4>
-                                                <div class="element-block">
-                                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                                    <!-- /.Post button -->
-                                                    <div class="post_share">
-                                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                    </div>
-                                                    <!-- /.Post social share -->
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <!-- /.End of grid post -->
-                                    <article class="grid_post grid_post_audio">
-                                        <figure>
-                                            <iframe class="soundcloud" height="200" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/290077969&amp;color=%23d17c78&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem Ipsum available</a></h4>
-                                                <div class="element-block">
-                                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                                    <!-- /.Post button -->
-                                                    <div class="post_share">
-                                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                    </div>
-                                                    <!-- /.Post social share -->
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <!-- /.End of grid audio post -->
-                                    <article class="grid_post">
-                                        <figure>
-                                            <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-2.jpg" class="img-responsive" alt="">
-                                            </a>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem Ipsum available</a></h4>
-                                                <div class="element-block">
-                                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                                    <!-- /.Post button -->
-                                                    <div class="post_share">
-                                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                                    </div>
-                                                    <!-- /.Post social share -->
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                    <!-- /.End of grid post -->
-                                    <article class="grid_post card-post">
-                                        <figure>
-                                            <a href="#" class="grid_image">
-                                                <img src="assets/img/grid-8.jpg" class="img-responsive" alt="">
-                                            </a>
-                                            <figcaption>
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="grid_post_title"><a href="#">There are <em>many variations</em> of passages of Lorem.</a></h4>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
                                                 </div>
                                             </figcaption>
                                         </figure>
