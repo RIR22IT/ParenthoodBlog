@@ -51,7 +51,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="viewSingleVideo.php">
-                    <i class="fas fa-plus-square"></i>
+                    <i class="fas fa-eye"></i>
                     <span>View Single Video</span>
                 </a>
             </li>
