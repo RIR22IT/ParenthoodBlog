@@ -190,7 +190,7 @@ if (!isset($_SESSION['email'])) {
                                                     $img = $row['img'];
                                         ?>
                                         <td>
-                                            <?php echo '<img width="300" height="250" src="./upload/homeAd/' .$img. '" alt="current-img">' ?>
+                                            <?php echo '<img width="250" height="300" src="./upload/homeAd/' .$img. '" alt="current-img">' ?>
                                         </td>
                                         <?php            
                                                 }
