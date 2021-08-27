@@ -49,10 +49,14 @@ if (isset($_POST['singleVideo'])) {
     $videoLink    = $_POST['videoLink'];
     $title        = $_POST['title'];
     $categoryType = $_POST['categoryType'];
-
-    $qry                 = "INSERT INTO singlevideo (videoLink, title, categoryType, date) VALUES ('$videoLink', '$title', '$categoryType', NOW() )";
-    $run                 = mysqli_query($db, $qry);
-    $_SESSION['message'] = "Added successfully";
+   
+        $qry = "INSERT INTO singlevideo (videoLink, title, categoryType, date) VALUES ('$videoLink', '$title', '$categoryType', NOW() )";
+        $run = mysqli_query($db, $qry);
+        if ($run) {
+            header("location: viewSingleVideo.php?success");
+        } else {
+            header("location: singleVideo.php?fail");
+        }
 }
 
 if (isset($_POST['s_update'])) { //update single video table
