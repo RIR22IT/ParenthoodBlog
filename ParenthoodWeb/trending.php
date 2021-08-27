@@ -9,6 +9,9 @@
             $cat   = $row['category'];
             $des   = $row['description'];
             $img   = $row['mainImage'];
+            $currentDate = $row['created_at'];
+            $today = date('d-m-Y');
+            $date = date("d-m-Y", strtotime($currentDate));
         }
     }
 ?>
@@ -65,10 +68,10 @@
                                             <h2><?php echo $title ?></h2>
                                             <div class="element-block">
                                                 <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
+                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span> 
                                                     <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
                                                 </div>
-                                                <div class="reading-time"><span class="eta"></span> (<span class="words"></span> words)</div>
+                                                <!-- <div class="reading-time"><span class="eta"></span> (<span class="words"></span> words)</div> -->
                                             </div>
                                         </header>
                                         <figure>
