@@ -49,14 +49,14 @@ if (isset($_POST['singleVideo'])) {
     $videoLink    = $_POST['videoLink'];
     $title        = $_POST['title'];
     $categoryType = $_POST['categoryType'];
-   
-        $qry = "INSERT INTO singlevideo (videoLink, title, categoryType, date) VALUES ('$videoLink', '$title', '$categoryType', NOW() )";
-        $run = mysqli_query($db, $qry);
-        if ($run) {
-            header("location: viewSingleVideo.php?success");
-        } else {
-            header("location: singleVideo.php?fail");
-        }
+
+    $qry = "INSERT INTO singlevideo (videoLink, title, categoryType, date) VALUES ('$videoLink', '$title', '$categoryType', NOW() )";
+    $run = mysqli_query($db, $qry);
+    if ($run) {
+        header("location: viewSingleVideo.php?success");
+    } else {
+        header("location: singleVideo.php?fail");
+    }
 }
 
 if (isset($_POST['s_update'])) { //update single video table
@@ -108,25 +108,51 @@ if (isset($_POST['trending'])) {
     $description = $_POST['description'];
 
     if (file_exists("upload/trending/" . $_FILES["img"]["name"])) {
-    $qry = "UPDATE trending SET mainTitle = '$mainTitle', category = '$category', description = '$description' WHERE t_Id = '1' ";
-    $run = mysqli_query($db, $qry);
+        $qry = "UPDATE trending SET mainTitle = '$mainTitle', category = '$category', description = '$description' WHERE t_Id = '1' ";
+        $run = mysqli_query($db, $qry);
         if ($run) {
             header("location: trending.php?success");
         } else {
             header("location: trending.php?fail");
-        
         }
     } else {
 
-    $temp = explode(".", $_FILES["img"]["name"]);
-    $newfilename = round(microtime(true)) . '.' . end($temp);
-    move_uploaded_file($_FILES["img"]["tmp_name"], "upload/trending/" . $newfilename);
-    $qry = "UPDATE trending SET mainTitle = '$mainTitle', mainImage = '$newfilename',  category = '$category', description = '$description' WHERE t_Id = '1' ";
-    $run = mysqli_query($db, $qry);
+        $temp = explode(".", $_FILES["img"]["name"]);
+        $newfilename = round(microtime(true)) . '.' . end($temp);
+        move_uploaded_file($_FILES["img"]["tmp_name"], "upload/trending/" . $newfilename);
+        $qry = "UPDATE trending SET mainTitle = '$mainTitle', mainImage = '$newfilename',  category = '$category', description = '$description' WHERE t_Id = '1' ";
+        $run = mysqli_query($db, $qry);
         if ($run) {
             header("location: trending.php?success");
         } else {
-            header("location: trending.php?fail");  
+            header("location: trending.php?fail");
         }
+    }
 }
+
+// initialize variables - single post 
+$mainTitle    = "";
+$img = [];
+$subTitle        = "";
+$categoryType = "";
+$description        = "";
+
+if (isset($_POST['postBtn'])) {
+    $mainTitle = $_POST['mainTitle'];
+    $img = $_FILES['img']['name'];
+    $subTitle = $_POST['subTitle'];
+    $categoryType = $_POST['categoryType'];
+    $description = $_POST['description'];
+
+    if (file_exists("upload/posts/" . $_FILES["img"]["name"])) {
+        $store              = $_FILES["img"]["name"];
+        $_SESSION['status'] = "Image already exists. '.$store.'";
+    } else {
+        $temp        = explode(".", $_FILES["img"]["name"]);
+        $newfilename = round(microtime(true)) . '.' . end($temp);
+        move_uploaded_file($_FILES["img"]["tmp_name"], "upload/posts/" . $newfilename);
+        $qry                 = "INSERT INTO post (mainTitle, img, subTitle, categoryType, description) VALUES ('$mainTitle', '$newfilename', '$subTitle', '$categoryType', '$description')";
+        $run                 = mysqli_query($db, $qry);
+        $_SESSION['message'] = "Added successfully";
+    }
 }
