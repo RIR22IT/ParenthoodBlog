@@ -110,7 +110,7 @@ if (!isset($_SESSION['email'])) {
                         <hr />
                     </center>
 
-                    <form method="POST" action="posts.php" enctype="multipart/form-data" style="width: 70%">
+                    <form method="POST" action="viewPosts.php" enctype="multipart/form-data" style="width: 70%">
                         <div class="row">
 
                             <div class="col-15">
@@ -181,7 +181,7 @@ if (!isset($_SESSION['email'])) {
     <script>
         CKEDITOR.replace('description', {
             height: 300,
-            filebrowserUploadUrl: "upload.php"
+            filebrowserUploadUrl: "../upload.php"
         })
     </script>
 

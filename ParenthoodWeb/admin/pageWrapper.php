@@ -58,8 +58,15 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="posts.php">
-                    <i class="fas fa-eye"></i>
+                    <i class="fas fa-plus-square"></i>
                     <span>Add Posts</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="viewPosts.php">
+                    <i class="fas fa-eye"></i>
+                    <span>View Posts</span>
                 </a>
             </li>
 
