@@ -156,3 +156,47 @@ if (isset($_POST['postBtn'])) {
         $_SESSION['message'] = "Added successfully";
     }
 }
+
+//Update post data
+
+if(isset($_POST['updatePost'])){
+    $id = $_POST['id'];
+    $mainImage = $_FILES['img']['name'];
+    $mainTitle = $_POST['mainTitle'];
+    $subTitle = $_POST['subTitile'];
+    $category = $_POST['categoryType'];
+    $description = $_POST['description'];
+
+    if (file_exists("upload/posts/" . $_FILES["img"]["name"])) {
+        $qry = "UPDATE post SET mainTitle = '$mainTitle', subTitle = '$subTitle', categoryType = '$category', description = '$description' WHERE id = '$id' ";
+        $run = mysqli_query($db, $qry);
+        if ($run) {
+            header("location: viewPosts.php?success");
+        } else {
+            header("location: viewPosts.php?fail");
+        }
+    } else {
+
+        $temp = explode(".", $_FILES["img"]["name"]);
+        $newfilename = round(microtime(true)) . '.' . end($temp);
+        move_uploaded_file($_FILES["img"]["tmp_name"], "upload/posts/" . $newfilename);
+        $qry = "UPDATE post SET mainTitle = '$mainTitle', subTitle = '$subTitle', img = '$newfilename', categoryType = '$category', description = '$description' WHERE id = '$id' ";
+        $run = mysqli_query($db, $qry);
+        if ($run) {
+            header("location: viewPosts.php?success");
+        } else {
+            header("location: viewPosts.php?fail");
+        }
+
+    }
+
+}
+
+//Delete post data
+
+if (isset($_GET['p_del'])) {
+    $id = $_GET['p_del'];
+    mysqli_query($db, "DELETE FROM post WHERE id=$id");
+    header('location: viewPosts.php');
+}
+

@@ -55,7 +55,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo-white.png" class="logo" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" class="logo" alt=""></a>
         </div>
         <!-- End Header Navigation -->
         <!-- Collect the nav links, forms, and other content for toggling -->

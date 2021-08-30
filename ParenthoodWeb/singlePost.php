@@ -1,3 +1,22 @@
+<?php include('./database/connection.php'); ?>
+<?php 
+    if(isset($_GET['post'])){
+        $id  = $_GET['post'];
+        $qry = "SELECT * FROM post WHERE id = $id";
+        $run = $db -> query($qry);
+        if($run->num_rows > 0){
+            while($row = $run->fetch_assoc()){
+                $id    = $row['id'];
+                $mainTitle = $row['mainTitle'];
+                $subTitle = $row['subTitle'];
+                $img   =    $row['img'];
+                $category = $row['categoryType'];
+                $description = $row['description'];
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,8 +67,8 @@
                                 <div class="details-body">
                                     <div class="post_details stickydetails">
                                         <header class="details-header">
-                                            <div class="post-cat"><a href="#">Fashion</a><a href="#">Travel</a><a href="#">Lifestyle</a></div>
-                                            <h2>There are many <em>variations of passages</em> of Lorem Ipsum available, but the majority.</h2>
+                                            <div class="post-cat"><a href="#"><?php echo $category ?></a></div>
+                                            <h2><?php echo $mainTitle ?></h2>
                                             <div class="element-block">
                                                 <div class="entry-meta">
                                                     <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
@@ -59,21 +78,20 @@
                                             </div>
                                         </header>
                                         <figure>
-                                            <img src="assets/img/details-4.jpg" alt="" class="aligncenter img-responsive">
+                                        <?php echo '<img class="aligncenter img-responsive" src="./admin/upload/posts/' .$img. '" alt="singlepost-img">' ?>
+                                            <!-- <img src="assets/img/details-4.jpg" alt="" class="aligncenter img-responsive"> -->
                                         </figure>
-                                        <h3>It is a long established fact that a reader will be distracted. </h3>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 
-                                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                        <h3><?php echo $subTitle ?></h3>
+                                        <p><?php echo $description ?></p>
+                                        <!-- <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
                                             desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
                                             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need 
                                             to be sure there isn't anything embarrassing hidden in the middle.</p>
                                         <a href="assets/img/details-2.jpg" class="fluidbox_img">
                                             <img src="assets/img/details-2.jpg" alt="Image" class="alignright img-responsive">
-                                        </a>
-                                        <p> Oh, you're gonna be in a coma, all right. I care deeply for nature. I care deeply for nature.
+                                        </a> -->
+                                        <!-- <p> Oh, you're gonna be in a coma, all right. I care deeply for nature. I care deeply for nature.
                                             I'm a monster. I don't criticize you! And if you're worried about criticism, sometimes a diet is 
                                             the best defense.</p>
                                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
@@ -85,21 +103,21 @@
                                         <blockquote>
                                             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
                                             by injected humour, or randomised words which don't look even slightly believable.
-                                        </blockquote>
-                                        <h3>There are many variations of passages of Lorem Ipsum available.</h3>
+                                        </blockquote> -->
+                                        <!-- <h3>There are many variations of passages of Lorem Ipsum available.</h3>
                                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
                                             making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
                                             obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered 
                                             the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
                                             by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
                                             "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                                        <p>
-                                            <a href="assets/img/details-5.jpg" class="fluidbox_img"><img src="assets/img/details-5.jpg" alt="Image" class="alignleft img-responsive"></a>
+                                        <p> -->
+                                            <!-- <a href="assets/img/details-5.jpg" class="fluidbox_img"><img src="assets/img/details-5.jpg" alt="Image" class="alignleft img-responsive"></a>
                                             Oh, you're gonna be in a coma, all right. I care deeply for nature. I care deeply for nature.
                                             I'm a monster. I don't criticize you! And if you're worried about criticism, sometimes a diet is 
                                             the best defense.
-                                        </p>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                        </p> -->
+                                        <!-- <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                                             The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
                                             here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use 
                                             Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
@@ -113,8 +131,8 @@
                                             <li>Donec eu neque at turpis tempus pretium rhoncus sed neque.</li>
                                             <li>In nec metus commodo, semper dolor vitae, volutpat lacus.</li>
                                             <li>Donec maximus dolor in felis ornare, et euismod enim lobortis.</li>
-                                        </ul>
-                                        <p>Source:&nbsp;https://unsplash.com/</p>
+                                        </ul> -->
+                                        <!-- <p>Source:&nbsp;https://unsplash.com/</p> -->
                                     </div>
                                     <!-- /.End of post details -->
                                     <div class="stickyshare">
