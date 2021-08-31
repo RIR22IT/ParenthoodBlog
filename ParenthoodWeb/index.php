@@ -1,5 +1,5 @@
-<?php include('./auth.php')?>
-<?php include('./database/connection.php')?>
+<?php include('./auth.php') ?>
+<?php include('./database/connection.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,19 +30,29 @@
         <!-- /.End of search full page  -->
         <!--<div class="height_40"></div>-->
         <!-- /.End of logo section -->
+
         <div class="container">
             <div class="newstricker_inner">
                 <div class="trending"><strong>TRENDING NOW</strong></div>
                 <div id="newsTicker" class="owl-carousel owl-theme">
-                    <!-- <div class="item">
-                            <a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                        </div> -->
-                    <div class="item">
-                        <a href="#">It is a long established fact that a reader will be distracted by the readable.</a>
-                    </div>
-                    <div class="item">
-                        <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text.</a>
-                    </div>
+
+                    <?php
+                    $qry = "SELECT * FROM post";
+                    $data = mysqli_query($db, $qry) or die('error');
+
+                    if (mysqli_num_rows($data) > 0) {
+                        while ($row = mysqli_fetch_assoc($data)) {
+                            $id  = $row['id'];
+                            $mainTitle = $row['mainTitle'];
+                    ?>
+
+                            <div class="item">
+                                <a href="#"><?php echo $mainTitle ?></a>
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -50,196 +60,217 @@
         <div class="news-masonry">
             <div class="container">
                 <div class="row mas-m">
-                    <div class="col-sm-6 mas-p">
-                        <div class="mas-item mas-big">
-                            <a href="#">
-                                <figure><img src="assets/img/masonry/568x450-01.jpg" class="img-responsive" alt="">
-                                </figure>
-                            </a>
-                            <div class="mas-text">
-                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                <h2 class="mas-title"><a href="#">It is a long <em>established</em> fact that a reader
-                                        will be distracted by the readable content</a></h2>
-                                <div class="mas-details">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form, by injected humour</p>
-                                    <a href="#" class="read-more">Read More &#8702;</a>
+                    <?php
+                    $qry = "SELECT * FROM singlevideo limit 1";
+                    $data = mysqli_query($db, $qry) or die('error');
+
+                    if (mysqli_num_rows($data) > 0) {
+                        while ($row = mysqli_fetch_assoc($data)) {
+                            $id  = $row['s_id'];
+                            $title = $row['title'];
+                            $category = $row['categoryType'];
+                            $link = $row['videoLink'];
+                            $currentDate = $row['date'];
+                            $date = date("d-m-Y", strtotime($currentDate));
+                            $url = substr($link, strpos($link, "v=") + 2);
+                    ?>
+
+                            <div class="col-sm-6 mas-p">
+                                <div class="mas-item mas-big">
+                                    <a href="#">
+                                        <figure>
+                                            <iframe allowfullscreen src="https://www.youtube.com/embed/<?php echo $url ?>" width="568" height="450"></iframe>
+                                        </figure>
+                                    </a>
+                                    <div class="mas-text">
+                                        <div class="post-cat"><a href="#"><?php echo $category ?></a></div>
+                                        <h2 class="mas-title"><a href="#"><?php echo $title ?></a></h2><br />
+                                        <div class="mas-details">
+                                            <a href="#" class="read-more">Read More &#8702;</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- /.End of masonry item -->
-                    </div>
+                    <?php
+                        }
+                    }
+                    ?>
+
+                    <!-- /.End of masonry item -->
 
                     <div class="col-sm-6 mas-p">
                         <div class="row mas-m">
+
                             <div class="col-xs-6 col-sm-6 mas-p">
                                 <div class="masonry-slide1 owl-carousel owl-theme">
-                                    <div class="item mas-m-b">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-01.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+
+                                    <?php
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'Parenthood Life' limit 2";
+                                    $data = mysqli_query($db, $qry) or die('error');
+
+                                    if (mysqli_num_rows($data) > 0) {
+                                        while ($row = mysqli_fetch_assoc($data)) {
+                                            $id  = $row['id'];
+                                            $mainTitle = $row['mainTitle'];
+                                            $categoryType = $row['categoryType'];
+                                            $description = $row['description'];
+                                            $img = $row['img'];
+                                    ?>
+
+                                            <div class="item mas-m-b">
+                                                <div class="mas-item masonry-sm">
+                                                    <a href="#">
+                                                        <figure><?php echo '<img src="./admin/upload/posts/' . $img . '" alt="" />' ?></figure>
+                                                    </a>
+                                                    <div class="mas-text">
+                                                        <div class="post-cat"><a href="#"><?php echo $categoryType ?></a></div>
+                                                        <h4 class="mas-title"><a href="#"><?php echo $mainTitle ?></a></h4>
+                                                        <div class="mas-details">
+                                                            <p><?php echo $description ?></p>
+                                                                <a href="#" class="read-more">Read More &#8702;</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <!-- /.End of masonry item -->
                                             </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
-                                    <div class="item mas-m-b">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-02.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+
                                 </div>
                             </div>
+
                             <div class="col-xs-6 col-sm-6 mas-p">
-                                <div class="masonry-slide2 owl-carousel owl-theme">
-                                    <div class="item">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-03.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+                                <div class="masonry-slide1 owl-carousel owl-theme">
+
+                                    <?php
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'Expecting Parents' limit 2";
+                                    $data = mysqli_query($db, $qry) or die('error');
+
+                                    function myTruncate($string, $limit, $break = ".", $pad = "...")
+                                    {
+                                        // return with no change if string is shorter than $limit
+                                        if (strlen($string) <= $limit) return $string;
+
+                                        // is $break present between $limit and the end of the string?
+                                        if (false !== ($breakpoint = strpos($string, $break, $limit))) {
+                                            if ($breakpoint < strlen($string) - 1) {
+                                                $string = substr($string, 0, $breakpoint) . $pad;
+                                            }
+                                        }
+
+                                        return $string;
+                                    }
+
+                                    if (mysqli_num_rows($data) > 0) {
+                                        while ($row = mysqli_fetch_assoc($data)) {
+                                            $id  = $row['id'];
+                                            $mainTitle = $row['mainTitle'];
+                                            $categoryType = $row['categoryType'];
+                                            $description = $row['description'];
+                                            $img = $row['img'];
+                                    ?>
+
+                                            <div class="item mas-m-b">
+                                                <div class="mas-item masonry-sm">
+                                                    <a href="#">
+                                                        <figure><?php echo '<img src="./admin/upload/posts/' . $img . '" alt="" />' ?></figure>
+                                                    </a>
+                                                    <div class="mas-text">
+                                                        <div class="post-cat"><a href="#"><?php echo $categoryType ?></a></div>
+                                                        <h4 class="mas-title"><a href="#"><?php echo $mainTitle ?></a></h4><br />
+                                                        <div class="mas-details">
+                                                        <p><?php echo $description ?></p>
+                                                            <a href="#" class="read-more">Read More &#8702;</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <!-- /.End of masonry item -->
                                             </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
-                                    <div class="item">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-04.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+
                                 </div>
                             </div>
+
                         </div>
                         <div class="hidden-xs row mas-m">
                             <div class="col-sm-6 mas-p">
-                                <div class="masonry-slide3 owl-carousel owl-theme">
-                                    <div class="item">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-05.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+                                <div class="masonry-slide1 owl-carousel owl-theme">
+
+                                    <?php
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'New Parents with Toddlers' limit 2";
+                                    $data = mysqli_query($db, $qry) or die('error');
+
+                                    if (mysqli_num_rows($data) > 0) {
+                                        while ($row = mysqli_fetch_assoc($data)) {
+                                            $id  = $row['id'];
+                                            $mainTitle = $row['mainTitle'];
+                                            $categoryType = $row['categoryType'];
+                                            $description = $row['description'];
+                                            $img = $row['img'];
+                                    ?>
+
+                                            <div class="item mas-m-b">
+                                                <div class="mas-item masonry-sm">
+                                                    <a href="#">
+                                                        <figure><?php echo '<img src="./admin/upload/posts/' . $img . '" alt="" />' ?></figure>
+                                                    </a>
+                                                    <div class="mas-text">
+                                                        <div class="post-cat"><a href="#"><?php echo $categoryType ?></a></div>
+                                                        <h4 class="mas-title"><a href="#"><?php echo $mainTitle ?></a></h4><br />
+                                                        <div class="mas-details">
+                                                        <p><?php echo $description ?></p>
+                                                            <a href="#" class="read-more">Read More &#8702;</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <!-- /.End of masonry item -->
                                             </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
-                                    <div class="item">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-06.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+
                                 </div>
                             </div>
                             <div class="col-sm-6 mas-p">
                                 <div class="masonry-slide4 owl-carousel owl-theme">
-                                    <div class="item">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-07.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+                                    <?php
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'Expert Advice' limit 2";
+                                    $data = mysqli_query($db, $qry) or die('error');
+
+                                    if (mysqli_num_rows($data) > 0) {
+                                        while ($row = mysqli_fetch_assoc($data)) {
+                                            $id  = $row['id'];
+                                            $mainTitle = $row['mainTitle'];
+                                            $categoryType = $row['categoryType'];
+                                            $description = $row['description'];
+                                            $img = $row['img'];
+                                    ?>
+                                            <div class="item">
+                                                <div class="mas-item masonry-sm">
+                                                    <a href="#">
+                                                        <figure><?php echo '<img src="./admin/upload/posts/' . $img . '" alt="" />' ?></figure>
+                                                    </a>
+                                                    <div class="mas-text">
+                                                        <div class="post-cat"><a href="#"><?php echo $categoryType ?></a></div>
+                                                        <h4 class="mas-title"><a href="#"><?php echo $mainTitle ?></a></h4><br />
+                                                        <div class="mas-details">
+                                                        <p><?php echo $description ?></p>
+                                                            <a href="#" class="read-more">Read More &#8702;</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <!-- /.End of masonry item -->
                                             </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
-                                    <div class="item">
-                                        <div class="mas-item masonry-sm">
-                                            <a href="#">
-                                                <figure><img src="assets/img/masonry/282x223-08.jpg"
-                                                        class="img-responsive" alt=""></figure>
-                                            </a>
-                                            <div class="mas-text">
-                                                <div class="post-cat"><a href="#">Fashion</a></div>
-                                                <h4 class="mas-title"><a href="#">It is a long <em>established</em> fact
-                                                        that a reader</a></h4>
-                                                <div class="mas-details">
-                                                    <p>There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.End of masonry item -->
-                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -247,193 +278,62 @@
                 </div>
             </div>
         </div>
+
         <!-- /.End of news masonry -->
         <div class="page-content">
             <!-- content goes here  -->
             <div class="container">
                 <div class="row">
                     <main class="col-sm-8 col-md-9 content p_r_40">
-                        <div class="media meida-md">
-                            <div class="media-left">
-                                <a href="#"><img src="assets/img/370x300-1.jpg" class="media-object" alt=""></a>
-                            </div>
-                            <!-- /.Post image -->
-                            <div class="media-body">
-                                <div class="post-header">
-                                    <div class="post-cat"><span>In</span> <a href="#">Lifestyle</a></div>
-                                    <h3 class="media-heading"><a href="#">It is a long <em>established fact</em> that a
-                                            reader will be distracted by the readable.</a></h3>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o"
-                                                aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                2018</time></span>
-                                        <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i>9 Comments</a></span>
-                                    </div>
-                                    <!-- /.Post meta -->
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some.</p>
-                                <div class="element-block">
-                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                    <!-- /.Post button -->
-                                    <div class="post_share">
-                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                        <a class="smedia linkedin fa fa-linkedin" href="#"></a>
-                                        <a class="smedia pinterest fa fa-pinterest-p" href="#"></a>
-                                    </div>
-                                    <!-- /.Post social share -->
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        $qry = "SELECT * FROM post";
+                        $data = mysqli_query($db, $qry) or die('error');
 
-                        <div class="media meida-md">
-                            <div class="media-left">
-                                <a href="#"><img src="assets/img/370x300-1.jpg" class="media-object" alt=""></a>
-                            </div>
-                            <!-- /.Post image -->
-                            <div class="media-body">
-                                <div class="post-header">
-                                    <div class="post-cat"><span>In</span> <a href="#">Lifestyle</a></div>
-                                    <h3 class="media-heading"><a href="#">It is a long <em>established fact</em> that a
-                                            reader will be distracted by the readable.</a></h3>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o"
-                                                aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                2018</time></span>
-                                        <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i>9 Comments</a></span>
+                        if (mysqli_num_rows($data) > 0) {
+                            while ($row = mysqli_fetch_assoc($data)) {
+                                $id  = $row['id'];
+                                $mainTitle = $row['mainTitle'];
+                                $subTitle = $row['subTitle'];
+                                $categoryType = $row['categoryType'];
+                                $description = $row['description'];
+                                $currentDate = $row['date'];
+                                $date = date("d-m-Y", strtotime($currentDate));
+                                $img = $row['img'];
+                        ?>
+                                <div class="media meida-md">
+                                    <div class="media-left">
+                                        <a href="#"><?php echo '<img src="./admin/upload/posts/' . $img . '" alt="" />' ?></a>
                                     </div>
-                                    <!-- /.Post meta -->
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some.</p>
-                                <div class="element-block">
-                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                    <!-- /.Post button -->
-                                    <div class="post_share">
-                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                        <a class="smedia linkedin fa fa-linkedin" href="#"></a>
-                                        <a class="smedia pinterest fa fa-pinterest-p" href="#"></a>
+                                    <!-- /.Post image -->
+                                    <div class="media-body">
+                                        <div class="post-header">
+                                            <div class="post-cat"><span>In</span> <a href="#"><?php echo $categoryType ?></a></div>
+                                            <h3 class="media-heading"><a href="#"><?php echo $mainTitle ?></a></h3>
+                                            <div class="entry-meta">
+                                                <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
+                                                <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
+                                            </div>
+                                            <!-- /.Post meta -->
+                                        </div>
+                                        <p><?php echo $description ?></p>
+                                        <div class="element-block">
+                                            <a href="post.php" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
+                                            <!-- /.Post button -->
+                                            <div class="post_share">
+                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
+                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
+                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
+                                                <a class="smedia linkedin fa fa-linkedin" href="#"></a>
+                                                <a class="smedia pinterest fa fa-pinterest-p" href="#"></a>
+                                            </div>
+                                            <!-- /.Post social share -->
+                                        </div>
                                     </div>
-                                    <!-- /.Post social share -->
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="media meida-md">
-                            <div class="media-left">
-                                <a href="#"><img src="assets/img/370x300-1.jpg" class="media-object" alt=""></a>
-                            </div>
-                            <!-- /.Post image -->
-                            <div class="media-body">
-                                <div class="post-header">
-                                    <div class="post-cat"><span>In</span> <a href="#">Lifestyle</a></div>
-                                    <h3 class="media-heading"><a href="#">It is a long <em>established fact</em> that a
-                                            reader will be distracted by the readable.</a></h3>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o"
-                                                aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                2018</time></span>
-                                        <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i>9 Comments</a></span>
-                                    </div>
-                                    <!-- /.Post meta -->
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some.</p>
-                                <div class="element-block">
-                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                    <!-- /.Post button -->
-                                    <div class="post_share">
-                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                        <a class="smedia linkedin fa fa-linkedin" href="#"></a>
-                                        <a class="smedia pinterest fa fa-pinterest-p" href="#"></a>
-                                    </div>
-                                    <!-- /.Post social share -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="media meida-md">
-                            <div class="media-left">
-                                <a href="#"><img src="assets/img/370x300-1.jpg" class="media-object" alt=""></a>
-                            </div>
-                            <!-- /.Post image -->
-                            <div class="media-body">
-                                <div class="post-header">
-                                    <div class="post-cat"><span>In</span> <a href="#">Lifestyle</a></div>
-                                    <h3 class="media-heading"><a href="#">It is a long <em>established fact</em> that a
-                                            reader will be distracted by the readable.</a></h3>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o"
-                                                aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                2018</time></span>
-                                        <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i>9 Comments</a></span>
-                                    </div>
-                                    <!-- /.Post meta -->
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some.</p>
-                                <div class="element-block">
-                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                    <!-- /.Post button -->
-                                    <div class="post_share">
-                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                        <a class="smedia linkedin fa fa-linkedin" href="#"></a>
-                                        <a class="smedia pinterest fa fa-pinterest-p" href="#"></a>
-                                    </div>
-                                    <!-- /.Post social share -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="media meida-md">
-                            <div class="media-left">
-                                <a href="#"><img src="assets/img/370x300-7.jpg" class="media-object" alt=""></a>
-                            </div>
-                            <!-- /.Post image -->
-                            <div class="media-body">
-                                <div class="post-header">
-                                    <div class="post-cat"><span>In</span> <a href="#">Lifestyle</a></div>
-                                    <h3 class="media-heading"><a href="#">It is a long <em>established fact</em> that a
-                                            reader will be distracted by the readable.</a></h3>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o"
-                                                aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                2018</time></span>
-                                        <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i>9 Comments</a></span>
-                                    </div>
-                                    <!-- /.Post meta -->
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some.</p>
-                                <div class="element-block">
-                                    <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                    <!-- /.Post button -->
-                                    <div class="post_share">
-                                        <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                        <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                        <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                        <a class="smedia linkedin fa fa-linkedin" href="#"></a>
-                                        <a class="smedia pinterest fa fa-pinterest-p" href="#"></a>
-                                    </div>
-                                    <!-- /.Post social share -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.End of media left post -->
-                        <!-- /.End of Load more -->
+                        <?php
+                            }
+                        }
+                        ?>
                         <ul class="pagination">
                             <li class="disabled"><a href="#">&#8701;</a></li>
                             <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
@@ -447,86 +347,73 @@
                     </main>
                     <aside class="col-sm-4 col-md-3 rightSidebar">
                         <?php
-                               $qry = "SELECT * FROM homead WHERE h_Id='1'";
-                               $data = mysqli_query($db, $qry) or die('error');
+                        $qry = "SELECT * FROM homead WHERE h_Id='1'";
+                        $data = mysqli_query($db, $qry) or die('error');
 
-                               if(mysqli_num_rows($data) > 0){
-                                   while($row = mysqli_fetch_assoc($data)){
-                                       $id = $row['h_Id'];
-                                       $img = $row['img'];
+                        if (mysqli_num_rows($data) > 0) {
+                            while ($row = mysqli_fetch_assoc($data)) {
+                                $id = $row['h_Id'];
+                                $img = $row['img'];
                         ?>
-                        <div class="banner-content">
-                            <?php echo'<img src="./admin/upload/homeAd/' .$img. '"alt="ad" class="img-responsive center-block">' ?>
-                        </div>
-                        <?php
-                                   }
-                               }
-                        ?>
-                        <!-- /.End of about -->
-                        <div class="social_share_btn">
-                            <div class="title-holder">
-                                <h3 class="title">Subscribe</h3>
-                                <span class="title-shape title-shape-dark"></span>
-                            </div>
-                            <!--  /.End of title -->
-                            <ul>
-                                <li class="li-facebook"><a href="https://www.facebook.com/parenthoodglobal"
-                                        target="_blank"><i class="fa fa-facebook"></i>
-                                        Facebook</a></li>
-                                <li class="li-pinterest"><a
-                                        href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA"
-                                        target="_blank"><i class="fa fa-youtube"></i>
-                                        Youtube</a></li>
-                                <li class="li-twitter"><a href="https://www.linkedin.com/company/parenthood-sri-lanka"
-                                        target="_blank"><i class="fa fa-linkedin"></i>
-                                        Linkedin</a></li>
-                                <li class="li-pinterest"><a href="https://www.pinterest.com/parenthoodglobal/_saved"
-                                        target="_blank"><i class="fa fa-pinterest-p"></i>
-                                        Pinterest</a></li>
-                            </ul>
-                        </div>
-                        <!-- /.End of subscribe -->
+                                <div class="banner-content">
+                                    <?php echo '<img src="./admin/upload/homeAd/' . $img . '"alt="ad" class="img-responsive center-block">' ?>
+                                </div>
+                                <!-- /.End of about -->
+                                <div class="social_share_btn">
+                                    <div class="title-holder">
+                                        <h3 class="title">Subscribe</h3>
+                                        <span class="title-shape title-shape-dark"></span>
+                                    </div>
+                                    <!--  /.End of title -->
+                                    <ul>
+                                        <li class="li-facebook"><a href="https://www.facebook.com/parenthoodglobal" target="_blank"><i class="fa fa-facebook"></i>
+                                                Facebook</a></li>
+                                        <li class="li-pinterest"><a href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA" target="_blank"><i class="fa fa-youtube"></i>
+                                                Youtube</a></li>
+                                        <li class="li-twitter"><a href="https://www.linkedin.com/company/parenthood-sri-lanka" target="_blank"><i class="fa fa-linkedin"></i>
+                                                Linkedin</a></li>
+                                        <li class="li-pinterest"><a href="https://www.pinterest.com/parenthoodglobal/_saved" target="_blank"><i class="fa fa-pinterest-p"></i>
+                                                Pinterest</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /.End of subscribe -->
 
-                        <!-- /.End of latest post -->
-                        <div class="category_widget">
-                            <div class="title-holder">
-                                <h3 class="title">Category</h3>
-                                <span class="title-shape title-shape-dark"></span>
-                            </div>
-                            <!--  /.End of title -->
-                            <a class="category" href="">
-                                <figure><img src="assets/img/category-1.jpg" class="img-responsive" alt=""></figure>
-                                <div class="category_name">Execting Parents</div>
-                            </a>
-                            <!-- /.End of category -->
-                            <a class="category" href="">
-                                <figure><img src="assets/img/category-2.jpg" class="img-responsive" alt=""></figure>
-                                <div class="category_name">New Parents with Toddlers</div>
-                            </a>
-                            <!-- /.End of category -->
-                            <a class="category" href="">
-                                <figure><img src="assets/img/category-3.jpg" class="img-responsive" alt=""></figure>
-                                <div class="category_name">Parents of Schoolers</div>
-                            </a>
-                            <!-- /.End of category -->
-                        </div>
-                        <!-- /.End of category widget -->
+                                <!-- /.End of latest post -->
+                                <div class="category_widget">
+                                    <div class="title-holder">
+                                        <h3 class="title">Category</h3>
+                                        <span class="title-shape title-shape-dark"></span>
+                                    </div>
+                                    <!--  /.End of title -->
+                                    <a class="category" href="">
+                                        <figure><img src="assets/img/category-1.jpg" class="img-responsive" alt=""></figure>
+                                        <div class="category_name">Execting Parents</div>
+                                    </a>
+                                    <!-- /.End of category -->
+                                    <a class="category" href="">
+                                        <figure><img src="assets/img/category-2.jpg" class="img-responsive" alt=""></figure>
+                                        <div class="category_name">New Parents with Toddlers</div>
+                                    </a>
+                                    <!-- /.End of category -->
+                                    <a class="category" href="">
+                                        <figure><img src="assets/img/category-3.jpg" class="img-responsive" alt=""></figure>
+                                        <div class="category_name">Parents of Schoolers</div>
+                                    </a>
+                                    <!-- /.End of category -->
+                                </div>
+                                <!-- /.End of category widget -->
 
-                        <div class="fb_like">
-                            <div class="title-holder">
-                                <h3 class="title">Facebook</h3>
-                                <span class="title-shape title-shape-dark"></span>
-                            </div>
-                            <!--  /.End of title -->
-                            <div class="fb-page" data-href="https://www.facebook.com/parenthoodglobal"
-                                data-tabs="timeline" data-width="268" data-height="214" data-small-header="false"
-                                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                <blockquote cite="https://www.facebook.com/parenthoodglobal"
-                                    class="fb-xfbml-parse-ignore"><a
-                                        href="https://www.facebook.com/parenthoodglobal">Parenthood Sri Lanka</a>
-                                </blockquote>
-                            </div>
-                        </div>
+                                <div class="fb_like">
+                                    <div class="title-holder">
+                                        <h3 class="title">Facebook</h3>
+                                        <span class="title-shape title-shape-dark"></span>
+                                    </div>
+                                    <!--  /.End of title -->
+                                    <div class="fb-page" data-href="https://www.facebook.com/parenthoodglobal" data-tabs="timeline" data-width="268" data-height="214" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                        <blockquote cite="https://www.facebook.com/parenthoodglobal" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/parenthoodglobal">Parenthood Sri Lanka</a>
+                                        </blockquote>
+                                    </div>
+                                </div>
 
                     </aside>
                 </div>
@@ -545,27 +432,26 @@
                                 <!-- the class "videoWrapper169" means a 16:9 aspect ration video. Another option is "videoWrapper43" for 4:3. -->
                                 <div class="videoWrapper videoWrapper169 js-videoWrapper">
                                     <?php
-                                        $sql = "SELECT link FROM video WHERE v_id = '1'";
-                                        $exe = mysqli_query($db, $sql);
-                                        $rowSelect = mysqli_fetch_array($exe);
-                                        if ($rowSelect['link'] != "") {
+                                    $sql = "SELECT link FROM video WHERE v_id = '1'";
+                                    $exe = mysqli_query($db, $sql);
+                                    $rowSelect = mysqli_fetch_array($exe);
+                                    if ($rowSelect['link'] != "") {
                                     ?>
 
-                                    <?php
+                                        <?php
                                         $url = $rowSelect['link'];
                                         $link = substr($url, strpos($url, "v=") + 2);
-                                    ?>
+                                        ?>
 
-                                    <!-- YouTube iframe. -->
-                                    <!-- note the iframe src is empty by default, the url is in the data-src="" argument -->
-                                    <!-- also note the arguments on the url, to autoplay video, remove youtube adverts/dodgy links to other videos, and set the interface language -->
-                                    <iframe class="videoIframe js-videoIframe" allowfullscreen
-                                        src="https://www.youtube.com/embed/<?php echo $link; ?>"></iframe>
-                                    <!-- the poster frame - in the form of a button to make it keyboard accessible -->
-                                    <!-- <button class="videoPoster js-videoPoster"
+                                        <!-- YouTube iframe. -->
+                                        <!-- note the iframe src is empty by default, the url is in the data-src="" argument -->
+                                        <!-- also note the arguments on the url, to autoplay video, remove youtube adverts/dodgy links to other videos, and set the interface language -->
+                                        <iframe class="videoIframe js-videoIframe" allowfullscreen src="https://www.youtube.com/embed/<?php echo $link; ?>"></iframe>
+                                        <!-- the poster frame - in the form of a button to make it keyboard accessible -->
+                                        <!-- <button class="videoPoster js-videoPoster"
                                         style="background-image:url(assets/img/youtube-video.jpg);">Play video</button> -->
                                     <?php
-                                        }
+                                    }
                                     ?>
                                 </div>
                                 <!--<button onclick="videoStop()">external close button</button>-->
@@ -576,33 +462,45 @@
                 </div>
             </div>
         </div>
-        <!--  /.End of youtube video -->
-        <div class="page-content">
-            <div class="container">
-                <div class="row">
-                    <main class="col-sm-12">
-                        <div id="macy-container">
+<?php
+                            }
+                        }
+?>
+<!--  /.End of youtube video -->
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <main class="col-sm-12">
+                <div id="macy-container">
+                    <?php
+                    $qry = "SELECT * FROM singlevideo  WHERE s_id != $id limit 4";
+                    $data = mysqli_query($db, $qry) or die('error');
+
+                    if (mysqli_num_rows($data) > 0) {
+                        while ($row = mysqli_fetch_assoc($data)) {
+                            $id  = $row['s_id'];
+                            $title = $row['title'];
+                            $category = $row['categoryType'];
+                            $link = $row['videoLink'];
+                            $currentDate = $row['date'];
+                            $date = date("d-m-Y", strtotime($currentDate));
+                            $url = substr($link, strpos($link, "v=") + 2);
+                    ?>
 
                             <article class="grid_post video_grid">
                                 <figure>
-                                    <a href="#" class="grid_image">
-                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                        <span class="post__icon post__icon--video"></span>
+                                    <a href="singleVideo.php?video=<?php echo $id ?>" class="grid_image">
+                                        <iframe class="img-responsive" allowfullscreen src="https://www.youtube.com/embed/<?php echo $url ?>"></iframe>
                                     </a>
                                     <figcaption>
-                                        <div class="post-cat"><a href="#">Fashion</a></div>
+                                        <div class="post-cat"><a href="singleVideo.php?video=<?php echo $id ?>"><?php echo $category ?></a></div>
                                         <div class="entry-meta">
-                                            <span class="entry-date"><i class="fa fa-calendar-o"
-                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                    2018</time></span>
-                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                        aria-hidden="true"></i>9 Comments</a></span>
+                                            <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
+                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
                                         </div>
-                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                of passages of Lorem Ipsum available</a></h4>
+                                        <h4 class="grid_post_title"><a href="singleVideo.php?video=<?php echo $id ?>"><?php echo $title ?></a></h4>
                                         <div class="element-block">
-                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                &#8702;</a>
+                                            <a href="singleVideo.php?video=<?php echo $id ?>" class="btn link-btn btn-outline btn-rounded">Reading&#8702;</a>
                                             <!-- /.Post button -->
                                             <div class="post_share">
                                                 <a class="smedia facebook fa fa-facebook" href="#"></a>
@@ -614,107 +512,15 @@
                                     </figcaption>
                                 </figure>
                             </article>
-
-                            <article class="grid_post video_grid">
-                                <figure>
-                                    <a href="#" class="grid_image">
-                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                        <span class="post__icon post__icon--video"></span>
-                                    </a>
-                                    <figcaption>
-                                        <div class="post-cat"><a href="#">Fashion</a></div>
-                                        <div class="entry-meta">
-                                            <span class="entry-date"><i class="fa fa-calendar-o"
-                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                    2018</time></span>
-                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                        aria-hidden="true"></i>9 Comments</a></span>
-                                        </div>
-                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                of passages of Lorem Ipsum available</a></h4>
-                                        <div class="element-block">
-                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                &#8702;</a>
-                                            <!-- /.Post button -->
-                                            <div class="post_share">
-                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                            </div>
-                                            <!-- /.Post social share -->
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-
-                            <article class="grid_post video_grid">
-                                <figure>
-                                    <a href="#" class="grid_image">
-                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                        <span class="post__icon post__icon--video"></span>
-                                    </a>
-                                    <figcaption>
-                                        <div class="post-cat"><a href="#">Fashion</a></div>
-                                        <div class="entry-meta">
-                                            <span class="entry-date"><i class="fa fa-calendar-o"
-                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                    2018</time></span>
-                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                        aria-hidden="true"></i>9 Comments</a></span>
-                                        </div>
-                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                of passages of Lorem Ipsum available</a></h4>
-                                        <div class="element-block">
-                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                &#8702;</a>
-                                            <!-- /.Post button -->
-                                            <div class="post_share">
-                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                            </div>
-                                            <!-- /.Post social share -->
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-
-                            <article class="grid_post video_grid">
-                                <figure>
-                                    <a href="#" class="grid_image">
-                                        <img src="assets/img/grid-3.jpg" class="img-responsive" alt="">
-                                        <span class="post__icon post__icon--video"></span>
-                                    </a>
-                                    <figcaption>
-                                        <div class="post-cat"><a href="#">Fashion</a></div>
-                                        <div class="entry-meta">
-                                            <span class="entry-date"><i class="fa fa-calendar-o"
-                                                    aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                                    2018</time></span>
-                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o"
-                                                        aria-hidden="true"></i>9 Comments</a></span>
-                                        </div>
-                                        <h4 class="grid_post_title"><a href="#">There are <em>many variations</em>
-                                                of passages of Lorem Ipsum available</a></h4>
-                                        <div class="element-block">
-                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading
-                                                &#8702;</a>
-                                            <!-- /.Post button -->
-                                            <div class="post_share">
-                                                <a class="smedia facebook fa fa-facebook" href="#"></a>
-                                                <a class="smedia twitter fa fa-twitter" href="#"></a>
-                                                <a class="smedia googleplus fa fa-google-plus" href="#"></a>
-                                            </div>
-                                            <!-- /.Post social share -->
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                        </div>
-                    </main>
+                    <?php
+                        }
+                    }
+                    ?>
                 </div>
-            </div>
+            </main>
         </div>
+    </div>
+</div>
 
     </div>
 
@@ -741,12 +547,10 @@
                                 <div class="ui horizontal divider">Or </div>
                                 <p>Sign in Using Your Email Address</p>
                                 <div class="form-group">
-                                    <input class="form-control" name="f_name" id="f_name2"
-                                        placeholder="Username or email" type="text">
+                                    <input class="form-control" name="f_name" id="f_name2" placeholder="Username or email" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" name="pass" id="pass" placeholder="Password"
-                                        type="text">
+                                    <input class="form-control" name="pass" id="pass" placeholder="Password" type="text">
                                 </div>
                                 <div class="block-content">
 
@@ -768,28 +572,22 @@
                                 <h2 class="text-center">Sign Up For Free</h2>
                                 <form method="POST" action="auth.php">
                                     <div class="form-group">
-                                        <input class="form-control" name="firstname" id="firstname"
-                                            placeholder="First Name" type="text">
+                                        <input class="form-control" name="firstname" id="firstname" placeholder="First Name" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="lastname" id="lastname"
-                                            placeholder="Last Name" type="text">
+                                        <input class="form-control" name="lastname" id="lastname" placeholder="Last Name" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="email" id="email"
-                                            placeholder="Enter Your Email" type="text">
+                                        <input class="form-control" name="email" id="email" placeholder="Enter Your Email" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="mobile" id="mobile"
-                                            placeholder="Enter Your Mobile" type="text">
+                                        <input class="form-control" name="mobile" id="mobile" placeholder="Enter Your Mobile" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="password" id="password"
-                                            placeholder="Enter Your Password" type="password">
+                                        <input class="form-control" name="password" id="password" placeholder="Enter Your Password" type="password">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="r_pass" id="r_pass"
-                                            placeholder="Retype Your Password" type="password">
+                                        <input class="form-control" name="r_pass" id="r_pass" placeholder="Retype Your Password" type="password">
                                     </div>
                                     <div class="block-content">
                                         <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are
@@ -827,11 +625,31 @@
     <script src="assets/js/readingTime.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
-    $(document).ready(function() {
-        'use strict';
-        //Grid content 
+        $(document).ready(function() {
+            'use strict';
+            //Grid content 
+            var masonry = new Macy({
+                container: '.grid-content',
+                trueOrder: false,
+                waitForImages: false,
+                useOwnImageLoader: false,
+                debug: true,
+                mobileFirst: true,
+                columns: 1,
+                margin: 30,
+                breakAt: {
+                    1200: 2,
+                    992: 2,
+                    768: 2,
+                    480: 2
+                }
+            });
+        });
+    </script>
+
+    <script>
         var masonry = new Macy({
-            container: '.grid-content',
+            container: '#macy-container',
             trueOrder: false,
             waitForImages: false,
             useOwnImageLoader: false,
@@ -840,32 +658,12 @@
             columns: 1,
             margin: 30,
             breakAt: {
-                1200: 2,
-                992: 2,
+                1200: 4,
+                992: 3,
                 768: 2,
                 480: 2
             }
         });
-    });
-    </script>
-
-    <script>
-    var masonry = new Macy({
-        container: '#macy-container',
-        trueOrder: false,
-        waitForImages: false,
-        useOwnImageLoader: false,
-        debug: true,
-        mobileFirst: true,
-        columns: 1,
-        margin: 30,
-        breakAt: {
-            1200: 4,
-            992: 3,
-            768: 2,
-            480: 2
-        }
-    });
     </script>
 </body>
 
