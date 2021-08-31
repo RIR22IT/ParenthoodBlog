@@ -12,7 +12,7 @@ if(isset($_FILES['upload']['name']))
  $allowed_extension = array("jpg", "gif", "png");
  if(in_array($extension, $allowed_extension))
  {
-  move_uploaded_file($file, './images/' . $new_image_name);
+  move_uploaded_file($file, '../images/' . $new_image_name);
   $function_number = $_GET['CKEditorFuncNum'];
   $url = '../images/' . $new_image_name;
   $message = '';

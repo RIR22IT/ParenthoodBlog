@@ -181,7 +181,7 @@ if (!isset($_SESSION['email'])) {
     <script>
         CKEDITOR.replace('description', {
             height: 300,
-            filebrowserUploadUrl: "../upload.php"
+            filebrowserUploadUrl: "./upload.php"
         })
     </script>
 
