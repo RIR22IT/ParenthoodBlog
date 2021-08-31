@@ -151,7 +151,7 @@ if (isset($_POST['postBtn'])) {
         $temp        = explode(".", $_FILES["img"]["name"]);
         $newfilename = round(microtime(true)) . '.' . end($temp);
         move_uploaded_file($_FILES["img"]["tmp_name"], "upload/posts/" . $newfilename);
-        $qry                 = "INSERT INTO post (mainTitle, img, subTitle, categoryType, description) VALUES ('$mainTitle', '$newfilename', '$subTitle', '$categoryType', '$description')";
+        $qry                 = "INSERT INTO post (mainTitle, img, subTitle, categoryType, description, date) VALUES ('$mainTitle', '$newfilename', '$subTitle', '$categoryType', '$description', NOW())";
         $run                 = mysqli_query($db, $qry);
         $_SESSION['message'] = "Added successfully";
     }
