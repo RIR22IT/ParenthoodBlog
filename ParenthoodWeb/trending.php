@@ -1,3 +1,20 @@
+<?php include('./database/connection.php'); ?>
+<?php
+    $qry = "SELECT * FROM trending";
+    $data = mysqli_query($db, $qry) or die('error');
+
+    if(mysqli_num_rows($data) > 0){
+        while($row = mysqli_fetch_assoc($data)){
+            $title = $row['mainTitle'];
+            $cat   = $row['category'];
+            $des   = $row['description'];
+            $img   = $row['mainImage'];
+            $currentDate = $row['created_at'];
+            $today = date('d-m-Y');
+            $date = date("d-m-Y", strtotime($currentDate));
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,7 +22,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>OSRU - News, Blog & Magazine HTML Template</title>
+        <title>Parenthood - Trending</title>
         <link href="assets/img/favicon.png" rel="icon">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/animsition.min.css" rel="stylesheet">
@@ -47,28 +64,27 @@
                                 <div class="details-body">
                                     <div class="post_details stickydetails">
                                         <header class="details-header">
-                                            <div class="post-cat"><a href="#">Fashion</a><a href="#">Travel</a><a href="#">Lifestyle</a></div>
-                                            <h2>There are many <em>variations of passages</em> of Lorem Ipsum available, but the majority.</h2>
+                                            <div class="post-cat"><a href="#"><?php echo $cat ?></a></div>
+                                            <h2><?php echo $title ?></h2>
                                             <div class="element-block">
                                                 <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
+                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span> 
                                                     <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
                                                 </div>
-                                                <div class="reading-time"><span class="eta"></span> (<span class="words"></span> words)</div>
+                                                <!-- <div class="reading-time"><span class="eta"></span> (<span class="words"></span> words)</div> -->
                                             </div>
                                         </header>
                                         <figure>
-                                            <img src="assets/img/details-4.jpg" alt="" class="aligncenter img-responsive">
+                                            <?php echo '<img class="aligncenter img-responsive" src="./admin/upload/trending/' .$img. '" alt="Trending-Image">' ?>
+                                            <!-- <img src="assets/img/details-4.jpg" alt="" class="aligncenter img-responsive"> -->
                                         </figure>
                                         <!-- <h3>It is a long established fact that a reader will be distracted. </h3> -->
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 
-                                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                        <p style="white-space: pre-line; white-space: pre-wrap;"><?php echo $des ?></p>
+                                        <!-- <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
                                             desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
                                             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need 
-                                            to be sure there isn't anything embarrassing hidden in the middle.</p>
+                                            to be sure there isn't anything embarrassing hidden in the middle.</p> -->
                                         <!-- <a href="assets/img/details-2.jpg" class="fluidbox_img">
                                             <img src="assets/img/details-2.jpg" alt="Image" class="alignright img-responsive">
                                         </a> -->
