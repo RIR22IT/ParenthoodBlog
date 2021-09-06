@@ -1,5 +1,5 @@
-<?php include('../database/connection.php'); ?>
-<?php include('../admin/php_code.php'); ?>
+<?php include '../database/connection.php'; ?>
+<?php include '../admin/php_code.php'; ?>
 
 <?php
 session_start();
@@ -11,16 +11,16 @@ if (!isset($_SESSION['email'])) {
 
 <?php
 if (isset($_GET['p_edit'])) {
-    $id = $_GET['p_edit'];
+    $id     = $_GET['p_edit'];
     $update = true;
     $record = mysqli_query($db, "SELECT * FROM post WHERE id=$id");
     if ($record->num_rows > 0) {
         while ($n = $record->fetch_assoc()) {
-            $id   = $n['id'];
-            $mainTitle = $n['mainTitle'];
-            $img = $n['img'];
-            $subTitle = $n['subTitle'];
-            $category = $n['categoryType'];
+            $id          = $n['id'];
+            $mainTitle   = $n['mainTitle'];
+            $img         = $n['img'];
+            $subTitle    = $n['subTitle'];
+            $category    = $n['categoryType'];
             $description = $n['description'];
         }
     }
@@ -89,7 +89,7 @@ if (isset($_GET['p_edit'])) {
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include('./pageWrapper.php') ?>
+        <?php include './pageWrapper.php' ?>
 
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -166,28 +166,28 @@ if (isset($_GET['p_edit'])) {
                                 <select class="form-control" id="type" name="categoryType" style="height: 40px;"
                                     required>
                                     <option value="Parenthood Life" <?php
-                                                                    if ($categoryType == 'Parenthood Life') {
-                                                                        echo "selected";
-                                                                    }
-                                                                    ?>>Parenthood Life</option>
+if ($categoryType == 'Parenthood Life') {
+    echo "selected";
+}
+?>>Parenthood Life</option>
 
                                     <option value="Expecting Parents" <?php
-                                                                        if ($categoryType == 'Expecting Parents') {
-                                                                            echo "selected";
-                                                                        }
-                                                                        ?>>Expecting Parents</option>
+if ($categoryType == 'Expecting Parents') {
+    echo "selected";
+}
+?>>Expecting Parents</option>
 
                                     <option value="New Parents with Toddlers" <?php
-                                                                                if ($categoryType == 'New Parents with Toddlers') {
-                                                                                    echo "selected";
-                                                                                }
-                                                                                ?>>New Parents with Toddlers</option>
+if ($categoryType == 'New Parents with Toddlers') {
+    echo "selected";
+}
+?>>New Parents with Toddlers</option>
 
                                     <option value="Expert Advice" <?php
-                                                                    if ($categoryType == 'Expert Advice') {
-                                                                        echo "selected";
-                                                                    }
-                                                                    ?>>Expert Advice</option>
+if ($categoryType == 'Expert Advice') {
+    echo "selected";
+}
+?>>Expert Advice</option>
                                 </select>
                             </div><br><br><br><br>
 

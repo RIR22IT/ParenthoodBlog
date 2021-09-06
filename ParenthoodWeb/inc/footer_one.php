@@ -23,7 +23,7 @@ include('./database/connection.php');
         <img class="ri-loading-image" src="assets/img/loading.gif" alt="" />
         <ul>
             <?php
-            $qry = "SELECT * FROM footerImage";
+            $qry = "SELECT * FROM footerimage";
             $data = mysqli_query($db, $qry) or die('error');
 
             if (mysqli_num_rows($data) > 0) {
