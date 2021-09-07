@@ -23,7 +23,8 @@
                         <a href="#"><i class="fa fa-youtube-play"></i></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal">Login / Register</a>
+                        <a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal">
+                        </a>
                     </li>
                     <!-- <li>
                         <div class="weather-top">
