@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>OSRU - News, Blog & Magazine HTML Template</title>
-        <link href="assets/img/favicon.jpg" rel="icon">
+        <link href="assets/img/favicon.png" rel="icon">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/animsition.min.css" rel="stylesheet">
         <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -134,14 +134,14 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="about-me.html">About</a></li>
                                         <li><a href="portfolio.html">Portfolio</a></li>
-                                        <li class="dropdown">
+                                        <li class="dropdown active">
                                             <a href="#" class="dropdown-toggle" >Category Type</a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="post-classic.html">Classic</a></li>
-                                                <li class="dropdown">
+                                                <li class="dropdown active">
                                                     <a href="#" class="dropdown-toggle">List Layout</a>
                                                     <ul class="dropdown-menu">
-                                                        <li><a href="post-list+left-right.html">Post List + Left Right Sidebar</a></li>
+                                                        <li class="active"><a href="post-list+left-right.html">Post List + Left Right Sidebar</a></li>
                                                         <li><a href="post-list+left-sidebar.html">Post List + Left Sidebar</a></li>
                                                         <li><a href="post-list+right-sidebar.html">Post List + Right Sidebar</a></li>
                                                     </ul>
@@ -156,11 +156,11 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown active">
+                                        <li class="dropdown">
                                             <a href="#" class="dropdown-toggle">Post Type</a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="details-classic.html">Post - Classic</a></li>
-                                                <li class="active"><a href="details-image.html">Post - Image</a></li>
+                                                <li><a href="details-image.html">Post - Image</a></li>
                                                 <li><a href="details-gallery.html">Post - Gallery</a></li>
                                                 <li><a href="details-video.html">Post - Video</a></li>
                                                 <li><a href="details-video-2.html">Post - Video - Two</a></li>
@@ -548,7 +548,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h3>Post Details</h3>
+                                <h3>Post Left Right Sidebar</h3>
                                 <ol class="breadcrumb">
                                     <li><a href="#">Home</a></li>
                                     <li><a href="#">Post Formats</a></li>
@@ -560,410 +560,7 @@
                 </div>
                 <!-- /.End of page header -->
                 <div class="page-content">
-                    <div class="container">
-                        <div class="row">
-                            <main class="col-sm-8 col-md-9 content p_r_40">
-                                <div class="details-body">
-                                    <div class="post_details stickydetails">
-                                        <header class="details-header">
-                                            <div class="post-cat"><a href="#">Fashion</a><a href="#">Travel</a><a href="#">Lifestyle</a></div>
-                                            <h2>There are many <em>variations of passages</em> of Lorem Ipsum available, but the majority.</h2>
-                                            <div class="element-block">
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span> 
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                                <div class="reading-time"><span class="eta"></span> (<span class="words"></span> words)</div>
-                                            </div>
-                                        </header>
-                                        <figure>
-                                            <img src="assets/img/details-4.jpg" alt="" class="aligncenter img-responsive">
-                                        </figure>
-                                        <h3>It is a long established fact that a reader will be distracted. </h3>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 
-                                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                                            desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
-                                            humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need 
-                                            to be sure there isn't anything embarrassing hidden in the middle.</p>
-                                        <a href="assets/img/details-2.jpg" class="fluidbox_img">
-                                            <img src="assets/img/details-2.jpg" alt="Image" class="alignright img-responsive">
-                                        </a>
-                                        <p> Oh, you're gonna be in a coma, all right. I care deeply for nature. I care deeply for nature.
-                                            I'm a monster. I don't criticize you! And if you're worried about criticism, sometimes a diet is 
-                                            the best defense.</p>
-                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
-                                            making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
-                                            obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered 
-                                            the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
-                                            by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
-                                            "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                                        <blockquote>
-                                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
-                                            by injected humour, or randomised words which don't look even slightly believable.
-                                        </blockquote>
-                                        <h3>There are many variations of passages of Lorem Ipsum available.</h3>
-                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
-                                            making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
-                                            obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered 
-                                            the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
-                                            by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
-                                            "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                                        <p>
-                                            <a href="assets/img/details-5.jpg" class="fluidbox_img"><img src="assets/img/details-5.jpg" alt="Image" class="alignleft img-responsive"></a>
-                                            Oh, you're gonna be in a coma, all right. I care deeply for nature. I care deeply for nature.
-                                            I'm a monster. I don't criticize you! And if you're worried about criticism, sometimes a diet is 
-                                            the best defense.
-                                        </p>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                                            here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use 
-                                            Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
-                                            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                                        <h4>It is a long established fact that a reader will be distracted</h4>
-                                        <ul>
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                            <li>Quisque mollis quam vitae arcu cursus lacinia.</li>
-                                            <li>Praesent condimentum nunc eget ligula rutrum pretium.</li>
-                                            <li>Fusce rhoncus eros et auctor tincidunt.</li>
-                                            <li>Donec eu neque at turpis tempus pretium rhoncus sed neque.</li>
-                                            <li>In nec metus commodo, semper dolor vitae, volutpat lacus.</li>
-                                            <li>Donec maximus dolor in felis ornare, et euismod enim lobortis.</li>
-                                        </ul>
-                                        <p>Source:&nbsp;https://unsplash.com/</p>
-                                    </div>
-                                    <!-- /.End of post details -->
-                                    <div class="stickyshare">
-                                        <aside class="share_article">
-                                            <a href="#" class="boxed_icon facebook" data-share-url="http://mightymedia.nl" data-share-network="facebook" data-share-text="Share this awesome link on Facebook" data-share-title="Facebook Share" data-share-via="" data-share-tags="" data-share-media=""><i class="fa fa-facebook"></i><span>28</span></a>
-                                            <a href="#" class="boxed_icon twitter" data-share-url="http://mightymedia.nl" data-share-network="twitter" data-share-text="Share this awesome link on Twitter" data-share-title="Twitter Share" data-share-via="" data-share-tags="" data-share-media=""><i class="fa fa-twitter"></i></a>
-                                            <a href="#" class="boxed_icon google-plus" data-share-url="http://mightymedia.nl" data-share-network="googleplus" data-share-text="Share this awesome link on Google+" data-share-title="Google+ Share" data-share-via="" data-share-tags="" data-share-media=""><i class="fa fa-google-plus"></i></a>
-                                            <a href="#" class="boxed_icon pinterest" data-share-url="http://mightymedia.nl" data-share-network="pinterest" data-share-text="Share this awesome link on Pinterest" data-share-title="Pinterest Share" data-share-via="" data-share-tags="" data-share-media=""><i class="fa fa-pinterest-p"></i></a>
-                                            <a href="#" class="boxed_icon comment"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="14" height="14" viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve"><path d="M3.6 14c0 0-0.1 0-0.1 0 -0.1-0.1-0.2-0.2-0.2-0.3v-2.7h-2.9C0.2 11 0 10.8 0 10.6V0.4C0 0.2 0.2 0 0.4 0h13.3C13.8 0 14 0.2 14 0.4v10.2c0 0.2-0.2 0.4-0.4 0.4H6.9L3.9 13.9C3.8 14 3.7 14 3.6 14zM0.7 10.2h2.9c0.2 0 0.4 0.2 0.4 0.4v2.2l2.5-2.4c0.1-0.1 0.2-0.1 0.2-0.1h6.6v-9.5H0.7V10.2z"></path></svg><span>3</span></a>
-                                        </aside>
-                                    </div>
-                                    <!-- /End of share icon -->
-                                </div>
-                                <!-- /.End of details body -->
-                                <aside class="about-author">
-                                    <h3>About The Author</h3>
-                                    <div class="author-bio">
-                                        <div class="author-img">
-                                            <a href="#"><img alt="Johnny Doe" src="assets/img/about-avatar.jpg" class="avatar img-responsive"></a>												
-                                        </div>
-                                        <!-- /. Author-img -->
-                                        <div class="author-info">
-                                            <h4 class="author-name">Johnny Doe</h4>
-                                            <p>Johnny Doe was born in Ulm, in the Kingdom of Württemberg in the German Empire on 14 March 1879. His father was Hermann Einstein, a salesman and engineer. He was a really good man for sure.</p>
-                                            <p>
-                                                <a class="social-link facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                                <a class="social-link twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                                <a class="social-link vine" href="#"><i class="fa fa-vine"></i></a>
-                                                <a class="social-link dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                                                <a class="social-link instagram" href="#"><i class="fa fa-instagram"></i></a>
-                                            </p>
-                                        </div>
-                                        <!-- /. Author-info -->
-                                    </div>
-                                    <!-- /.End of author bio -->
-                                </aside>
-                                <!-- /.End of about author -->
-                                <div class="post_related">
-                                    <h3 class="related_post_title">You Might Also Like...</h3>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <article class="post_article item_related">
-                                                <a class="post_img" href="#">
-                                                    <figure>
-                                                        <img class="img-responsive" src="assets/img/400x280-7.jpg" alt="">
-                                                    </figure>
-                                                </a>
-                                                <h4><a href="#">Ut et nunc a <em><strong>dolor sodales</strong></em> lacinia quis ac justo.</a></h4>
-                                            </article>
-                                            <!-- /.End of related post -->
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <article class="post_article item_related">
-                                                <a class="post_img" href="#">
-                                                    <figure>
-                                                        <img class="img-responsive" src="assets/img/400x280-8.jpg" alt="">
-                                                    </figure>
-                                                </a>
-                                                <h4><a href="#">Aliquam <em><strong>gravida urna</strong></em> ut ipsum hendrerit cursus.</a></h4>
-                                            </article>
-                                            <!-- /.End of related post -->
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <article class="post_article item_related">
-                                                <a class="post_img" href="#">
-                                                    <figure>
-                                                        <img class="img-responsive" src="assets/img/400x280-9.jpg" alt="">
-                                                    </figure>
-                                                </a>
-                                                <h4><a href="#">Aliquam eu nunc at nulla efficitur <em><strong>pellentesque a quis.</strong></em></a></h4>
-                                            </article>
-                                            <!-- /.End of related post -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.End of  related post -->
-                                <div class="comments">
-                                    <h3 class="comment_title">2 Comments</h3>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img src="assets/img/img_avatar1.png" alt="" class="media-object">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">Jahangir Alom <small>Posted on February 19, 2016</small></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <a href="#" class="btn link-btn btn-rounded">Reply ⇾</a>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <img src="assets/img/img_avatar2.png" alt="Demo Avatar Jane Doe" class="media-object">
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Jane Doe <small>Posted on February 20, 2016</small></h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                                    <a href="#" class="btn link-btn btn-rounded">Reply ⇾</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img src="assets/img/img_avatar1.png" alt="" class="media-object">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <a href="#" class="btn link-btn btn-rounded">Reply ⇾</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.End of comment -->
-                                <div class="comment_form">
-                                    <h3 class="replay_title">Leave a Reply </h3>
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="textarea" rows="5"></textarea>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="name" class="col-sm-2 col-form-label">Name *</label>
-                                        <div class="col-sm-5">
-                                            <input class="form-control" id="name2" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="email" class="col-sm-2 col-form-label">Email *</label>
-                                        <div class="col-sm-5">
-                                            <input class="form-control" id="email3" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="website" class="col-sm-2 col-form-label">Website</label>
-                                        <div class="col-sm-5">
-                                            <input class="form-control" id="website" type="text">
-                                        </div>
-                                    </div>
-                                    <a href="#" class="btn link-btn">Post Comment ⇾</a>
-                                </div>
-                                <!-- /.End of comment content -->
-                            </main>
-                            <aside class="col-sm-4 col-md-3 rightSidebar">
-                                <div class="about-card">
-                                    <div class="ui divider">About me</div>
-                                    <figure>
-                                        <img src="assets/img/about-avatar.jpg" class="img-responsive center-block" alt="">
-                                    </figure>
-                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                                    <img src="assets/img/signature.png" class="img-responsive center-block" alt="">
-                                </div>
-                                <!-- /.End of about -->
-                                <div class="social_share_btn">
-                                    <div class="title-holder">
-                                        <h3 class="title">Subscribe</h3>
-                                        <span class="title-shape title-shape-dark"></span>
-                                    </div>
-                                    <!--  /.End of title -->
-                                    <ul>
-                                        <li class="li-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
-                                        <li class="li-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
-                                        <li class="li-google-plus"><a href="#" target="_blank"><i class="fa fa-google-plus"></i> Google +</a></li>
-                                        <li class="li-pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest-p"></i> Pinterest</a></li>
-                                    </ul>
-                                </div>
-                                <!-- /.End of subscribe -->
-                                <div class="donation_widget">
-                                    <h4 class="donation_title">Donation Information</h4>
-                                    <div class="donation_header">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <input class="form-control" id="currency" type="text" placeholder="$10">
-                                            </div>
-                                            <div class="col-sm-7">
-                                                <div class="radio radio-danger">
-                                                    <input type="radio" name="radio2" id="radio3" value="option1">
-                                                    <label for="radio3">
-                                                        One Time
-                                                    </label>
-                                                </div>
-                                                <div class="radio radio-danger">
-                                                    <input type="radio" name="radio2" id="radio4" value="option2" checked="">
-                                                    <label for="radio4">
-                                                        Recurring Monthly
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <i class="fa fa-shield" aria-hidden="true"></i> SECURE CONNECTION
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="form-group">
-                                                <label>Card Number</label>
-                                                <input class="form-control" id="c_number" type="text" placeholder="*** *** ***">
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <label>CW</label>
-                                                    <input class="form-control" id="cw" type="text">
-                                                </div>
-                                                <div class="col-sm-8">
-                                                    <label>Expiration Date</label>
-                                                    <div class="row mar">
-                                                        <div class="col-sm-5 pad">
-                                                            <input class="form-control" id="mm" type="text" placeholder="MM">
-                                                        </div>
-                                                        <div class="col-sm-7 pad">
-                                                            <input class="form-control" id="yyyy" type="text" placeholder="YYYY">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.End of card info -->
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input class="form-control" id="f_name2" type="text" placeholder="First name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <!--<label>Last name</label>-->
-                                                <input class="form-control" id="l_name" type="text" placeholder="Last name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <input class="form-control" id="email2" type="text" placeholder="Email Address">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="btn link-btn">Submit Donation ⇾</a>
-                                </div>
-                                <!-- /.End of donation widget -->
-                                <div class="latest_post_widget">
-                                    <div class="title-holder">
-                                        <h3 class="title">Latest Post</h3>
-                                        <span class="title-shape title-shape-dark"></span>
-                                    </div>
-                                    <!--  /.End of title -->
-                                    <div class="media latest_post">
-                                        <a class="media-left" href="">
-                                            <img src="assets/img/100x70-1.jpg" class="media-object" alt="">
-                                        </a>
-                                        <div class="media-body">
-                                            <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.latest post -->
-                                    <div class="media latest_post">
-                                        <a class="media-left" href="">
-                                            <img src="assets/img/100x70-2.jpg" class="media-object" alt="">
-                                        </a>
-                                        <div class="media-body">
-                                            <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.latest post -->
-                                    <div class="media latest_post">
-                                        <a class="media-left" href="">
-                                            <img src="assets/img/100x70-3.jpg" class="media-object" alt="">
-                                        </a>
-                                        <div class="media-body">
-                                            <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.latest post -->
-                                </div>
-                                <!-- /.End of latest post -->
-                                <div class="category_widget">
-                                    <div class="title-holder">
-                                        <h3 class="title">Category</h3>
-                                        <span class="title-shape title-shape-dark"></span>
-                                    </div>
-                                    <!--  /.End of title -->
-                                    <a class="category" href="">
-                                        <figure><img src="assets/img/category-1.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Fashion</div>
-                                    </a>
-                                    <!-- /.End of category -->
-                                    <a class="category" href="">
-                                        <figure><img src="assets/img/category-2.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Travel</div>
-                                    </a>
-                                    <!-- /.End of category -->
-                                    <a class="category" href="">
-                                        <figure><img src="assets/img/category-3.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Life Style</div>
-                                    </a>
-                                    <!-- /.End of category -->
-                                </div>
-                                <!-- /.End of category widget -->
-                                <div class="fb_like">
-                                    <div class="title-holder">
-                                        <h3 class="title">Facebook</h3>
-                                        <span class="title-shape title-shape-dark"></span>
-                                    </div>
-                                    <!--  /.End of title -->
-                                    <div class="fb-page" data-href="https://www.facebook.com/fatakestono1/" data-tabs="timeline" data-width="268" data-height="214" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                        <blockquote cite="https://www.facebook.com/fatakestono1/" class="fb-xfbml-parse-ignore">
-                                            <a href="https://www.facebook.com/fatakestono1/">ফাটাকেস্ট</a>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                <!-- /.End of facebook like box -->
-                                <div class="tag_widget">
-                                    <div class="title-holder">
-                                        <h3 class="title">Tags</h3>
-                                        <span class="title-shape title-shape-dark"></span>
-                                    </div>
-                                    <!--  /.End of title -->
-                                    <a href="#">WordPress</a>
-                                    <a href="#">HTML</a>
-                                    <a href="#">CSS</a>
-                                    <a href="#">PHP</a>
-                                    <a href="#">Fashion</a>
-                                    <a href="#">News</a>
-                                </div>
-                                <!-- /.End of tags -->
-                            </aside>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="newslatter">
                     <div class="container">
