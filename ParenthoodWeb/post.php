@@ -100,16 +100,16 @@
 
                                 <article class="grid_post text-center">
                                     <figure>
-                                        <a href="#" class="grid_image"><?php echo '<img class="img-responsive" src="./admin/upload/posts/' . $img . '" alt="" />' ?></a>
+                                        <a href="singlePost.php?post=<?php echo $id ?>" class="grid_image"><?php echo '<img class="img-responsive" src="./admin/upload/posts/' . $img . '" alt="" />' ?></a>
                                         <figcaption>
                                             <div class="post-cat"><span>In</span> <a href="#"><?php echo $categoryType ?></a></div>
                                             <div class="entry-meta">
                                                 <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
                                                 <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
                                             </div>
-                                            <h4 class="grid_post_title"><a href="#"><?php echo $mainTitle ?></a></h4>
+                                            <h4 class="grid_post_title"><a href="singlePost.php?post=<?php echo $id ?>"><?php echo $mainTitle ?></a></h4>
                                             <p><?php echo $shortDescription ?></p>
-                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
+                                            <a href="singlePost.php?post=<?php echo $id ?>" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
                                             <!-- /.Post button -->
                                         </figcaption>
                                     </figure>
