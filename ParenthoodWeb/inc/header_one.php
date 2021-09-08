@@ -169,10 +169,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Parents</a>
                     <ul class="dropdown-menu">
-                        <li><a href="post.php">Parenthood Life</a></li>
-                        <li><a href="#">Expecting Parents</a></li>
-                        <li><a href="#">New Parents with Toddlers</a></li>
-                        <li><a href="#">Expert Advice</a></li>
+                        <li><a href="post.php?page=Parenthood Life">Parenthood Life</a></li>
+                        <li><a href="post.php?page=Expecting Parents">Expecting Parents</a></li>
+                        <li><a href="post.php?page=New Parents with Toddlers">New Parents with Toddlers</a></li>
+                        <li><a href="videos.php">Expert Advice</a></li>
                     </ul>
                     <!-- <ul class="dropdown-menu megamenu-content" role="menu"> -->
                         <!-- <li>

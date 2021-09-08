@@ -61,7 +61,7 @@
             <div class="container">
                 <div class="row mas-m">
                     <?php
-                    $qry = "SELECT * FROM singlevideo limit 1";
+                    $qry = "SELECT * FROM singlevideo order by s_id DESC limit 1";
                     $data = mysqli_query($db, $qry) or die('error');
 
                     if (mysqli_num_rows($data) > 0) {
@@ -105,7 +105,7 @@
                                 <div class="masonry-slide1 owl-carousel owl-theme">
 
                                     <?php
-                                    $qry = "SELECT * FROM post WHERE categoryType = 'Parenthood Life' limit 2";
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'Parenthood Life' order by id DESC limit 2";
                                     $data = mysqli_query($db, $qry) or die('error');
 
                                     if (mysqli_num_rows($data) > 0) {
@@ -124,7 +124,7 @@
                                                     </a>
                                                     <div class="mas-text">
                                                         <div class="post-cat"><a href="#"><?php echo $categoryType ?></a></div>
-                                                        <h4 class="mas-title"><a href="#"><?php echo $mainTitle ?></a></h4>
+                                                        <h4 class="mas-title"><a href="#"><?php echo $mainTitle ?></a></h4><br />
                                                         <div class="mas-details">
                                                             <p><?php echo $description ?></p>
                                                                 <a href="#" class="read-more">Read More &#8702;</a>
@@ -145,7 +145,7 @@
                                 <div class="masonry-slide1 owl-carousel owl-theme">
 
                                     <?php
-                                    $qry = "SELECT * FROM post WHERE categoryType = 'Expecting Parents' limit 2";
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'Expecting Parents' order by id DESC limit 2";
                                     $data = mysqli_query($db, $qry) or die('error');
 
                                     function myTruncate($string, $limit, $break = ".", $pad = "...")
@@ -202,7 +202,7 @@
                                 <div class="masonry-slide1 owl-carousel owl-theme">
 
                                     <?php
-                                    $qry = "SELECT * FROM post WHERE categoryType = 'New Parents with Toddlers' limit 2";
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'New Parents with Toddlers' order by id DESC limit 2";
                                     $data = mysqli_query($db, $qry) or die('error');
 
                                     if (mysqli_num_rows($data) > 0) {
@@ -240,7 +240,7 @@
                             <div class="col-sm-6 mas-p">
                                 <div class="masonry-slide4 owl-carousel owl-theme">
                                     <?php
-                                    $qry = "SELECT * FROM post WHERE categoryType = 'Expert Advice' limit 2";
+                                    $qry = "SELECT * FROM post WHERE categoryType = 'Expert Advice' order by id DESC limit 2";
                                     $data = mysqli_query($db, $qry) or die('error');
 
                                     if (mysqli_num_rows($data) > 0) {
@@ -385,19 +385,19 @@
                                         <span class="title-shape title-shape-dark"></span>
                                     </div>
                                     <!--  /.End of title -->
-                                    <a class="category" href="">
+                                    <a class="category" href="post.php?page=Parenthood Life">
                                         <figure><img src="assets/img/category-1.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Execting Parents</div>
+                                        <div class="category_name">Parenthood Life</div>
                                     </a>
                                     <!-- /.End of category -->
-                                    <a class="category" href="">
+                                    <a class="category" href="post.php?page=Expecting Parents">
                                         <figure><img src="assets/img/category-2.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">New Parents with Toddlers</div>
+                                        <div class="category_name">Expecting Parents</div>
                                     </a>
                                     <!-- /.End of category -->
-                                    <a class="category" href="">
+                                    <a class="category" href="post.php?page=New Parents with Toddlers">
                                         <figure><img src="assets/img/category-3.jpg" class="img-responsive" alt=""></figure>
-                                        <div class="category_name">Parents of Schoolers</div>
+                                        <div class="category_name">New Parents with Toddlers</div>
                                     </a>
                                     <!-- /.End of category -->
                                 </div>
@@ -473,7 +473,7 @@
             <main class="col-sm-12">
                 <div id="macy-container">
                     <?php
-                    $qry = "SELECT * FROM singlevideo  WHERE s_id != $id limit 4";
+                    $qry = "SELECT * FROM singlevideo order by s_id DESC limit 4";
                     $data = mysqli_query($db, $qry) or die('error');
 
                     if (mysqli_num_rows($data) > 0) {

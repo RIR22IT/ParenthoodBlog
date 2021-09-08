@@ -182,12 +182,6 @@ if (isset($_GET['p_edit'])) {
                                                                                     echo "selected";
                                                                                 }
                                                                                 ?>>New Parents with Toddlers</option>
-
-                                    <option value="Expert Advice" <?php
-                                                                    if ($categoryType == 'Expert Advice') {
-                                                                        echo "selected";
-                                                                    }
-                                                                    ?>>Expert Advice</option>
                                 </select>
                             </div><br><br><br><br>
 

@@ -68,56 +68,59 @@
                     <div class="author-post-content">
 
                         <?php
-                        $qry = "SELECT * FROM post";
-                        $data = mysqli_query($db, $qry) or die('error');
+                        if (isset($_GET['page'])) {
+                            $category = $_GET['page'];
+                            
+                            $qry = "SELECT * FROM post WHERE categoryType= '$category'";
+                            $data = mysqli_query($db, $qry) or die('error');
 
-                        function myTruncate($string, $limit, $break = ".", $pad = "...")
-                        {
-                            // return with no change if string is shorter than $limit
-                            if (strlen($string) <= $limit) return $string;
+                            function myTruncate($string, $limit, $break = ".", $pad = "...")
+                            {
+                                // return with no change if string is shorter than $limit
+                                if (strlen($string) <= $limit) return $string;
 
-                            // is $break present between $limit and the end of the string?
-                            if (false !== ($breakpoint = strpos($string, $break, $limit))) {
-                                if ($breakpoint < strlen($string) - 1) {
-                                    $string = substr($string, 0, $breakpoint) . $pad;
+                                // is $break present between $limit and the end of the string?
+                                if (false !== ($breakpoint = strpos($string, $break, $limit))) {
+                                    if ($breakpoint < strlen($string) - 1) {
+                                        $string = substr($string, 0, $breakpoint) . $pad;
+                                    }
                                 }
+
+                                return $string;
                             }
 
-                            return $string;
-                        }
-
-                        if (mysqli_num_rows($data) > 0) {
-                            while ($row = mysqli_fetch_assoc($data)) {
-                                $id  = $row['id'];
-                                $mainTitle = $row['mainTitle'];
-                                $categoryType = $row['categoryType'];
-                                $description = $row['description'];
-                                $currentDate = $row['date'];
-                                $date = date("d-m-Y", strtotime($currentDate));
-                                $img = $row['img'];
-                                $shortDescription = myTruncate($description, 10);
+                            if (mysqli_num_rows($data) > 0) {
+                                while ($row = mysqli_fetch_assoc($data)) {
+                                    $id  = $row['id'];
+                                    $mainTitle = $row['mainTitle'];
+                                    $description = $row['description'];
+                                    $currentDate = $row['date'];
+                                    $date = date("d-m-Y", strtotime($currentDate));
+                                    $img = $row['img'];
+                                    $shortDescription = myTruncate($description, 10);
                         ?>
 
-                                <article class="grid_post text-center">
-                                    <figure>
-                                        <a href="#" class="grid_image"><?php echo '<img class="img-responsive" src="./admin/upload/posts/' . $img . '" alt="" />' ?></a>
-                                        <figcaption>
-                                            <div class="post-cat"><span>In</span> <a href="#"><?php echo $categoryType ?></a></div>
-                                            <div class="entry-meta">
-                                                <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
-                                                <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                            </div>
-                                            <h4 class="grid_post_title"><a href="#"><?php echo $mainTitle ?></a></h4>
-                                            <p><?php echo $shortDescription ?></p>
-                                            <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                            <!-- /.Post button -->
-                                        </figcaption>
-                                    </figure>
+                                    <article class="grid_post text-center">
+                                        <figure>
+                                            <a href="#" class="grid_image"><?php echo '<img class="img-responsive" src="./admin/upload/posts/' . $img . '" alt="" />' ?></a>
+                                            <figcaption>
+                                                <div class="post-cat"><span>In</span> <a href="#"><?php echo $category ?></a></div>
+                                                <div class="entry-meta">
+                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
+                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
+                                                </div>
+                                                <h4 class="grid_post_title"><a href="#"><?php echo $mainTitle ?></a></h4>
+                                                <p><?php echo $shortDescription ?></p>
+                                                <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
+                                                <!-- /.Post button -->
+                                            </figcaption>
+                                        </figure>
 
-                                </article>
-                                <!-- /.End of grid post -->
+                                    </article>
+                                    <!-- /.End of grid post -->
 
                         <?php
+                                }
                             }
                         }
                         ?>
