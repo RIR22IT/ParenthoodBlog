@@ -100,24 +100,24 @@
                                     $shortDescription = myTruncate($description, 10);
                         ?>
 
-                                    <article class="grid_post text-center">
-                                        <figure>
-                                            <a href="#" class="grid_image"><?php echo '<img class="img-responsive" src="./admin/upload/posts/' . $img . '" alt="" />' ?></a>
-                                            <figcaption>
-                                                <div class="post-cat"><span>In</span> <a href="#"><?php echo $category ?></a></div>
-                                                <div class="entry-meta">
-                                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
-                                                    <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
-                                                </div>
-                                                <h4 class="grid_post_title"><a href="#"><?php echo $mainTitle ?></a></h4>
-                                                <p><?php echo $shortDescription ?></p>
-                                                <a href="#" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
-                                                <!-- /.Post button -->
-                                            </figcaption>
-                                        </figure>
+                                <article class="grid_post text-center">
+                                    <figure>
+                                        <a href="singlePost.php?post=<?php echo $id ?>" class="grid_image"><?php echo '<img class="img-responsive" src="./admin/upload/posts/' . $img . '" alt="" />' ?></a>
+                                        <figcaption>
+                                            <div class="post-cat"><span>In</span> <a href="#"><?php echo $categoryType ?></a></div>
+                                            <div class="entry-meta">
+                                                <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
+                                                <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
+                                            </div>
+                                            <h4 class="grid_post_title"><a href="singlePost.php?post=<?php echo $id ?>"><?php echo $mainTitle ?></a></h4>
+                                            <p><?php echo $shortDescription ?></p>
+                                            <a href="singlePost.php?post=<?php echo $id ?>" class="btn link-btn btn-outline btn-rounded">Reading &#8702;</a>
+                                            <!-- /.Post button -->
+                                        </figcaption>
+                                    </figure>
 
-                                    </article>
-                                    <!-- /.End of grid post -->
+                                </article>
+                                <!-- /.End of grid post -->
 
                         <?php
                                 }
@@ -130,75 +130,8 @@
             <?php include('./inc/footer_one.php'); ?>
 
         </div>
-        <div class="modal fade user-modal" id="user-modal">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#login" data-toggle="tab">Log in</a></li>
-                            <li><a href="#register" data-toggle="tab">Register</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="login">
-                                <div class="form-content text-center">
-                                    <h2>Sign In</h2>
-                                    <p>Chose One of the Following Methods.</p>
-                                    <div class="social-btn">
-                                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i>With Facebook</a>
-                                        <a href="#" class="btn btn-plush"><i class="fa fa-google-plus"></i>With Google +</a>
-                                    </div>
-                                    <div class="ui horizontal divider">Or </div>
-                                    <p>Sign in Using Your Email Address</p>
-                                    <div class="form-group">
-                                        <input class="form-control" name="f_name" id="f_name" placeholder="Username or email" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="pass" id="pass" placeholder="Password" type="text">
-                                    </div>
-                                    <div class="block-content">
+        <?php include('./inc/auth/auth.php'); ?>
 
-                                        <div class="checkbox checkbox-danger">
-                                            <input id="checkbox8" type="checkbox">
-                                            <label for="checkbox8">
-                                                Remember me
-                                            </label>
-                                        </div>
-                                        <a href="#" class="forgot">Forgot Password?</a>
-                                    </div>
-                                    <a href="#" class="btn link-btn btn-block btn-rounded">Login &#8702;</a>
-                                    <div class="">Don't have an account? <a href="#">Sign up Now</a></div>
-                                </div>
-                                <!-- /.End of Login -->
-                            </div>
-                            <div class="tab-pane fade" id="register">
-                                <div class="form-content">
-                                    <h2 class="text-center">Sign Up For Free</h2>
-                                    <div class="form-group">
-                                        <input class="form-control" name="name" id="name" placeholder="Your Name" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="email" id="email" placeholder="Your Email Address" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="c_name" id="c_name" placeholder="Your Company Name" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="pass2" id="pass2" placeholder="Enter Your Password" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="r_pass" id="r_pass" placeholder="Retype Your Password" type="text">
-                                    </div>
-                                    <div class="block-content">
-                                        <div><i class="fa fa-shield"></i><span>Your Password at Global Crypto are encrypted and Secured</span></div>
-                                    </div>
-                                    <a href="#" class="btn link-btn btn-block btn-rounded">Sign Up &#8702;</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- /.End of Sign up  Sing in -->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
