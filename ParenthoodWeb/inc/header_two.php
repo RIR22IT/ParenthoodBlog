@@ -1,7 +1,6 @@
 <?php
-    // session_start();
+    session_start();
     // include "../../database/connection.php";
-
     if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
         $id = $_SESSION['id'];
         $query = "SELECT * FROM user WHERE id = '$id'";
@@ -45,8 +44,10 @@
                         <a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal">Login / Register</a>
                         <?php
                             }else{
-                                echo $firstName. ' ' . $lastName;
-                                echo'<a href="auth/logout.php">Logout</a>';
+                        ?>
+                                <a><?php echo $firstName. ' ' .$lastName; ?>  |</a>
+                                <a href="inc/auth/logout.php">Logout</a>;
+                        <?php
                             }
                         ?>
                     </li>
