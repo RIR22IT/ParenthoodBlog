@@ -145,9 +145,10 @@ function myTruncate($string, $limit, $break = ".", $pad = "...")
                                             <div class="mas-text">
                                                 <div class="post-cat"><a href="#"><?php echo $categoryType ?></a></div>
                                                 <h4 class="mas-title"><a href="#"><?php echo $mainTitle ?></a></h4>
+                                                <br />
                                                 <div class="mas-details">
                                                     <p><?php echo $description ?></p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+                                                    <a href="post.php" class="read-more">Read More &#8702;</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -190,7 +191,7 @@ function myTruncate($string, $limit, $break = ".", $pad = "...")
                                                 <br />
                                                 <div class="mas-details">
                                                     <p><?php echo $description ?></p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+                                                    <a href="post.php" class="read-more">Read More &#8702;</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -235,7 +236,7 @@ function myTruncate($string, $limit, $break = ".", $pad = "...")
                                                 <br />
                                                 <div class="mas-details">
                                                     <p><?php echo $description ?></p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+                                                    <a href="post.php" class="read-more">Read More &#8702;</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -275,7 +276,7 @@ function myTruncate($string, $limit, $break = ".", $pad = "...")
                                                 <br />
                                                 <div class="mas-details">
                                                     <p><?php echo $description ?></p>
-                                                    <a href="#" class="read-more">Read More &#8702;</a>
+                                                    <a href="post.php" class="read-more">Read More &#8702;</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -411,17 +412,17 @@ function myTruncate($string, $limit, $break = ".", $pad = "...")
                             <!--  /.End of title -->
                             <a class="category" href="">
                                 <figure><img src="assets/img/category-1.jpg" class="img-responsive" alt=""></figure>
+                                <div class="category_name">Parenthood Life</div>
+                            </a>
+                            <!-- /.End of category -->
+                            <a class="category" href="">
+                                <figure><img src="assets/img/category-1.jpg" class="img-responsive" alt=""></figure>
                                 <div class="category_name">Execting Parents</div>
                             </a>
                             <!-- /.End of category -->
                             <a class="category" href="">
                                 <figure><img src="assets/img/category-2.jpg" class="img-responsive" alt=""></figure>
                                 <div class="category_name">New Parents with Toddlers</div>
-                            </a>
-                            <!-- /.End of category -->
-                            <a class="category" href="">
-                                <figure><img src="assets/img/category-3.jpg" class="img-responsive" alt=""></figure>
-                                <div class="category_name">Parents of Schoolers</div>
                             </a>
                             <!-- /.End of category -->
                         </div>

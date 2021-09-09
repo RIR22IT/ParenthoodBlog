@@ -139,7 +139,7 @@ if (!isset($_SESSION['email'])) {
                                     <option value="Parenthood Life">Parenthood Life</option>
                                     <option value="Expecting Parents">Expecting Parents</option>
                                     <option value="New Parents with Toddlers">New Parents with Toddlers</option>
-                                    <option value="Expert Advice">Expert Advice</option>
+                                    <!-- <option value="Expert Advice">Expert Advice</option> -->
                                 </select>
                             </div><br><br><br><br>
 

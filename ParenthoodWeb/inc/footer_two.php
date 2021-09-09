@@ -1,5 +1,5 @@
-<?php 
-    include('./database/connection.php');
+<?php
+include('./database/connection.php');
 ?>
 
 <div class="newslatter">
@@ -18,25 +18,25 @@
 </div>
 
 <div class="insta-content">
-        <!-- <div class="insta-link"><a href="#" rel="me" target="_blank" class="">Follow Me!</a></div> -->
-        <div id="ri-grid" class="ri-grid ri-grid-size-2">
-            <img class="ri-loading-image" src="assets/img/loading.gif" alt="" />
-            <ul>
-                <?php
-                    $qry = "SELECT * FROM footerimage";
-                    $data = mysqli_query($db, $qry) or die('error');
+    <!-- <div class="insta-link"><a href="#" rel="me" target="_blank" class="">Follow Me!</a></div> -->
+    <div id="ri-grid" class="ri-grid ri-grid-size-2">
+        <img class="ri-loading-image" src="assets/img/loading.gif" alt="" />
+        <ul>
+            <?php
+            $qry = "SELECT * FROM footerimage";
+            $data = mysqli_query($db, $qry) or die('error');
 
-                    if(mysqli_num_rows($data) > 0){
-                        while($row = mysqli_fetch_assoc($data)){
-                            $id = $row['id'];
-                            $img = $row['img'];
-                ?>
-                    <li><a href=""><?php echo'<img src="./admin/upload/footerImage/'.$img.'" alt="" />' ?></a></li>
-                <?php
-                    }
+            if (mysqli_num_rows($data) > 0) {
+                while ($row = mysqli_fetch_assoc($data)) {
+                    $id = $row['id'];
+                    $img = $row['img'];
+            ?>
+                    <li><a href=""><?php echo '<img src="./admin/upload/footerImage/' . $img . '" alt="" />' ?></a></li>
+            <?php
                 }
-                ?>
-                <!-- <li><a href="#"><img src="assets/img/instagram/01.jpg" alt="" /></a></li>
+            }
+            ?>
+            <!-- <li><a href="#"><img src="assets/img/instagram/01.jpg" alt="" /></a></li>
                 <li><a href="#"><img src="assets/img/instagram/02.jpg" alt="" /></a></li>
                 <li><a href="#"><img src="assets/img/instagram/03.jpg" alt="" /></a></li>
                 <li><a href="#"><img src="assets/img/instagram/04.jpg" alt="" /></a></li>
@@ -56,9 +56,9 @@
                 <li><a href="#"><img src="assets/img/instagram/18.jpg" alt="" /></a></li>
                 <li><a href="#"><img src="assets/img/instagram/19.jpg" alt="" /></a></li>
                 <li><a href="#"><img src="assets/img/instagram/20.jpg" alt="" /></a></li> -->
-            </ul>
-        </div>
+        </ul>
     </div>
+</div>
 
 <footer class="footer-black">
     <div class="main-footer">
@@ -78,28 +78,28 @@
                         <h3 class="widget-title title-white">Twitter</h3>
                         <ul class="twitter-widget">
                             <li>
-                            <div class="icon"><i class="fa fa-facebook"></i></div>
-                            <div class="tweet-text">
-                                Facebook Social Link - 
+                                <div class="icon"><i class="fa fa-facebook"></i></div>
+                                <div class="tweet-text">
+                                    Facebook Social Link -
                                     <a target="_blank" href="https://www.facebook.com/
                                         parenthoodglobal">https://www.facebook.com/
                                         parenthoodglobal</a>
-                            </div>
-                            
-                                
+                                </div>
+
+
                             </li>
                             <li>
-                            <div class="icon"><i class="fa fa-instagram"></i></div>
+                                <div class="icon"><i class="fa fa-instagram"></i></div>
                                 <div class="tweet-text">
-                                Instagram Social Link - 
+                                    Instagram Social Link -
                                     <a target="_blank" href="https://www.instagram.com/parenthoodsrilanka/">https://www.instagram.com/
                                         parenthoodsrilanka</a>
                                 </div>
                             </li>
                             <li>
-                            <div class="icon"><i class="fa fa-linkedin"></i></div>
+                                <div class="icon"><i class="fa fa-linkedin"></i></div>
                                 <div class="tweet-text">
-                                Linkedin Social Link - 
+                                    Linkedin Social Link -
                                     <a target="_blank" href="https://www.linkedin.com/company/parenthood-sri-lanka">https://www.linkedin.com/company/
                                         parenthood-sri-lanka</a>
                                 </div>
@@ -107,17 +107,17 @@
                             <li>
                                 <div class="icon"><i class="fa fa-pinterest-square"></i></div>
                                 <div class="tweet-text">
-                                Pinterest Social Link -
-                                   <a target="_blank" href="https://www.pinterest.com/parenthoodglobal/_saved">https://www.pinterest.com/
-                                       parenthoodglobal/_saved</a>
+                                    Pinterest Social Link -
+                                    <a target="_blank" href="https://www.pinterest.com/parenthoodglobal/_saved">https://www.pinterest.com/
+                                        parenthoodglobal/_saved</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon"><i class="fa fa-youtube-play"></i></div>
                                 <div class="tweet-text">
-                                Youtube Social Link -
-                                   <a target="_blank" href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA">https://www.youtube.com/
-                                       channel/UCcZeSJZ4KFFUOppROwUg_uA</a>
+                                    Youtube Social Link -
+                                    <a target="_blank" href="https://www.youtube.com/channel/UCcZeSJZ4KFFUOppROwUg_uA">https://www.youtube.com/
+                                        channel/UCcZeSJZ4KFFUOppROwUg_uA</a>
                                 </div>
                             </li>
 
@@ -128,59 +128,47 @@
                     <div class="footer-box">
                         <h3 class="widget-title title-white">Need help</h3>
                         <ul class="footer-cat">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Community</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="whyUs.php">Community</a></li>
                             <li><a href="#">Parents</a></li>
-                            <li><a href="#">Trending</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="trending.php">Trending</a></li>
+                            <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-5 col-md-3">
                     <div class="footer-box">
                         <h3 class="widget-title title-white">Latest Post</h3>
-                        <div class="media latest_post">
-                            <a class="media-left" href="">
-                                <img src="assets/img/100x70-1.jpg" class="media-object" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics
-                                        Copenhagen</a></h6>
-                                <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                            2018</time></span>
+                        <?php
+                        $qry = "SELECT * FROM post ORDER BY id DESC limit 4";
+                        $data = mysqli_query($db, $qry) or die('error');
+
+                        if (mysqli_num_rows($data) > 0) {
+                            while ($row = mysqli_fetch_assoc($data)) {
+                                $id  = $row['id'];
+                                $mainTitle = $row['mainTitle'];
+                                $categoryType = $row['categoryType'];
+                                $img = $row['img'];
+                                $currentDate = $row['date'];
+                                $date = date("d-m-Y", strtotime($currentDate));
+                        ?>
+                                <div class="media latest_post">
+                                    <a class="media-left" href="post.php">
+                                        <?php echo '<img src="./admin/upload/posts/' . $img . '" class="media-object" alt="" />' ?>
+                                        <!-- <img src="assets/img/100x70-1.jpg" class="media-object" alt=""> -->
+                                    </a>
+                                    <div class="media-body">
+                                        <h6 class="media-heading"><a href="post.php"><?php echo $mainTitle ?><em> - <?php echo $categoryType ?></em></a></h6>
+                                        <div class="entry-meta">
+                                            <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00"><?php echo $date ?></time></span>
+                                            <span class="comment-link"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>9 Comments</a></span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- /.latest post -->
-                        <div class="media latest_post">
-                            <a class="media-left" href="">
-                                <img src="assets/img/100x70-2.jpg" class="media-object" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics
-                                        Copenhagen</a></h6>
-                                <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                            2018</time></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.latest post -->
-                        <div class="media latest_post">
-                            <a class="media-left" href="">
-                                <img src="assets/img/100x70-3.jpg" class="media-object" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><a href="#">The <em>Best Street-Style</em> Pics
-                                        Copenhagen</a></h6>
-                                <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21,
-                                            2018</time></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.latest post -->
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
