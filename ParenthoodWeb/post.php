@@ -68,36 +68,34 @@
                     <div class="author-post-content">
 
                         <?php
-                        if (isset($_GET['page'])) {
-                            $category = $_GET['page'];
-                            
-                            $qry = "SELECT * FROM post WHERE categoryType= '$category'";
-                            $data = mysqli_query($db, $qry) or die('error');
+                        $qry = "SELECT * FROM post";
+                        $data = mysqli_query($db, $qry) or die('error');
 
-                            function myTruncate($string, $limit, $break = ".", $pad = "...")
-                            {
-                                // return with no change if string is shorter than $limit
-                                if (strlen($string) <= $limit) return $string;
+                        function myTruncate($string, $limit, $break = ".", $pad = "...")
+                        {
+                            // return with no change if string is shorter than $limit
+                            if (strlen($string) <= $limit) return $string;
 
-                                // is $break present between $limit and the end of the string?
-                                if (false !== ($breakpoint = strpos($string, $break, $limit))) {
-                                    if ($breakpoint < strlen($string) - 1) {
-                                        $string = substr($string, 0, $breakpoint) . $pad;
-                                    }
+                            // is $break present between $limit and the end of the string?
+                            if (false !== ($breakpoint = strpos($string, $break, $limit))) {
+                                if ($breakpoint < strlen($string) - 1) {
+                                    $string = substr($string, 0, $breakpoint) . $pad;
                                 }
-
-                                return $string;
                             }
 
-                            if (mysqli_num_rows($data) > 0) {
-                                while ($row = mysqli_fetch_assoc($data)) {
-                                    $id  = $row['id'];
-                                    $mainTitle = $row['mainTitle'];
-                                    $description = $row['description'];
-                                    $currentDate = $row['date'];
-                                    $date = date("d-m-Y", strtotime($currentDate));
-                                    $img = $row['img'];
-                                    $shortDescription = myTruncate($description, 10);
+                            return $string;
+                        }
+
+                        if (mysqli_num_rows($data) > 0) {
+                            while ($row = mysqli_fetch_assoc($data)) {
+                                $id  = $row['id'];
+                                $mainTitle = $row['mainTitle'];
+                                $categoryType = $row['categoryType'];
+                                $description = $row['description'];
+                                $currentDate = $row['date'];
+                                $date = date("d-m-Y", strtotime($currentDate));
+                                $img = $row['img'];
+                                $shortDescription = myTruncate($description, 10);
                         ?>
 
                                 <article class="grid_post text-center">
@@ -120,7 +118,6 @@
                                 <!-- /.End of grid post -->
 
                         <?php
-                                }
                             }
                         }
                         ?>
