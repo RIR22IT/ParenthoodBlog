@@ -45,8 +45,8 @@
                         <?php
                             }else{
                         ?>
-                                <a><?php echo $firstName. ' ' .$lastName; ?>  |</a>
-                                <a href="inc/auth/logout.php">Logout</a>;
+                        <a><?php echo $firstName. ' ' .$lastName; ?> |</a>
+                        <a href="inc/auth/logout.php">Logout</a>;
                         <?php
                             }
                         ?>
@@ -106,7 +106,7 @@
                         <li><a href="videos.php">Expert Advice</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="">
                     <a href="trending.php" class="dropdown-toggle">Trending</a>
                 </li>
@@ -143,4 +143,3 @@
         </div>
     </div> -->
 </div>
-
