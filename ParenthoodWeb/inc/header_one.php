@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    // include "../../database/connection.php";
+    if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
+        $id = $_SESSION['id'];
+        $query = "SELECT * FROM user WHERE id = '$id'";
+        $run = mysqli_query($db, $query);
+        if (mysqli_num_rows($run) > 0) {
+            $row = mysqli_fetch_array($run);
+            $firstName = $row['firstname'];
+            $lastName = $row['lastname'];
+        }    
+    }
+
+?>
 
 <div class="top-header">
     <div class="container">
@@ -23,8 +38,18 @@
                         <a href="#"><i class="fa fa-youtube-play"></i></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal">
-                        </a>
+                        <?php
+                            if(empty($_SESSION['id'])){
+                        ?>
+                        <a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal">Login / Register</a>
+                        <?php
+                            }else{
+                        ?>
+                                <a><?php echo $firstName. ' ' .$lastName; ?>  |</a>
+                                <a href="inc/auth/logout.php">Logout</a>
+                        <?php
+                            }
+                        ?>
                     </li>
                     <!-- <li>
                         <div class="weather-top">
