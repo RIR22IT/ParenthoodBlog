@@ -1,5 +1,5 @@
-<?php include('./authAction.php') ?>
-<?php include('../../database/connection.php'); ?>
+<!-- <?php include('./authAction.php') ?> -->
+<!-- <?php include('../../database/connection.php'); ?> -->
 
 <div class="modal fade user-modal" id="user-modal">
     <div class="modal-dialog modal-sm" role="document">
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" name="password" id="password" placeholder="Password"
-                                        type="text">
+                                        type="password">
                                 </div>
                                 <div class="block-content">
                                     <!-- <div class="checkbox checkbox-danger">
