@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 //comment.php
 ?>
 
@@ -79,4 +79,4 @@ $(document).ready(function(){
  });
  
 });
-</script>
+</script> -->
