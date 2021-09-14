@@ -24,7 +24,7 @@
 <body>
     <div class="main-content animsition">
         <div class="page-outer-wrap">
-            <?php include('./inc/header_one.php') ?>
+            <?php include './inc/header_one.php' ?>
             <div class="clearfix"></div>
             <!-- /.End of navigation -->
             <div class="parallax page_header" data-parallax-bg-image="assets/img/header-bg.jpg"
@@ -32,7 +32,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3>Contact page</h3>
+                            <h3>
+                                Contact page
+                            </h3>
                             <ol class="breadcrumb">
                                 <li><a href="#">Home</a></li>
                                 <li class="active">Contact</li>
@@ -131,11 +133,11 @@
                 </div>
                 <div class="height_30"></div>
             </div>
-          
+
         </div>
-        <?php include('./inc/footer_one.php') ?>
+        <?php include './inc/footer_one.php' ?>
     </div>
-    <?php include('./inc/auth/auth.php') ?>
+    <?php include './inc/auth/auth.php' ?>
     <!-- /.End of Sign up  Sing in -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/jquery.min.js"></script>
@@ -173,7 +175,7 @@
             // The latitude and longitude to center the map (always required)
             center: new google.maps.LatLng(6.899907344162203, 79.86387133861886), //Dhaka
 
-            // How you would like to style the map. 
+            // How you would like to style the map.
             // This is where you would paste any style found on Snazzy Maps.
             styles: [{
                 "featureType": "administrative",
@@ -240,7 +242,7 @@
             url: myIcon
         };
 
-        // Get the HTML DOM element that will contain your map 
+        // Get the HTML DOM element that will contain your map
         // We are using a div with id="map" seen below in the <body>
         var mapElement = document.getElementById('map');
 

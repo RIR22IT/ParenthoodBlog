@@ -51,16 +51,6 @@
                             }
                         ?>
                     </li>
-                    <!-- <li>
-                        <div class="weather-top">
-                            <i class="fa fa-cloud"></i>
-                            <div class="weather-now">
-                                <span class="degrees">- 5.9</span>
-                                <span class="unit">C</span>
-                            </div>
-                            <div class="weather-city">New York</div>
-                        </div>
-                    </li> -->
             </div>
         </div>
     </div>
